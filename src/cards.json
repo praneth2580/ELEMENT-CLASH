@@ -1,0 +1,404 @@
+[
+  {
+    "name": "Fireball",
+    "element": "Fire",
+    "value": 20,
+    "cost": 3,
+    "type": "Attack",
+    "special": {
+      "name": "Burn",
+      "type": "damage-over-time",
+      "value": 5,
+      "duration": 2
+    }
+  },
+  {
+    "name": "Inferno Blast",
+    "element": "Fire",
+    "value": 35,
+    "cost": 6,
+    "type": "Attack",
+    "special": {
+      "name": "Burn",
+      "type": "damage-over-time",
+      "value": 8,
+      "duration": 3
+    }
+  },
+  {
+    "name": "Flame Shield",
+    "element": "Fire",
+    "value": 0,
+    "cost": 4,
+    "type": "Defend",
+    "special": {
+      "name": "Burn Shield",
+      "type": "damage-over-time",
+      "value": 5,
+      "duration": 2
+    }
+  },
+  {
+    "name": "Firestorm",
+    "element": "Fire",
+    "value": 40,
+    "cost": 7,
+    "type": "Attack",
+    "special": {
+      "name": "Burn",
+      "type": "damage-over-time",
+      "value": 10,
+      "duration": 2
+    }
+  },
+  {
+    "name": "Blazing Strike",
+    "element": "Fire",
+    "value": 30,
+    "cost": 5,
+    "type": "Attack",
+    "special": {
+      "name": "Power Surge",
+      "type": "boost",
+      "multiplier": 1.5
+    }
+  },
+  {
+    "name": "Fire Wall",
+    "element": "Fire",
+    "value": 0,
+    "cost": 5,
+    "type": "Defend",
+    "special": {
+      "name": "Shield",
+      "type": "block",
+      "value": 20
+    }
+  },
+  {
+    "name": "Magma Slam",
+    "element": "Fire",
+    "value": 45,
+    "cost": 8,
+    "type": "Attack",
+    "special": {
+      "name": "Burn",
+      "type": "damage-over-time",
+      "value": 12,
+      "duration": 3
+    }
+  },
+  {
+    "name": "Lava Burst",
+    "element": "Fire",
+    "value": 50,
+    "cost": 10,
+    "type": "Attack",
+    "special": {
+      "name": "Burn",
+      "type": "damage-over-time",
+      "value": 15,
+      "duration": 3
+    }
+  },
+  {
+    "name": "Ember Strike",
+    "element": "Fire",
+    "value": 25,
+    "cost": 3,
+    "type": "Attack",
+    "special": {
+      "name": "Burn",
+      "type": "damage-over-time",
+      "value": 5,
+      "duration": 1
+    }
+  },
+  {
+    "name": "Blaze Wings",
+    "element": "Fire",
+    "value": 10,
+    "cost": 2,
+    "type": "Defend",
+    "special": {
+      "name": "Fire Shield",
+      "type": "block",
+      "value": 15
+    }
+  },
+  {
+    "name": "Water Jet",
+    "element": "Water",
+    "value": 15,
+    "cost": 3,
+    "type": "Attack",
+    "special": {
+      "name": "Flood",
+      "type": "damage-over-time",
+      "value": 4,
+      "duration": 2
+    }
+  },
+  {
+    "name": "Tsunami",
+    "element": "Water",
+    "value": 35,
+    "cost": 6,
+    "type": "Attack",
+    "special": {
+      "name": "Flood",
+      "type": "damage-over-time",
+      "value": 6,
+      "duration": 3
+    }
+  },
+  {
+    "name": "Water Surge",
+    "element": "Water",
+    "value": 20,
+    "cost": 3,
+    "type": "Heal",
+    "special": {
+      "name": "Heal",
+      "type": "heal",
+      "value": 10
+    }
+  },
+  {
+    "name": "Healing Rain",
+    "element": "Water",
+    "value": 0,
+    "cost": 5,
+    "type": "Heal",
+    "special": {
+      "name": "Heal",
+      "type": "heal",
+      "value": 20
+    }
+  },
+  {
+    "name": "Water Shield",
+    "element": "Water",
+    "value": 0,
+    "cost": 4,
+    "type": "Defend",
+    "special": {
+      "name": "Water Barrier",
+      "type": "block",
+      "value": 10
+    }
+  },
+  {
+    "name": "Frozen Blast",
+    "element": "Water",
+    "value": 30,
+    "cost": 6,
+    "type": "Attack",
+    "special": {
+      "name": "Freeze",
+      "type": "debuff",
+      "value": 2,
+      "duration": 1
+    }
+  },
+  {
+    "name": "Vortex",
+    "element": "Water",
+    "value": 25,
+    "cost": 5,
+    "type": "Attack",
+    "special": {
+      "name": "Power Surge",
+      "type": "boost",
+      "multiplier": 1.5
+    }
+  },
+  {
+    "name": "Flood Strike",
+    "element": "Water",
+    "value": 40,
+    "cost": 7,
+    "type": "Attack",
+    "special": {
+      "name": "Flood",
+      "type": "damage-over-time",
+      "value": 10,
+      "duration": 3
+    }
+  },
+  {
+    "name": "Aqua Jet",
+    "element": "Water",
+    "value": 20,
+    "cost": 4,
+    "type": "Attack",
+    "special": {
+      "name": "Freeze",
+      "type": "debuff",
+      "value": 5,
+      "duration": 2
+    }
+  },
+  {
+    "name": "Splash",
+    "element": "Water",
+    "value": 5,
+    "cost": 1,
+    "type": "Heal",
+    "special": {
+      "name": "Heal",
+      "type": "heal",
+      "value": 5
+    }
+  },
+  {
+    "name": "Ocean Wave",
+    "element": "Water",
+    "value": 35,
+    "cost": 8,
+    "type": "Heal",
+    "special": {
+      "name": "Heal",
+      "type": "heal",
+      "value": 30
+    }
+  },
+  {
+    "name": "Earthquake",
+    "element": "Earth",
+    "value": 45,
+    "cost": 8,
+    "type": "Attack",
+    "special": {
+      "name": "Stun",
+      "type": "debuff",
+      "value": 2,
+      "duration": 1
+    }
+  },
+  {
+    "name": "Rock Smash",
+    "element": "Earth",
+    "value": 30,
+    "cost": 6,
+    "type": "Attack",
+    "special": {
+      "name": "Shield Break",
+      "type": "debuff",
+      "value": 10,
+      "duration": 1
+    }
+  },
+  {
+    "name": "Stonewall",
+    "element": "Earth",
+    "value": 0,
+    "cost": 5,
+    "type": "Defend",
+    "special": {
+      "name": "Heavy Shield",
+      "type": "block",
+      "value": 25
+    }
+  },
+  {
+    "name": "Earth Pillar",
+    "element": "Earth",
+    "value": 20,
+    "cost": 4,
+    "type": "Defend",
+    "special": {
+      "name": "Block",
+      "type": "block",
+      "value": 15
+    }
+  },
+  {
+    "name": "Stone Fist",
+    "element": "Earth",
+    "value": 35,
+    "cost": 7,
+    "type": "Attack",
+    "special": {
+      "name": "Power Surge",
+      "type": "boost",
+      "multiplier": 2
+    }
+  },
+  {
+    "name": "Boulder Slam",
+    "element": "Earth",
+    "value": 40,
+    "cost": 9,
+    "type": "Attack",
+    "special": {
+      "name": "Stun",
+      "type": "debuff",
+      "value": 5,
+      "duration": 2
+    }
+  },
+  {
+    "name": "Rock Barrage",
+    "element": "Earth",
+    "value": 50,
+    "cost": 10,
+    "type": "Attack",
+    "special": {
+      "name": "Shield Break",
+      "type": "debuff",
+      "value": 15,
+      "duration": 1
+    }
+  },
+  {
+    "name": "Stone Spire",
+    "element": "Earth",
+    "value": 15,
+    "cost": 3,
+    "type": "Defend",
+    "special": {
+      "name": "Shield",
+      "type": "block",
+      "value": 10
+    }
+  },
+  {
+    "name": "Rockslide",
+    "element": "Earth",
+    "value": 25,
+    "cost": 5,
+    "type": "Attack",
+    "special": {
+      "name": "Stun",
+      "type": "debuff",
+      "value": 2,
+      "duration": 1
+    }
+  },
+  {
+    "name": "Air Slash",
+    "element": "Air",
+    "value": 15,
+    "cost": 3,
+    "type": "Attack",
+    "special": {
+      "name": "Power Surge",
+      "type": "boost",
+      "multiplier": 1.5
+    }
+  },
+  {
+    "name": "Windstorm",
+    "element": "Air",
+    "value": 30,
+    "cost": 6,
+    "type": "Attack",
+    "special": {
+      "name": "Stun",
+      "type": "debuff",
+      "value": 3,
+      "duration": 2
+    }
+  }
+]
