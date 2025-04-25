@@ -1,42 +1,48 @@
-import { getRandomCards, removeByIndexes } from "../functions";
+// import { getRandomCards, removeByIndexes } from "../functions";
 
-export default class Player {
+import Entity from "./Entity";
 
-    deck;
-    hand;
-    discarded;
-    HP;
-    shield;
+// export default class Player {
 
-    constructor(deck_card_count, health = 100, shield = 0) {
-        this.deck = this.setupDeck(deck_card_count);
-        this.HP = health;
-        this.shield = shield;
-    }
+//     deck;
+//     hand;
+//     discarded;
+//     HP;
+//     shield;
 
-    setupDeck(no_of_cards) {
-        return getRandomCards(no_of_cards)
-    }
+//     constructor(deck_card_count, health = 100, shield = 0) {
+//         this.deck = this.setupDeck(deck_card_count);
+//         this.HP = health;
+//         this.shield = shield;
+//     }
 
-    drawHand(no_of_cards) {
-        this.hand = getRandomCards(no_of_cards, this.deck);
-    }
+//     setupDeck(no_of_cards) {
+//         return getRandomCards(no_of_cards)
+//     }
 
-    cardPlayered(card) {
-        const index = this.hand.indexOf(card);
-        const played_card = this.hand[index];
+//     drawHand(no_of_cards) {
+//         this.hand = getRandomCards(no_of_cards, this.deck);
+//     }
 
-        this.discarded = played_card;
-        this.hand = removeByIndexes(this.hand, index);
-    }
+//     cardPlayered(card) {
+//         const index = this.hand.indexOf(card);
+//         const played_card = this.hand[index];
 
-    setHP(health) {
-        this.HP = health;
-    }
+//         this.discarded = played_card;
+//         this.hand = removeByIndexes(this.hand, index);
+//     }
 
-    setShield(shield) {
-        this.shield = shield;
-    }
+//     setHP(health) {
+//         this.HP = health;
+//     }
+
+//     setShield(shield) {
+//         this.shield = shield;
+//     }
 
 
+// }
+
+export default class Player extends Entity {
+    
 }

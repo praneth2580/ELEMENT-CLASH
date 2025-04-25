@@ -56,17 +56,17 @@ export default function ElementClash() {
 
   function addDamage(_damage) {
     let damage = _damage || 0;
-  
+
     let oppHP = currentTurn == 0 ? aiHP : playerHP;
     let setOppHP = currentTurn == 0 ? setAiHP : setPlayerHP;
     let oppShield = currentTurn == 0 ? aiShield : playerShield;
     let setOppShield = currentTurn == 0 ? setAiShield : setPlayerShield;
-  
+
     let effects = currentTurn == 0 ? playerEffects : aiEffects;
     const setEffects = currentTurn == 0 ? setPlayerEffects : setAiEffects;
     let oppEffects = currentTurn == 0 ? aiEffects : playerEffects;
     let setOppEffects = currentTurn == 0 ? setAiEffects : setPlayerEffects;
-  
+
     // Apply boost effects
     const oppBoostEffectIndexes = oppEffects
       .map((effect, index) => (effect.type === "boost" ? index : -1))
@@ -74,11 +74,11 @@ export default function ElementClash() {
     let boostValue = oppEffects
       .filter((e) => e.type === "boost")
       .reduce((sum, effect) => sum + (effect.multiplier || 0), 1);
-  
+
     damage = Math.max(damage * boostValue, 0);
     if (oppBoostEffectIndexes.length > 0)
       oppEffects = removeByIndexes(oppEffects, oppBoostEffectIndexes);
-  
+
     // Apply block effects
     const oppBlockEffectIndexes = oppEffects
       .map((effect, index) => (effect.type === "block" ? index : -1))
@@ -86,26 +86,27 @@ export default function ElementClash() {
     let blockValue = oppEffects
       .filter((e) => e.type === "block")
       .reduce((sum, effect) => sum + (effect.value || 0), 0);
-  
+
     damage = Math.max(damage - blockValue, 0);
     if (oppBlockEffectIndexes.length > 0)
       oppEffects = removeByIndexes(oppEffects, oppBlockEffectIndexes);
-  
+
     // Apply shield and HP
     if (oppShield && oppShield > 0) {
-      oppShield = oppShield - (damage * 0.75);
+      oppShield = oppShield - damage * 0.75;
       // damage = damage * 0.25;
     }
-  
+
     if (oppShield < 0) {
       // damage -= Math.abs(oppShield); // remaining damage after shield break
       oppHP = Math.max(oppHP - Math.abs(oppShield), 0);
       oppShield = 0;
     }
-  
 
-    console.log(`Damage Dealt: ${damage} | HP: ${oppHP} | Shield: ${oppShield}`);
-  
+    console.log(
+      `Damage Dealt: ${damage} | HP: ${oppHP} | Shield: ${oppShield}`
+    );
+
     setOppHP(oppHP);
     setOppShield(oppShield);
     setEffects(effects);
@@ -176,7 +177,6 @@ export default function ElementClash() {
 
     const card = aiRef.current.pickFromHand();
 
-
     let damage = card.value;
 
     if (card.special) {
@@ -185,7 +185,7 @@ export default function ElementClash() {
 
     addDamage(damage);
     setCurrentTurn(0);
-    setCurrentRound(prev => prev + 1)
+    setCurrentRound((prev) => prev + 1);
 
     aiRef.current.setHP(aiHP);
     aiRef.current.setShield(aiShield);
@@ -224,7 +224,7 @@ export default function ElementClash() {
 
     // AI Turn
     setTimeout(() => {
-        aiPlayCard()
+      aiPlayCard();
     }, 1000);
   }
 

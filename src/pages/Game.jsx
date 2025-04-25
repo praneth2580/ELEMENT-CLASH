@@ -1,216 +1,124 @@
 import React, { useEffect, useRef, useState } from "react";
-import cards from "../cards.json";
-import { getRandomCards, removeByIndexes } from "../functions";
-import AI from "../scripts/Ai";
+import { removeByIndexes } from "../functions";
 import Player from "../scripts/Player";
+import AI from "../scripts/Ai";
 
-export default function ElementClash() {
-  const [aiHP, setAiHP] = useState(0);
-  const [aiShield, setAiShield] = useState(40);
-  const [aiDeck, setAiDeck] = useState(null);
-  const [aiHand, setAiHand] = useState(null);
-  const [aiEffects, setAiEffects] = useState([]);
-  const [aiAura, setAiAura] = useState(0);
-  let aiRef = useRef(null);
+export default function Game() {
+  const playerRef = useRef(null);
+  const aiRef = useRef(null);
 
-  const [playerHP, setPlayerHP] = useState(0);
-  const [playerShield, setPlayerShield] = useState(0);
-  const [playerDeck, setPlayerDeck] = useState(null);
-  const [playerHand, setPlayerHand] = useState(null);
-  const [playerEffects, setPlayerEffects] = useState([]);
-  const [playerAura, setPlayerAura] = useState(0);
-  let playerRef = useRef(null);
+  const [playerStats, setPlayerStats] = useState({
+    HP: 0,
+    shield: 0,
+    effects: [],
+    hand: [],
+    aura: 0
+  });
+  const [aiStats, setAiStats] = useState({
+    HP: 0,
+    shield: 0,
+    effects: [],
+    hand: [],
+    aura: 0
+  });
 
-  const [currentRound, setCurrentRound] = useState(0);
-  const [currentTurn, setCurrentTurn] = useState(0);
-  const [message, setMessage] = useState("Choose your card!");
+  const [currentTurn, setCurrentTurn] = useState(0); // 0 = Player, 1 = AI
+  const [currentRound, setCurrentRound] = useState(1);
+  const [message, setMessage] = useState("Let the clash begin!");
 
-  function setupGame() {
-    console.log("🔧 Setting up game...");
-  
+  useEffect(() => {
     playerRef.current = new Player(100);
-    setPlayerHP(playerRef.current.HP);
-    setPlayerDeck(playerRef.current.deck);
-    playerRef.current.drawHand(3);
-    setPlayerHand(playerRef.current.hand);
-    console.log("🧙 Player initialized:", playerRef.current);
-  
     aiRef.current = new AI(100);
-    setAiHP(aiRef.current.HP);
-    setAiDeck(aiRef.current.deck);
+
+    playerRef.current.drawHand(3);
     aiRef.current.drawHand(3);
-    setAiHand(aiRef.current.hand);
-    console.log("🤖 AI initialized:", aiRef.current);
-  
-    setPlayerAura(6);
-    setAiAura(6);
-  }
 
-  function elementalModifier(attacker, defender) {
-    const strengths = {
-      Fire: "Air",
-      Air: "Earth",
-      Earth: "Water",
-      Water: "Fire",
-    };
-    const modifier = strengths[attacker] === defender ? 1.5 : strengths[defender] === attacker ? 0.75 : 1;
-    console.log(`⚔️ Elemental modifier from ${attacker} to ${defender}: x${modifier}`);
-    return modifier;
-  }
-
-  function addDamage(_damage) {
-    let damage = _damage || 0;
-  
-    let oppHP = currentTurn == 0 ? aiHP : playerHP;
-    let setOppHP = currentTurn == 0 ? setAiHP : setPlayerHP;
-    let oppShield = currentTurn == 0 ? aiShield : playerShield;
-    let setOppShield = currentTurn == 0 ? setAiShield : setPlayerShield;
-  
-    let effects = currentTurn == 0 ? playerEffects : aiEffects;
-    const setEffects = currentTurn == 0 ? setPlayerEffects : setAiEffects;
-    let oppEffects = currentTurn == 0 ? aiEffects : playerEffects;
-    let setOppEffects = currentTurn == 0 ? setAiEffects : setPlayerEffects;
-  
-    console.log(`🔻 Base damage: ${damage}`);
-    console.log("🌀 Opponent effects before damage:", oppEffects);
-  
-    // Boost effects
-    const oppBoostEffectIndexes = oppEffects.map((e, i) => (e.type === "boost" ? i : -1)).filter(i => i !== -1);
-    let boostValue = oppEffects.filter(e => e.type === "boost").reduce((sum, e) => sum + (e.multiplier || 0), 1);
-    damage = Math.max(damage * boostValue, 0);
-    if (oppBoostEffectIndexes.length > 0)
-      oppEffects = removeByIndexes(oppEffects, oppBoostEffectIndexes);
-    console.log(`⚡ Boosted damage: ${damage}`);
-  
-    // Block effects
-    const oppBlockEffectIndexes = oppEffects.map((e, i) => (e.type === "block" ? i : -1)).filter(i => i !== -1);
-    let blockValue = oppEffects.filter(e => e.type === "block").reduce((sum, e) => sum + (e.value || 0), 0);
-    damage = Math.max(damage - blockValue, 0);
-    if (oppBlockEffectIndexes.length > 0)
-      oppEffects = removeByIndexes(oppEffects, oppBlockEffectIndexes);
-    console.log(`🛡️ Damage after block: ${damage}`);
-  
-    if (oppShield && oppShield > 0) {
-      console.log(`🧱 Shield before damage: ${oppShield}`);
-      oppShield = oppShield - (damage * 0.75);
-    }
-  
-    if (oppShield < 0) {
-      oppHP = Math.max(oppHP - Math.abs(oppShield), 0);
-      oppShield = 0;
-    }
-  
-    console.log(`💥 Final Damage Applied | HP: ${oppHP} | Shield: ${oppShield}`);
-  
-    setOppHP(oppHP);
-    setOppShield(oppShield);
-    setEffects(effects);
-    setOppEffects(oppEffects);
-  }
-  
-  function heal(hp) {
-    let setHP = currentTurn == 0 ? setPlayerHP : setAiHP;
-    console.log(`❤️ Healing for ${hp}`);
-    setHP(prev => prev + hp);
-  }
-  
-  function assignSpecialEffects(card) {
-    const setEffects = currentTurn == 0 ? setPlayerEffects : setAiEffects;
-    console.log(`✨ Applying special effect:`, card.special);
-    setEffects(prev => [...prev, card.special]);
-  }
-  
-  function executeSpecial(isPlayer) {
-    let effects = isPlayer ? playerEffects : aiEffects;
-    const setEffect = isPlayer ? setPlayerEffects : setAiEffects;
-  
-    if (effects.length > 0) {
-      console.log(`🌀 Executing special effects for ${isPlayer ? "Player" : "AI"}`, effects);
-  
-      for (let i = 0; i < effects.length; i++) {
-        const effect = effects[i];
-  
-        switch (effect.type) {
-          case "damage-over-time":
-            if (effect.duration === 0) {
-              effects = removeByIndexes(effects, i);
-              break;
-            }
-            console.log(`🔥 DoT: ${effect.value} damage`);
-            addDamage(effect.value);
-            effects[i].duration -= 1;
-            break;
-          case "heal":
-            console.log(`💚 Heal effect: ${effect.value}`);
-            heal(effect.value);
-            effects = removeByIndexes(effects, i);
-            break;
-          default:
-            console.log(`🔁 Effect processed:`, effect);
-            break;
-        }
-      }
-  
-      setEffect(effects);
-    }
-  }
-  
-  function aiPlayCard() {
-    if (playerHP <= 0 || aiHP <= 0) return;
-  
-    const card = aiRef.current.pickFromHand();
-    console.log("🤖 AI plays card:", card);
-  
-    let damage = card.value;
-  
-    if (card.special) {
-      assignSpecialEffects(card);
-    }
-  
-    addDamage(damage);
-    setCurrentTurn(0);
-    setCurrentRound(prev => prev + 1);
-  
-    aiRef.current.setHP(aiHP);
-    aiRef.current.setShield(aiShield);
-  }
-  
-  function playCard(card) {
-    if (playerHP <= 0 || aiHP <= 0) return;
-  
-    console.log("🧙 Player plays card:", card);
-  
-    let damage = card.value;
-  
-    if (card.special) {
-      assignSpecialEffects(card);
-    }
-  
-    addDamage(damage);
-    setCurrentTurn(1);
-  
-    playerRef.current.setHP(playerHP);
-    playerRef.current.setShield(playerShield);
-    playerRef.current.cardPlayered(card);
-  
-    setTimeout(() => {
-      aiPlayCard();
-    }, 6000);
-  }
-  
-  // Aura per turn
-  useEffect(() => {
-    console.log("🔄 Round changed:", currentRound);
-    setPlayerAura((a) => Math.min(a + 1, 10));
-    // executeSpecial(true);
-  
-    setAiAura((a) => Math.min(a + 1, 10));
-    // executeSpecial(false);
-  }, [currentRound]);
-  
-  useEffect(() => {
-    setupGame();
+    syncStats();
   }, []);
+
+  useEffect(() => {
+    if (checkGameOver()) return;
+    if (currentTurn === 0) return;
+
+    const aiTurn = setTimeout(() => {
+      playCard(aiRef.current.pickFromHand());
+      syncStats();
+    }, 3000);
+
+    return () => clearTimeout(aiTurn);
+  }, [currentTurn]);
+
+  // TURN BASED AURA
+  useEffect(() => {
+    if (checkGameOver()) return;
+
+    playerRef.current.addAura(1);
+    playerRef.current.applySpecial()
+    
+    aiRef.current.addAura(1); 
+    aiRef.current.applySpecial();
+
+    syncStats();
+  }, [currentRound]);
+
+  function syncStats() {
+    setPlayerStats(playerRef.current.getStats());
+    setAiStats(aiRef.current.getStats());
+  }
+
+  function endTurn() {
+    const nextTurn = (currentTurn + 1) % 2;
+    if (nextTurn === 0) {
+      setCurrentRound((prev) => prev + 1);
+    }
+    setCurrentTurn(nextTurn);
+  }
+
+  function checkGameOver() {
+    if (playerRef.current.HP <= 0 || aiRef.current.HP <= 0) {
+      setMessage(
+        `${playerRef.current.HP <= 0 ? "AI" : "Player"} has Won the Game`
+      );
+      return true;
+    }
+    return false;
+  }
+
+  function playCard(card) {
+    if (checkGameOver()) return;
+
+    const attacker = currentTurn === 0 ? playerRef.current : aiRef.current;
+    const defender = currentTurn === 0 ? aiRef.current : playerRef.current;
+
+    // Basic logic (expand as needed for special effects)
+    if (card.type.toLowerCase() === "attack") {
+      defender.applyDamage(card.value);
+      setMessage(
+        `${attacker.constructor.name} attacked for ${card.value} damage!`
+      );
+    } else if (card.type.toLowerCase() === "heal") {
+      attacker.heal(card.value);
+      setMessage(`${attacker.constructor.name} healed for ${card.value} HP!`);
+    } else if (card.type.toLowerCase() === "block") {
+      attacker.setShield(card.value);
+      setMessage(
+        `${attacker.constructor.name} raised a shield of ${card.value}!`
+      );
+    }
+
+    // adding special effect of cards to entity
+    if (card.special) {
+      if (["block", "heal", "buff"].includes(card.special.type)) {
+        attacker.addSpecial(card.special);
+      } else {
+        defender.addSpecial(card.special);
+      }
+    }
+
+    attacker.cardPlayered(attacker.hand.indexOf(card));
+    syncStats();
+    endTurn();
+  }
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-6">
@@ -218,14 +126,14 @@ export default function ElementClash() {
         {/* Player Debug - LEFT */}
         <div className="bg-blue-50 rounded-lg p-4 shadow-md">
           <h2 className="text-xl font-bold mb-2 text-center">🧙 Player</h2>
-          <p className="text-sm">HP: {playerHP}</p>
-          <p className="text-sm">Shield: {playerShield}</p>
-          <p className="text-sm mb-2">Aura: {playerAura}</p>
+          <p className="text-sm">HP: {playerStats.HP}</p>
+          <p className="text-sm">Shield: {playerStats.shield}</p>
+          <p className="text-sm mb-2">Aura: {playerStats.aura}</p>
 
           <h3 className="font-semibold text-sm mt-4">Effects</h3>
           <ul className="text-sm bg-white rounded p-2 max-h-40 overflow-auto shadow-inner">
-            {playerEffects.length > 0 ? (
-              playerEffects.map((eff, i) => (
+            {playerStats.effects.length > 0 ? (
+              playerStats.effects.map((eff, i) => (
                 <li key={i}>
                   {eff.type} – {eff.value ?? eff.multiplier} –{" "}
                   {eff.duration ?? "∞"}
@@ -238,7 +146,7 @@ export default function ElementClash() {
 
           <h3 className="font-semibold text-sm mt-4">Hand</h3>
           <ul className="text-sm bg-white rounded p-2 max-h-40 overflow-auto shadow-inner">
-            {playerHand?.map((card, i) => (
+            {playerStats.hand?.map((card, i) => (
               <li key={i}>
                 {card.name} (Cost: {card.cost}, Dmg: {card.value})
               </li>
@@ -256,12 +164,13 @@ export default function ElementClash() {
           <div className="mb-2 font-semibold">{message}</div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {playerHand &&
-              playerHand.map((card, index) => (
+            {currentTurn === 0 &&
+              playerStats.hand &&
+              playerStats.hand.map((card, index) => (
                 <button
                   key={index}
                   onClick={() => playCard(card)}
-                  disabled={playerHP <= 0 || aiHP <= 0}
+                  disabled={playerStats.HP <= 0 || aiStats.HP <= 0}
                   className="p-3 border rounded bg-gray-100 hover:bg-gray-200 shadow"
                 >
                   <div className="font-bold">{card.name}</div>
@@ -278,14 +187,14 @@ export default function ElementClash() {
         {/* AI Debug - RIGHT */}
         <div className="bg-red-50 rounded-lg p-4 shadow-md">
           <h2 className="text-xl font-bold mb-2 text-center">🤖 AI</h2>
-          <p className="text-sm">HP: {aiHP}</p>
-          <p className="text-sm">Shield: {aiShield}</p>
-          <p className="text-sm mb-2">Aura: {aiAura}</p>
+          <p className="text-sm">HP: {aiStats.HP}</p>
+          <p className="text-sm">Shield: {aiStats.shield}</p>
+          <p className="text-sm mb-2">Aura: {aiStats.aura}</p>
 
           <h3 className="font-semibold text-sm mt-4">Effects</h3>
           <ul className="text-sm bg-white rounded p-2 max-h-40 overflow-auto shadow-inner">
-            {aiEffects.length > 0 ? (
-              aiEffects.map((eff, i) => (
+            {aiStats.effects.length > 0 ? (
+              aiStats.effects.map((eff, i) => (
                 <li key={i}>
                   {eff.type} – {eff.value ?? eff.multiplier} –{" "}
                   {eff.duration ?? "∞"}
@@ -298,7 +207,7 @@ export default function ElementClash() {
 
           <h3 className="font-semibold text-sm mt-4">Hand</h3>
           <ul className="text-sm bg-white rounded p-2 max-h-40 overflow-auto shadow-inner">
-            {aiHand?.map((card, i) => (
+            {aiStats.hand?.map((card, i) => (
               <li key={i}>
                 {card.name} (Cost: {card.cost}, Dmg: {card.value})
               </li>

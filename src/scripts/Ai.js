@@ -1,46 +1,53 @@
-import { getRandomCards, removeByIndexes } from "../functions";
+// import { getRandomCards, removeByIndexes } from "../functions";
 
-export default class AI {
+import Entity from "./Entity";
 
-    deck;
-    hand;
-    discarded;
-    HP;
-    shield;
+// export default class AI {
 
-    constructor(deck_card_count, health = 100, shield = 0) {
-        this.deck = this.setupDeck(deck_card_count);
-        this.HP = health;
-        this.shield = shield;
-    }
+//     deck;
+//     hand;
+//     discarded;
+//     HP;
+//     shield;
 
-    setupDeck(no_of_cards) {
-        return getRandomCards(no_of_cards)
-    }
+//     constructor(deck_card_count, health = 100, shield = 0) {
+//         this.deck = this.setupDeck(deck_card_count);
+//         this.HP = health;
+//         this.shield = shield;
+//     }
 
-    drawHand(no_of_cards) {
-        this.hand = getRandomCards(no_of_cards, this.deck);
-    }
+//     setupDeck(no_of_cards) {
+//         return getRandomCards(no_of_cards)
+//     }
 
-    cardPlayered(index) {
-        const played_card = this.hand[index];
+//     drawHand(no_of_cards) {
+//         this.hand = getRandomCards(no_of_cards, this.deck);
+//     }
 
-        this.discarded = played_card;
-        this.hand = removeByIndexes(this.hand, index);
-    }
+//     cardPlayered(index) {
+//         const played_card = this.hand[index];
 
-    setHP(health) {
-        this.HP = health;
-    }
+//         this.discarded = played_card;
+//         this.hand = removeByIndexes(this.hand, index);
+//     }
 
-    setShield(shield) {
-        this.shield = shield;
-    }
+//     setHP(health) {
+//         this.HP = health;
+//     }
 
-    pickFromHand() {
-        const card = getRandomCards(1, this.hand);
-        this.cardPlayered(card);
-        return card
-    }
+//     setShield(shield) {
+//         this.shield = shield;
+//     }
+
+//     pickFromHand() {
+//         const card = getRandomCards(1, this.hand);
+//         this.cardPlayered(card);
+//         return card
+//     }
+
+// }
+
+
+export default class AI extends Entity {
 
 }
