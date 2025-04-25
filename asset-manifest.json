@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/ELEMENT-CLASH/static/css/main.0443bd84.css",
-    "main.js": "/ELEMENT-CLASH/static/js/main.a9db6b53.js",
+    "main.css": "/ELEMENT-CLASH/static/css/main.585ffcf6.css",
+    "main.js": "/ELEMENT-CLASH/static/js/main.6ebfdb59.js",
     "static/js/453.e2fcaec1.chunk.js": "/ELEMENT-CLASH/static/js/453.e2fcaec1.chunk.js",
     "static/media/logo.svg": "/ELEMENT-CLASH/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/ELEMENT-CLASH/index.html",
-    "main.0443bd84.css.map": "/ELEMENT-CLASH/static/css/main.0443bd84.css.map",
-    "main.a9db6b53.js.map": "/ELEMENT-CLASH/static/js/main.a9db6b53.js.map",
+    "main.585ffcf6.css.map": "/ELEMENT-CLASH/static/css/main.585ffcf6.css.map",
+    "main.6ebfdb59.js.map": "/ELEMENT-CLASH/static/js/main.6ebfdb59.js.map",
     "453.e2fcaec1.chunk.js.map": "/ELEMENT-CLASH/static/js/453.e2fcaec1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0443bd84.css",
-    "static/js/main.a9db6b53.js"
+    "static/css/main.585ffcf6.css",
+    "static/js/main.6ebfdb59.js"
   ]
 }
