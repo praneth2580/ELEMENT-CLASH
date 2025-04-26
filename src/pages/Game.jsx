@@ -2,8 +2,12 @@ import React, { useEffect, useRef, useState } from "react";
 import { removeByIndexes } from "../functions";
 import Player from "../scripts/Player";
 import AI from "../scripts/Ai";
+import Card from "../components/Card"; // ⭐ your Card component
+import "../Card.css"; // ⭐ card styles
+import { Tooltip } from "react-tooltip"; // ✨ New tooltip library
+import "react-tooltip/dist/react-tooltip.css"; // ✨ Tooltip CSS
 
-export default function Game() {
+export default function ElementClash() {
   const playerRef = useRef(null);
   const aiRef = useRef(null);
 
@@ -12,14 +16,14 @@ export default function Game() {
     shield: 0,
     effects: [],
     hand: [],
-    aura: 0
+    aura: 0,
   });
   const [aiStats, setAiStats] = useState({
     HP: 0,
     shield: 0,
     effects: [],
     hand: [],
-    aura: 0
+    aura: 0,
   });
 
   const [currentTurn, setCurrentTurn] = useState(0); // 0 = Player, 1 = AI
@@ -48,14 +52,13 @@ export default function Game() {
     return () => clearTimeout(aiTurn);
   }, [currentTurn]);
 
-  // TURN BASED AURA
   useEffect(() => {
     if (checkGameOver()) return;
 
     playerRef.current.addAura(1);
-    playerRef.current.applySpecial()
-    
-    aiRef.current.addAura(1); 
+    playerRef.current.applySpecial();
+
+    aiRef.current.addAura(1);
     aiRef.current.applySpecial();
 
     syncStats();
@@ -90,7 +93,6 @@ export default function Game() {
     const attacker = currentTurn === 0 ? playerRef.current : aiRef.current;
     const defender = currentTurn === 0 ? aiRef.current : playerRef.current;
 
-    // Basic logic (expand as needed for special effects)
     if (card.type.toLowerCase() === "attack") {
       defender.applyDamage(card.value);
       setMessage(
@@ -106,7 +108,6 @@ export default function Game() {
       );
     }
 
-    // adding special effect of cards to entity
     if (card.special) {
       if (["block", "heal", "buff"].includes(card.special.type)) {
         attacker.addSpecial(card.special);
@@ -121,99 +122,63 @@ export default function Game() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-6">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
-        {/* Player Debug - LEFT */}
-        <div className="bg-blue-50 rounded-lg p-4 shadow-md">
-          <h2 className="text-xl font-bold mb-2 text-center">🧙 Player</h2>
-          <p className="text-sm">HP: {playerStats.HP}</p>
-          <p className="text-sm">Shield: {playerStats.shield}</p>
-          <p className="text-sm mb-2">Aura: {playerStats.aura}</p>
+    <div className="max-w-7xl mx-auto px-4 py-8 space-y-6">
+      {/* Header */}
+      <div className="text-center">
+        <h1 className="text-4xl font-bold mb-2">⚡ Element Clash ⚡</h1>
+        <p className="text-lg">{message}</p>
+        <p className="text-sm text-gray-600 mt-1">
+          Round {currentRound} | Turn: {currentTurn === 0 ? "Player" : "AI"}
+        </p>
+      </div>
 
-          <h3 className="font-semibold text-sm mt-4">Effects</h3>
-          <ul className="text-sm bg-white rounded p-2 max-h-40 overflow-auto shadow-inner">
-            {playerStats.effects.length > 0 ? (
-              playerStats.effects.map((eff, i) => (
-                <li key={i}>
-                  {eff.type} – {eff.value ?? eff.multiplier} –{" "}
-                  {eff.duration ?? "∞"}
-                </li>
-              ))
-            ) : (
-              <li className="text-gray-500">None</li>
-            )}
-          </ul>
+      {/* AI Info Only */}
+      <div className="flex flex-col items-center space-y-2">
+        <h2 className="text-xl font-semibold">🤖 AI Opponent</h2>
+        <p>
+          HP: {aiStats.HP} | Shield: {aiStats.shield} | Aura: {aiStats.aura}
+        </p>
+        {/* AI Cards are hidden */}
+        <div className="text-gray-400 text-sm italic">Cards are hidden</div>
+      </div>
 
-          <h3 className="font-semibold text-sm mt-4">Hand</h3>
-          <ul className="text-sm bg-white rounded p-2 max-h-40 overflow-auto shadow-inner">
-            {playerStats.hand?.map((card, i) => (
-              <li key={i}>
-                {card.name} (Cost: {card.cost}, Dmg: {card.value})
-              </li>
-            ))}
-          </ul>
-        </div>
+      {/* Battlefield */}
+      <div className="border-t border-b py-4 text-center font-semibold">
+        {currentTurn === 0 ? "Your Turn! Choose a card." : "AI is thinking..."}
+      </div>
 
-        {/* Game UI - CENTER */}
-        <div className="bg-white rounded-lg p-4 shadow-md text-center">
-          <h1 className="text-2xl font-bold mb-2">Element Clash</h1>
-          <div className="text-sm mb-2">
-            Round: {currentRound} | Turn:{" "}
-            <strong>{currentTurn === 0 ? "Player" : "AI"}</strong>
-          </div>
-          <div className="mb-2 font-semibold">{message}</div>
+      {/* Player Field */}
+      <div className="flex flex-wrap justify-center gap-4 mt-4">
+        {playerStats.hand?.map((card, index) => {
+          const isDisabled =
+            playerStats.HP <= 0 || aiStats.HP <= 0 || currentTurn === 1;
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {currentTurn === 0 &&
-              playerStats.hand &&
-              playerStats.hand.map((card, index) => (
-                <button
-                  key={index}
-                  onClick={() => playCard(card)}
-                  disabled={playerStats.HP <= 0 || aiStats.HP <= 0}
-                  className="p-3 border rounded bg-gray-100 hover:bg-gray-200 shadow"
-                >
-                  <div className="font-bold">{card.name}</div>
-                  <div className="text-sm">Element: {card.element}</div>
-                  <div className="text-sm">Type: {card.type}</div>
-                  <div className="text-sm">Cost: {card.cost}</div>
-                  <div className="text-sm">Damage: {card.value}</div>
-                  <div className="text-xs italic">{card.special?.name}</div>
-                </button>
-              ))}
-          </div>
-        </div>
-
-        {/* AI Debug - RIGHT */}
-        <div className="bg-red-50 rounded-lg p-4 shadow-md">
-          <h2 className="text-xl font-bold mb-2 text-center">🤖 AI</h2>
-          <p className="text-sm">HP: {aiStats.HP}</p>
-          <p className="text-sm">Shield: {aiStats.shield}</p>
-          <p className="text-sm mb-2">Aura: {aiStats.aura}</p>
-
-          <h3 className="font-semibold text-sm mt-4">Effects</h3>
-          <ul className="text-sm bg-white rounded p-2 max-h-40 overflow-auto shadow-inner">
-            {aiStats.effects.length > 0 ? (
-              aiStats.effects.map((eff, i) => (
-                <li key={i}>
-                  {eff.type} – {eff.value ?? eff.multiplier} –{" "}
-                  {eff.duration ?? "∞"}
-                </li>
-              ))
-            ) : (
-              <li className="text-gray-500">None</li>
-            )}
-          </ul>
-
-          <h3 className="font-semibold text-sm mt-4">Hand</h3>
-          <ul className="text-sm bg-white rounded p-2 max-h-40 overflow-auto shadow-inner">
-            {aiStats.hand?.map((card, i) => (
-              <li key={i}>
-                {card.name} (Cost: {card.cost}, Dmg: {card.value})
-              </li>
-            ))}
-          </ul>
-        </div>
+          return (
+            <button
+              key={index}
+              onClick={() => playCard(card)}
+              disabled={isDisabled}
+              className={`relative transition-transform ${
+                isDisabled ? "opacity-40 cursor-not-allowed" : "hover:scale-105"
+              }`}
+              data-tooltip-id={`tooltip-${index}`}
+              data-tooltip-content={
+                card.special
+                  ? `${card.special.name} (${card.special.type}) — ${
+                      card.special.value ?? card.special.multiplier
+                    }`
+                  : "No special effect"
+              }
+            >
+              <Card
+                {...card}
+                aura={playerStats.aura}
+                specialReady={playerStats.aura >= card.cost}
+              />
+              <Tooltip id={`tooltip-${index}`} />
+            </button>
+          );
+        })}
       </div>
     </div>
   );

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+      // Get the current URL path after your basename ("/ELEMENT-CLASH")
+      const path = window.location.pathname.replace('/ELEMENT-CLASH', '');
+      
+      // Redirect to index.html but preserve the path in the hash
+      window.location.replace('/ELEMENT-CLASH/#' + path + window.location.search);
+    </script>
+  </head>
+  <body>
+    <h1>Redirecting...</h1>
+  </body>
+</html>

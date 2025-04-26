@@ -1,17 +1,27 @@
 import logo from "./logo.svg";
 import "./App.css";
 import ElementClash from "./pages/Game";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import GameDev from "./pages/GameDev";
 import CardGenerator from "./pages/CardGenerator";
+import CardsDemo from "./pages/CardsDemo";
+import { HashRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
-        <Route exact path="/" Component={ElementClash} />
-        <Route path="/gen" Component={CardGenerator} />
+        <Route path="/" element={<ElementClash />} />
+        <Route path="/dev" element={<GameDev />} />
+        <Route path="/gen" element={<CardGenerator />} />
+        <Route path="/demo" element={<CardsDemo />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
+    // <BrowserRouter basename="/ELEMENT-CLASH">
+    //   <Routes>
+    //     <Route path="/" element={<ElementClash />} />
+    //     <Route path="/gen" element={<CardGenerator />} />
+    //   </Routes>
+    // </BrowserRouter>
     // <div className="App">
     //   {/* <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />

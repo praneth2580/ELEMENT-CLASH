@@ -1,21 +1,170 @@
 [
   {
-    "name": "Mending Cyclone Shot",
+    "name": "Burning Airborne Heal",
     "element": "Air",
-    "value": 21,
-    "cost": 1,
-    "type": "Attack",
+    "value": 14,
+    "cost": 4,
+    "type": "Heal",
     "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 12
+      "name": "Damage-over-time",
+      "type": "damage-over-time",
+      "value": 16,
+      "duration": 1
     },
     "rarity": "Legendary"
   },
   {
-    "name": "Shielded Earthen Embrace",
+    "name": "Restoring Wave Crash",
+    "element": "Water",
+    "value": 24,
+    "cost": 4,
+    "type": "Attack",
+    "special": {
+      "name": "Heal",
+      "type": "heal",
+      "value": 19
+    },
+    "rarity": "Rare"
+  },
+  {
+    "name": "Lingering Sky Restoration",
+    "element": "Air",
+    "value": 24,
+    "cost": 3,
+    "type": "Heal",
+    "special": {
+      "name": "Damage-over-time",
+      "type": "damage-over-time",
+      "value": 16,
+      "duration": 4
+    },
+    "rarity": "Uncommon"
+  },
+  {
+    "name": "Energized Ice Shell",
+    "element": "Water",
+    "value": 14,
+    "cost": 4,
+    "type": "Defend",
+    "special": {
+      "name": "Buff",
+      "type": "buff",
+      "value": 19
+    },
+    "rarity": "Epic"
+  },
+  {
+    "name": "Lingering Wind Cloak",
+    "element": "Air",
+    "value": 24,
+    "cost": 4,
+    "type": "Defend",
+    "special": {
+      "name": "Damage-over-time",
+      "type": "damage-over-time",
+      "value": 20,
+      "duration": 4
+    },
+    "rarity": "Legendary"
+  },
+  {
+    "name": "Venomous Sky Restoration",
+    "element": "Air",
+    "value": 23,
+    "cost": 5,
+    "type": "Heal",
+    "special": {
+      "name": "Damage-over-time",
+      "type": "damage-over-time",
+      "value": 18,
+      "duration": 1
+    },
+    "rarity": "Epic"
+  },
+  {
+    "name": "Shielded Wind Cloak",
+    "element": "Air",
+    "value": 14,
+    "cost": 4,
+    "type": "Defend",
+    "special": {
+      "name": "Block",
+      "type": "block",
+      "value": 15
+    },
+    "rarity": "Epic"
+  },
+  {
+    "name": "Restoring Blazing Jab",
+    "element": "Fire",
+    "value": 23,
+    "cost": 5,
+    "type": "Attack",
+    "special": {
+      "name": "Heal",
+      "type": "heal",
+      "value": 6
+    },
+    "rarity": "Uncommon"
+  },
+  {
+    "name": "Burning Granite Guard",
     "element": "Earth",
-    "value": 19,
+    "value": 29,
+    "cost": 4,
+    "type": "Defend",
+    "special": {
+      "name": "Damage-over-time",
+      "type": "damage-over-time",
+      "value": 17,
+      "duration": 2
+    },
+    "rarity": "Uncommon"
+  },
+  {
+    "name": "Restoring Airborne Heal",
+    "element": "Air",
+    "value": 15,
+    "cost": 5,
+    "type": "Heal",
+    "special": {
+      "name": "Heal",
+      "type": "heal",
+      "value": 20
+    },
+    "rarity": "Common"
+  },
+  {
+    "name": "Burning Blazing Jab",
+    "element": "Fire",
+    "value": 24,
+    "cost": 1,
+    "type": "Attack",
+    "special": {
+      "name": "Damage-over-time",
+      "type": "damage-over-time",
+      "value": 13,
+      "duration": 1
+    },
+    "rarity": "Common"
+  },
+  {
+    "name": "Empowered Ashen Shield",
+    "element": "Fire",
+    "value": 25,
+    "cost": 1,
+    "type": "Defend",
+    "special": {
+      "name": "Buff",
+      "type": "buff",
+      "value": 14
+    },
+    "rarity": "Uncommon"
+  },
+  {
+    "name": "Guarded Flame Mender",
+    "element": "Fire",
+    "value": 22,
     "cost": 1,
     "type": "Heal",
     "special": {
@@ -23,78 +172,372 @@
       "type": "block",
       "value": 11
     },
+    "rarity": "Rare"
+  },
+  {
+    "name": "Venomous Smoldering Spirit",
+    "element": "Fire",
+    "value": 22,
+    "cost": 5,
+    "type": "Heal",
+    "special": {
+      "name": "Damage-over-time",
+      "type": "damage-over-time",
+      "value": 13,
+      "duration": 5
+    },
+    "rarity": "Epic"
+  },
+  {
+    "name": "Restoring Ashen Shield",
+    "element": "Fire",
+    "value": 16,
+    "cost": 1,
+    "type": "Defend",
+    "special": {
+      "name": "Heal",
+      "type": "heal",
+      "value": 13
+    },
+    "rarity": "Common"
+  },
+  {
+    "name": "Guarded Wind Cloak",
+    "element": "Air",
+    "value": 13,
+    "cost": 5,
+    "type": "Defend",
+    "special": {
+      "name": "Block",
+      "type": "block",
+      "value": 18
+    },
+    "rarity": "Rare"
+  },
+  {
+    "name": "Energized Soil Healing",
+    "element": "Earth",
+    "value": 19,
+    "cost": 4,
+    "type": "Heal",
+    "special": {
+      "name": "Buff",
+      "type": "buff",
+      "value": 6
+    },
+    "rarity": "Uncommon"
+  },
+  {
+    "name": "Venomous Tide Jab",
+    "element": "Water",
+    "value": 25,
+    "cost": 3,
+    "type": "Attack",
+    "special": {
+      "name": "Damage-over-time",
+      "type": "damage-over-time",
+      "value": 20,
+      "duration": 3
+    },
+    "rarity": "Epic"
+  },
+  {
+    "name": "Shielded Mist Guard",
+    "element": "Water",
+    "value": 26,
+    "cost": 3,
+    "type": "Defend",
+    "special": {
+      "name": "Block",
+      "type": "block",
+      "value": 17
+    },
     "rarity": "Legendary"
   },
   {
-    "name": "Venomous Ember Wall",
+    "name": "Restoring Breeze Barrier",
+    "element": "Air",
+    "value": 14,
+    "cost": 3,
+    "type": "Defend",
+    "special": {
+      "name": "Heal",
+      "type": "heal",
+      "value": 7
+    },
+    "rarity": "Legendary"
+  },
+  {
+    "name": "Shielded Sky Restoration",
+    "element": "Air",
+    "value": 27,
+    "cost": 4,
+    "type": "Heal",
+    "special": {
+      "name": "Block",
+      "type": "block",
+      "value": 14
+    },
+    "rarity": "Legendary"
+  },
+  {
+    "name": "Weakened Flame Mender",
     "element": "Fire",
-    "value": 15,
+    "value": 30,
+    "cost": 3,
+    "type": "Heal",
+    "special": {
+      "name": "Debuff",
+      "type": "debuff",
+      "value": 9
+    },
+    "rarity": "Epic"
+  },
+  {
+    "name": "Healing Breath of Life",
+    "element": "Air",
+    "value": 26,
+    "cost": 2,
+    "type": "Heal",
+    "special": {
+      "name": "Heal",
+      "type": "heal",
+      "value": 16
+    },
+    "rarity": "Legendary"
+  },
+  {
+    "name": "Guarded Breath of Life",
+    "element": "Air",
+    "value": 14,
+    "cost": 2,
+    "type": "Heal",
+    "special": {
+      "name": "Block",
+      "type": "block",
+      "value": 7
+    },
+    "rarity": "Uncommon"
+  },
+  {
+    "name": "Fortified Rainfall Blessing",
+    "element": "Water",
+    "value": 20,
+    "cost": 1,
+    "type": "Heal",
+    "special": {
+      "name": "Block",
+      "type": "block",
+      "value": 15
+    },
+    "rarity": "Rare"
+  },
+  {
+    "name": "Restoring Rock Shield",
+    "element": "Earth",
+    "value": 26,
+    "cost": 5,
+    "type": "Defend",
+    "special": {
+      "name": "Heal",
+      "type": "heal",
+      "value": 11
+    },
+    "rarity": "Legendary"
+  },
+  {
+    "name": "Burning Flare Guard",
+    "element": "Fire",
+    "value": 26,
     "cost": 3,
     "type": "Defend",
     "special": {
       "name": "Damage-over-time",
       "type": "damage-over-time",
-      "value": 20
+      "value": 19,
+      "duration": 5
     },
     "rarity": "Epic"
   },
   {
-    "name": "Mending Wind Cloak",
-    "element": "Air",
-    "value": 22,
+    "name": "Burning Mist Guard",
+    "element": "Water",
+    "value": 19,
     "cost": 2,
     "type": "Defend",
     "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 6
+      "name": "Damage-over-time",
+      "type": "damage-over-time",
+      "value": 17,
+      "duration": 4
+    },
+    "rarity": "Legendary"
+  },
+  {
+    "name": "Lingering Earthen Embrace",
+    "element": "Earth",
+    "value": 24,
+    "cost": 1,
+    "type": "Heal",
+    "special": {
+      "name": "Damage-over-time",
+      "type": "damage-over-time",
+      "value": 17,
+      "duration": 4
+    },
+    "rarity": "Legendary"
+  },
+  {
+    "name": "Burning Earth Wall",
+    "element": "Earth",
+    "value": 15,
+    "cost": 5,
+    "type": "Defend",
+    "special": {
+      "name": "Damage-over-time",
+      "type": "damage-over-time",
+      "value": 12,
+      "duration": 3
     },
     "rarity": "Common"
   },
   {
-    "name": "Fortified Cyclone Shot",
-    "element": "Air",
-    "value": 25,
-    "cost": 3,
+    "name": "Weakened Earthen Embrace",
+    "element": "Earth",
+    "value": 19,
+    "cost": 2,
+    "type": "Heal",
+    "special": {
+      "name": "Debuff",
+      "type": "debuff",
+      "value": 17
+    },
+    "rarity": "Legendary"
+  },
+  {
+    "name": "Blessed Terra Punch",
+    "element": "Earth",
+    "value": 17,
+    "cost": 1,
     "type": "Attack",
     "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 9
+      "name": "Buff",
+      "type": "buff",
+      "value": 20
+    },
+    "rarity": "Legendary"
+  },
+  {
+    "name": "Weakened Sky Restoration",
+    "element": "Air",
+    "value": 29,
+    "cost": 5,
+    "type": "Heal",
+    "special": {
+      "name": "Debuff",
+      "type": "debuff",
+      "value": 5
     },
     "rarity": "Rare"
   },
   {
     "name": "Restoring Sky Restoration",
     "element": "Air",
-    "value": 20,
-    "cost": 3,
+    "value": 22,
+    "cost": 2,
     "type": "Heal",
     "special": {
       "name": "Heal",
       "type": "heal",
-      "value": 11
-    },
-    "rarity": "Legendary"
-  },
-  {
-    "name": "Blessed Earth Wall",
-    "element": "Earth",
-    "value": 23,
-    "cost": 1,
-    "type": "Defend",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 11
+      "value": 8
     },
     "rarity": "Epic"
   },
   {
-    "name": "Cursed Feather Guard",
+    "name": "Guarded Flame Strike",
+    "element": "Fire",
+    "value": 24,
+    "cost": 1,
+    "type": "Attack",
+    "special": {
+      "name": "Block",
+      "type": "block",
+      "value": 15
+    },
+    "rarity": "Rare"
+  },
+  {
+    "name": "Corrupting Boulder Bash",
+    "element": "Earth",
+    "value": 28,
+    "cost": 1,
+    "type": "Attack",
+    "special": {
+      "name": "Debuff",
+      "type": "debuff",
+      "value": 15
+    },
+    "rarity": "Legendary"
+  },
+  {
+    "name": "Burning Earth Wall",
+    "element": "Earth",
+    "value": 11,
+    "cost": 5,
+    "type": "Defend",
+    "special": {
+      "name": "Damage-over-time",
+      "type": "damage-over-time",
+      "value": 7,
+      "duration": 2
+    },
+    "rarity": "Legendary"
+  },
+  {
+    "name": "Mending Ashen Shield",
+    "element": "Fire",
+    "value": 19,
+    "cost": 5,
+    "type": "Defend",
+    "special": {
+      "name": "Heal",
+      "type": "heal",
+      "value": 20
+    },
+    "rarity": "Common"
+  },
+  {
+    "name": "Lingering Terra Punch",
+    "element": "Earth",
+    "value": 22,
+    "cost": 4,
+    "type": "Attack",
+    "special": {
+      "name": "Damage-over-time",
+      "type": "damage-over-time",
+      "value": 20,
+      "duration": 3
+    },
+    "rarity": "Epic"
+  },
+  {
+    "name": "Corrupting Wind Cutter",
     "element": "Air",
-    "value": 12,
+    "value": 22,
     "cost": 2,
+    "type": "Attack",
+    "special": {
+      "name": "Debuff",
+      "type": "debuff",
+      "value": 17
+    },
+    "rarity": "Epic"
+  },
+  {
+    "name": "Weakened Ember Wall",
+    "element": "Fire",
+    "value": 14,
+    "cost": 1,
     "type": "Defend",
     "special": {
       "name": "Debuff",
@@ -104,745 +547,269 @@
     "rarity": "Legendary"
   },
   {
-    "name": "Corrupting Boulder Bash",
+    "name": "Venomous Soil Healing",
     "element": "Earth",
-    "value": 11,
-    "cost": 1,
-    "type": "Attack",
+    "value": 22,
+    "cost": 4,
+    "type": "Heal",
     "special": {
-      "name": "Debuff",
-      "type": "debuff",
-      "value": 15
+      "name": "Damage-over-time",
+      "type": "damage-over-time",
+      "value": 12,
+      "duration": 4
+    },
+    "rarity": "Common"
+  },
+  {
+    "name": "Burning Soil Healing",
+    "element": "Earth",
+    "value": 15,
+    "cost": 2,
+    "type": "Heal",
+    "special": {
+      "name": "Damage-over-time",
+      "type": "damage-over-time",
+      "value": 9,
+      "duration": 1
+    },
+    "rarity": "Uncommon"
+  },
+  {
+    "name": "Burning Earthen Embrace",
+    "element": "Earth",
+    "value": 29,
+    "cost": 1,
+    "type": "Heal",
+    "special": {
+      "name": "Damage-over-time",
+      "type": "damage-over-time",
+      "value": 17,
+      "duration": 4
     },
     "rarity": "Legendary"
   },
   {
-    "name": "Blessed Aqua Recovery",
-    "element": "Water",
-    "value": 22,
-    "cost": 3,
-    "type": "Heal",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 7
-    },
-    "rarity": "Common"
-  },
-  {
-    "name": "Fortified Soothing Stream",
-    "element": "Water",
-    "value": 10,
-    "cost": 5,
-    "type": "Heal",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 5
-    },
-    "rarity": "Common"
-  },
-  {
-    "name": "Fortified Smoldering Spirit",
-    "element": "Fire",
-    "value": 10,
-    "cost": 1,
-    "type": "Heal",
+    "name": "Fortified Boulder Bash",
+    "element": "Earth",
+    "value": 26,
+    "cost": 2,
+    "type": "Attack",
     "special": {
       "name": "Block",
       "type": "block",
       "value": 10
     },
-    "rarity": "Common"
-  },
-  {
-    "name": "Restoring Boulder Bash",
-    "element": "Earth",
-    "value": 14,
-    "cost": 3,
-    "type": "Attack",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 13
-    },
-    "rarity": "Common"
-  },
-  {
-    "name": "Restoring Earthen Embrace",
-    "element": "Earth",
-    "value": 21,
-    "cost": 1,
-    "type": "Heal",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 11
-    },
     "rarity": "Rare"
   },
   {
-    "name": "Restoring Flare Guard",
-    "element": "Fire",
-    "value": 12,
-    "cost": 4,
-    "type": "Defend",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 15
-    },
-    "rarity": "Epic"
-  },
-  {
-    "name": "Guarded Ember Wall",
-    "element": "Fire",
-    "value": 21,
-    "cost": 4,
-    "type": "Defend",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 13
-    },
-    "rarity": "Uncommon"
-  },
-  {
-    "name": "Empowered Tide Jab",
-    "element": "Water",
+    "name": "Empowered Breath of Life",
+    "element": "Air",
     "value": 22,
-    "cost": 4,
-    "type": "Attack",
+    "cost": 2,
+    "type": "Heal",
     "special": {
       "name": "Buff",
       "type": "buff",
       "value": 12
     },
-    "rarity": "Rare"
-  },
-  {
-    "name": "Shielded Granite Guard",
-    "element": "Earth",
-    "value": 23,
-    "cost": 4,
-    "type": "Defend",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 10
-    },
-    "rarity": "Rare"
-  },
-  {
-    "name": "Energized Earth Wall",
-    "element": "Earth",
-    "value": 11,
-    "cost": 3,
-    "type": "Defend",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 6
-    },
-    "rarity": "Rare"
-  },
-  {
-    "name": "Restoring Nature's Touch",
-    "element": "Earth",
-    "value": 23,
-    "cost": 5,
-    "type": "Heal",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 13
-    },
-    "rarity": "Legendary"
-  },
-  {
-    "name": "Cursed Smoldering Spirit",
-    "element": "Fire",
-    "value": 27,
-    "cost": 2,
-    "type": "Heal",
-    "special": {
-      "name": "Debuff",
-      "type": "debuff",
-      "value": 8
-    },
-    "rarity": "Rare"
-  },
-  {
-    "name": "Burning Cyclone Shot",
-    "element": "Air",
-    "value": 17,
-    "cost": 5,
-    "type": "Attack",
-    "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
-      "value": 11
-    },
-    "rarity": "Rare"
-  },
-  {
-    "name": "Venomous Stone Slam",
-    "element": "Earth",
-    "value": 12,
-    "cost": 4,
-    "type": "Attack",
-    "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
-      "value": 6
-    },
     "rarity": "Common"
   },
   {
-    "name": "Burning Flame Strike",
-    "element": "Fire",
-    "value": 17,
-    "cost": 4,
+    "name": "Healing Wave Crash",
+    "element": "Water",
+    "value": 26,
+    "cost": 2,
     "type": "Attack",
     "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
+      "name": "Heal",
+      "type": "heal",
+      "value": 12
+    },
+    "rarity": "Rare"
+  },
+  {
+    "name": "Blessed Soothing Stream",
+    "element": "Water",
+    "value": 30,
+    "cost": 4,
+    "type": "Heal",
+    "special": {
+      "name": "Buff",
+      "type": "buff",
       "value": 16
     },
     "rarity": "Rare"
   },
   {
-    "name": "Venomous Wind Cloak",
-    "element": "Air",
-    "value": 22,
-    "cost": 4,
-    "type": "Defend",
+    "name": "Restoring Terra Punch",
+    "element": "Earth",
+    "value": 15,
+    "cost": 1,
+    "type": "Attack",
     "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
-      "value": 10
+      "name": "Heal",
+      "type": "heal",
+      "value": 12
     },
     "rarity": "Epic"
   },
   {
-    "name": "Blessed Rainfall Blessing",
+    "name": "Energized Aqua Recovery",
     "element": "Water",
-    "value": 19,
-    "cost": 3,
+    "value": 13,
+    "cost": 2,
     "type": "Heal",
     "special": {
       "name": "Buff",
       "type": "buff",
-      "value": 14
+      "value": 6
     },
-    "rarity": "Legendary"
+    "rarity": "Epic"
   },
   {
-    "name": "Mending Tide Barrier",
-    "element": "Water",
-    "value": 24,
-    "cost": 5,
+    "name": "Healing Flare Guard",
+    "element": "Fire",
+    "value": 30,
+    "cost": 3,
     "type": "Defend",
     "special": {
       "name": "Heal",
       "type": "heal",
-      "value": 8
+      "value": 17
     },
-    "rarity": "Common"
+    "rarity": "Uncommon"
   },
   {
-    "name": "Corrupting Terra Punch",
-    "element": "Earth",
-    "value": 19,
+    "name": "Guarded Airborne Heal",
+    "element": "Air",
+    "value": 29,
     "cost": 5,
-    "type": "Attack",
+    "type": "Heal",
+    "special": {
+      "name": "Block",
+      "type": "block",
+      "value": 11
+    },
+    "rarity": "Uncommon"
+  },
+  {
+    "name": "Corrupting Feather Guard",
+    "element": "Air",
+    "value": 29,
+    "cost": 4,
+    "type": "Defend",
     "special": {
       "name": "Debuff",
       "type": "debuff",
       "value": 18
     },
-    "rarity": "Uncommon"
+    "rarity": "Common"
   },
   {
-    "name": "Guarded Soil Healing",
-    "element": "Earth",
-    "value": 24,
-    "cost": 1,
-    "type": "Heal",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 13
-    },
-    "rarity": "Legendary"
-  },
-  {
-    "name": "Lingering Stone Slam",
-    "element": "Earth",
-    "value": 29,
-    "cost": 5,
+    "name": "Energized Cyclone Shot",
+    "element": "Air",
+    "value": 18,
+    "cost": 4,
     "type": "Attack",
     "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
+      "name": "Buff",
+      "type": "buff",
       "value": 9
     },
-    "rarity": "Rare"
+    "rarity": "Common"
   },
   {
-    "name": "Healing Wind Cloak",
-    "element": "Air",
-    "value": 24,
-    "cost": 5,
-    "type": "Defend",
+    "name": "Restoring Smoldering Spirit",
+    "element": "Fire",
+    "value": 28,
+    "cost": 2,
+    "type": "Heal",
     "special": {
       "name": "Heal",
       "type": "heal",
-      "value": 12
+      "value": 8
     },
-    "rarity": "Legendary"
+    "rarity": "Uncommon"
   },
   {
-    "name": "Fortified Rock Shield",
+    "name": "Energized Soil Healing",
     "element": "Earth",
-    "value": 11,
+    "value": 13,
     "cost": 5,
-    "type": "Defend",
+    "type": "Heal",
     "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 16
+      "name": "Buff",
+      "type": "buff",
+      "value": 10
     },
-    "rarity": "Epic"
+    "rarity": "Common"
   },
   {
-    "name": "Venomous Nature's Touch",
-    "element": "Earth",
+    "name": "Lingering Ash Revival",
+    "element": "Fire",
     "value": 28,
     "cost": 3,
     "type": "Heal",
     "special": {
       "name": "Damage-over-time",
       "type": "damage-over-time",
-      "value": 16
+      "value": 19,
+      "duration": 1
     },
-    "rarity": "Uncommon"
+    "rarity": "Legendary"
   },
   {
-    "name": "Guarded Blazing Jab",
-    "element": "Fire",
-    "value": 24,
-    "cost": 1,
-    "type": "Attack",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 8
-    },
-    "rarity": "Epic"
-  },
-  {
-    "name": "Restoring Rock Shield",
+    "name": "Mending Boulder Bash",
     "element": "Earth",
-    "value": 30,
-    "cost": 1,
-    "type": "Defend",
+    "value": 27,
+    "cost": 2,
+    "type": "Attack",
     "special": {
       "name": "Heal",
       "type": "heal",
       "value": 14
     },
-    "rarity": "Legendary"
-  },
-  {
-    "name": "Corrupting Stone Slam",
-    "element": "Earth",
-    "value": 12,
-    "cost": 2,
-    "type": "Attack",
-    "special": {
-      "name": "Debuff",
-      "type": "debuff",
-      "value": 7
-    },
-    "rarity": "Legendary"
-  },
-  {
-    "name": "Guarded Earth Wall",
-    "element": "Earth",
-    "value": 10,
-    "cost": 2,
-    "type": "Defend",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 13
-    },
-    "rarity": "Uncommon"
-  },
-  {
-    "name": "Restoring Wind Cutter",
-    "element": "Air",
-    "value": 10,
-    "cost": 4,
-    "type": "Attack",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 10
-    },
     "rarity": "Common"
   },
   {
-    "name": "Mending Blazing Jab",
-    "element": "Fire",
-    "value": 25,
+    "name": "Energized Sky Restoration",
+    "element": "Air",
+    "value": 17,
     "cost": 5,
-    "type": "Attack",
+    "type": "Heal",
     "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 12
-    },
-    "rarity": "Common"
-  },
-  {
-    "name": "Corrupting Tide Jab",
-    "element": "Water",
-    "value": 15,
-    "cost": 4,
-    "type": "Attack",
-    "special": {
-      "name": "Debuff",
-      "type": "debuff",
+      "name": "Buff",
+      "type": "buff",
       "value": 19
-    },
-    "rarity": "Legendary"
-  },
-  {
-    "name": "Blessed Wind Cutter",
-    "element": "Air",
-    "value": 16,
-    "cost": 3,
-    "type": "Attack",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 8
-    },
-    "rarity": "Rare"
-  },
-  {
-    "name": "Cursed Flare Guard",
-    "element": "Fire",
-    "value": 23,
-    "cost": 4,
-    "type": "Defend",
-    "special": {
-      "name": "Debuff",
-      "type": "debuff",
-      "value": 16
-    },
-    "rarity": "Rare"
-  },
-  {
-    "name": "Empowered Flame Strike",
-    "element": "Fire",
-    "value": 23,
-    "cost": 3,
-    "type": "Attack",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 14
     },
     "rarity": "Epic"
   },
   {
-    "name": "Blessed Tide Jab",
-    "element": "Water",
-    "value": 12,
-    "cost": 4,
-    "type": "Attack",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 5
-    },
-    "rarity": "Legendary"
-  },
-  {
-    "name": "Cursed Wind Cloak",
+    "name": "Venomous Cyclone Shot",
     "element": "Air",
-    "value": 23,
-    "cost": 2,
-    "type": "Defend",
-    "special": {
-      "name": "Debuff",
-      "type": "debuff",
-      "value": 7
-    },
-    "rarity": "Common"
-  },
-  {
-    "name": "Weakened Inferno Slash",
-    "element": "Fire",
-    "value": 18,
-    "cost": 2,
-    "type": "Attack",
-    "special": {
-      "name": "Debuff",
-      "type": "debuff",
-      "value": 12
-    },
-    "rarity": "Uncommon"
-  },
-  {
-    "name": "Shielded Feather Guard",
-    "element": "Air",
-    "value": 23,
-    "cost": 4,
-    "type": "Defend",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 7
-    },
-    "rarity": "Rare"
-  },
-  {
-    "name": "Lingering Earthen Embrace",
-    "element": "Earth",
-    "value": 24,
-    "cost": 2,
-    "type": "Heal",
-    "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
-      "value": 6
-    },
-    "rarity": "Uncommon"
-  },
-  {
-    "name": "Venomous Sky Restoration",
-    "element": "Air",
-    "value": 18,
+    "value": 19,
     "cost": 1,
-    "type": "Heal",
+    "type": "Attack",
     "special": {
       "name": "Damage-over-time",
       "type": "damage-over-time",
-      "value": 19
-    },
-    "rarity": "Uncommon"
-  },
-  {
-    "name": "Mending Soil Healing",
-    "element": "Earth",
-    "value": 20,
-    "cost": 4,
-    "type": "Heal",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 15
-    },
-    "rarity": "Uncommon"
-  },
-  {
-    "name": "Blessed Breeze Barrier",
-    "element": "Air",
-    "value": 23,
-    "cost": 3,
-    "type": "Defend",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 13
-    },
-    "rarity": "Epic"
-  },
-  {
-    "name": "Mending Smoldering Spirit",
-    "element": "Fire",
-    "value": 12,
-    "cost": 5,
-    "type": "Heal",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 11
+      "value": 12,
+      "duration": 5
     },
     "rarity": "Legendary"
   },
   {
-    "name": "Mending Mist Guard",
-    "element": "Water",
-    "value": 11,
-    "cost": 4,
-    "type": "Defend",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 5
-    },
-    "rarity": "Common"
-  },
-  {
-    "name": "Energized Terra Punch",
+    "name": "Corrupting Boulder Bash",
     "element": "Earth",
-    "value": 30,
+    "value": 14,
     "cost": 3,
     "type": "Attack",
     "special": {
-      "name": "Buff",
-      "type": "buff",
+      "name": "Debuff",
+      "type": "debuff",
       "value": 9
     },
-    "rarity": "Epic"
-  },
-  {
-    "name": "Guarded Granite Guard",
-    "element": "Earth",
-    "value": 30,
-    "cost": 4,
-    "type": "Defend",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 17
-    },
-    "rarity": "Epic"
-  },
-  {
-    "name": "Corrupting Flame Strike",
-    "element": "Fire",
-    "value": 25,
-    "cost": 2,
-    "type": "Attack",
-    "special": {
-      "name": "Debuff",
-      "type": "debuff",
-      "value": 8
-    },
-    "rarity": "Common"
-  },
-  {
-    "name": "Lingering Inferno Slash",
-    "element": "Fire",
-    "value": 22,
-    "cost": 3,
-    "type": "Attack",
-    "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
-      "value": 9
-    },
-    "rarity": "Legendary"
-  },
-  {
-    "name": "Burning Mist Guard",
-    "element": "Water",
-    "value": 22,
-    "cost": 3,
-    "type": "Defend",
-    "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
-      "value": 17
-    },
-    "rarity": "Rare"
-  },
-  {
-    "name": "Lingering Soil Healing",
-    "element": "Earth",
-    "value": 16,
-    "cost": 3,
-    "type": "Heal",
-    "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
-      "value": 19
-    },
-    "rarity": "Legendary"
-  },
-  {
-    "name": "Healing Soothing Stream",
-    "element": "Water",
-    "value": 21,
-    "cost": 5,
-    "type": "Heal",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 20
-    },
-    "rarity": "Legendary"
-  },
-  {
-    "name": "Weakened Stone Slam",
-    "element": "Earth",
-    "value": 13,
-    "cost": 3,
-    "type": "Attack",
-    "special": {
-      "name": "Debuff",
-      "type": "debuff",
-      "value": 7
-    },
-    "rarity": "Legendary"
-  },
-  {
-    "name": "Healing Airborne Heal",
-    "element": "Air",
-    "value": 20,
-    "cost": 5,
-    "type": "Heal",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 14
-    },
-    "rarity": "Epic"
-  },
-  {
-    "name": "Burning Soil Healing",
-    "element": "Earth",
-    "value": 26,
-    "cost": 2,
-    "type": "Heal",
-    "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
-      "value": 10
-    },
-    "rarity": "Common"
-  },
-  {
-    "name": "Healing Inferno Slash",
-    "element": "Fire",
-    "value": 24,
-    "cost": 2,
-    "type": "Attack",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 12
-    },
-    "rarity": "Legendary"
-  },
-  {
-    "name": "Corrupting Blazing Jab",
-    "element": "Fire",
-    "value": 20,
-    "cost": 2,
-    "type": "Attack",
-    "special": {
-      "name": "Debuff",
-      "type": "debuff",
-      "value": 12
-    },
-    "rarity": "Common"
+    "rarity": "Uncommon"
   },
   {
     "name": "Blessed Soothing Stream",
@@ -853,450 +820,505 @@
     "special": {
       "name": "Buff",
       "type": "buff",
-      "value": 7
-    },
-    "rarity": "Legendary"
-  },
-  {
-    "name": "Healing Breath of Life",
-    "element": "Air",
-    "value": 30,
-    "cost": 3,
-    "type": "Heal",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 16
-    },
-    "rarity": "Epic"
-  },
-  {
-    "name": "Guarded Wind Cloak",
-    "element": "Air",
-    "value": 23,
-    "cost": 2,
-    "type": "Defend",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 17
-    },
-    "rarity": "Epic"
-  },
-  {
-    "name": "Burning Boulder Bash",
-    "element": "Earth",
-    "value": 25,
-    "cost": 1,
-    "type": "Attack",
-    "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
-      "value": 8
-    },
-    "rarity": "Uncommon"
-  },
-  {
-    "name": "Corrupting Mist Guard",
-    "element": "Water",
-    "value": 22,
-    "cost": 3,
-    "type": "Defend",
-    "special": {
-      "name": "Debuff",
-      "type": "debuff",
-      "value": 10
-    },
-    "rarity": "Uncommon"
-  },
-  {
-    "name": "Shielded Flame Strike",
-    "element": "Fire",
-    "value": 11,
-    "cost": 4,
-    "type": "Attack",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 12
-    },
-    "rarity": "Common"
-  },
-  {
-    "name": "Restoring Soil Healing",
-    "element": "Earth",
-    "value": 15,
-    "cost": 3,
-    "type": "Heal",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 19
-    },
-    "rarity": "Legendary"
-  },
-  {
-    "name": "Empowered Ash Revival",
-    "element": "Fire",
-    "value": 19,
-    "cost": 5,
-    "type": "Heal",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 9
-    },
-    "rarity": "Legendary"
-  },
-  {
-    "name": "Guarded Mist Guard",
-    "element": "Water",
-    "value": 17,
-    "cost": 1,
-    "type": "Defend",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 19
-    },
-    "rarity": "Legendary"
-  },
-  {
-    "name": "Corrupting Granite Guard",
-    "element": "Earth",
-    "value": 16,
-    "cost": 4,
-    "type": "Defend",
-    "special": {
-      "name": "Debuff",
-      "type": "debuff",
-      "value": 19
-    },
-    "rarity": "Uncommon"
-  },
-  {
-    "name": "Fortified Cyclone Shot",
-    "element": "Air",
-    "value": 23,
-    "cost": 1,
-    "type": "Attack",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 10
-    },
-    "rarity": "Legendary"
-  },
-  {
-    "name": "Restoring Ember Wall",
-    "element": "Fire",
-    "value": 14,
-    "cost": 5,
-    "type": "Defend",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 17
-    },
-    "rarity": "Uncommon"
-  },
-  {
-    "name": "Guarded Aqua Recovery",
-    "element": "Water",
-    "value": 25,
-    "cost": 1,
-    "type": "Heal",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 13
-    },
-    "rarity": "Legendary"
-  },
-  {
-    "name": "Energized Wind Cutter",
-    "element": "Air",
-    "value": 12,
-    "cost": 3,
-    "type": "Attack",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 8
-    },
-    "rarity": "Common"
-  },
-  {
-    "name": "Energized Smoldering Spirit",
-    "element": "Fire",
-    "value": 26,
-    "cost": 2,
-    "type": "Heal",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
       "value": 15
-    },
-    "rarity": "Legendary"
-  },
-  {
-    "name": "Shielded Breeze Barrier",
-    "element": "Air",
-    "value": 11,
-    "cost": 5,
-    "type": "Defend",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 11
-    },
-    "rarity": "Uncommon"
-  },
-  {
-    "name": "Venomous Tide Jab",
-    "element": "Water",
-    "value": 10,
-    "cost": 5,
-    "type": "Attack",
-    "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
-      "value": 5
-    },
-    "rarity": "Uncommon"
-  },
-  {
-    "name": "Energized Cyclone Shot",
-    "element": "Air",
-    "value": 25,
-    "cost": 2,
-    "type": "Attack",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 15
-    },
-    "rarity": "Uncommon"
-  },
-  {
-    "name": "Weakened Soil Healing",
-    "element": "Earth",
-    "value": 29,
-    "cost": 3,
-    "type": "Heal",
-    "special": {
-      "name": "Debuff",
-      "type": "debuff",
-      "value": 20
-    },
-    "rarity": "Common"
-  },
-  {
-    "name": "Empowered Rainfall Blessing",
-    "element": "Water",
-    "value": 17,
-    "cost": 5,
-    "type": "Heal",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 7
-    },
-    "rarity": "Common"
-  },
-  {
-    "name": "Fortified Terra Punch",
-    "element": "Earth",
-    "value": 25,
-    "cost": 5,
-    "type": "Attack",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 16
-    },
-    "rarity": "Epic"
-  },
-  {
-    "name": "Empowered Earth Wall",
-    "element": "Earth",
-    "value": 22,
-    "cost": 3,
-    "type": "Defend",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 19
-    },
-    "rarity": "Rare"
-  },
-  {
-    "name": "Weakened Breath of Life",
-    "element": "Air",
-    "value": 24,
-    "cost": 3,
-    "type": "Heal",
-    "special": {
-      "name": "Debuff",
-      "type": "debuff",
-      "value": 6
-    },
-    "rarity": "Uncommon"
-  },
-  {
-    "name": "Mending Flare Guard",
-    "element": "Fire",
-    "value": 25,
-    "cost": 1,
-    "type": "Defend",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 18
     },
     "rarity": "Uncommon"
   },
   {
     "name": "Fortified Boulder Bash",
     "element": "Earth",
-    "value": 17,
-    "cost": 1,
+    "value": 19,
+    "cost": 5,
     "type": "Attack",
     "special": {
       "name": "Block",
       "type": "block",
       "value": 20
     },
-    "rarity": "Uncommon"
+    "rarity": "Legendary"
   },
   {
-    "name": "Blessed Frosted Strike",
-    "element": "Water",
-    "value": 23,
-    "cost": 3,
-    "type": "Attack",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 15
-    },
-    "rarity": "Uncommon"
-  },
-  {
-    "name": "Restoring Mist Guard",
-    "element": "Water",
-    "value": 14,
-    "cost": 5,
-    "type": "Defend",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 13
-    },
-    "rarity": "Uncommon"
-  },
-  {
-    "name": "Empowered Terra Punch",
-    "element": "Earth",
-    "value": 27,
-    "cost": 5,
-    "type": "Attack",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 17
-    },
-    "rarity": "Uncommon"
-  },
-  {
-    "name": "Venomous Wind Cloak",
+    "name": "Corrupting Breath of Life",
     "element": "Air",
-    "value": 10,
-    "cost": 3,
-    "type": "Defend",
+    "value": 23,
+    "cost": 4,
+    "type": "Heal",
     "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
-      "value": 12
+      "name": "Debuff",
+      "type": "debuff",
+      "value": 19
     },
     "rarity": "Legendary"
   },
   {
-    "name": "Fortified Mist Guard",
-    "element": "Water",
-    "value": 26,
-    "cost": 2,
-    "type": "Defend",
+    "name": "Mending Terra Punch",
+    "element": "Earth",
+    "value": 21,
+    "cost": 5,
+    "type": "Attack",
     "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 17
+      "name": "Heal",
+      "type": "heal",
+      "value": 15
+    },
+    "rarity": "Legendary"
+  },
+  {
+    "name": "Mending Breath of Life",
+    "element": "Air",
+    "value": 14,
+    "cost": 5,
+    "type": "Heal",
+    "special": {
+      "name": "Heal",
+      "type": "heal",
+      "value": 16
     },
     "rarity": "Rare"
   },
   {
-    "name": "Burning Earth Wall",
-    "element": "Earth",
-    "value": 26,
-    "cost": 3,
-    "type": "Defend",
-    "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
-      "value": 8
-    },
-    "rarity": "Epic"
-  },
-  {
-    "name": "Guarded Earth Wall",
-    "element": "Earth",
-    "value": 12,
-    "cost": 2,
-    "type": "Defend",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 18
-    },
-    "rarity": "Uncommon"
-  },
-  {
-    "name": "Cursed Mist Guard",
-    "element": "Water",
-    "value": 23,
-    "cost": 4,
+    "name": "Weakened Breeze Barrier",
+    "element": "Air",
+    "value": 25,
+    "cost": 1,
     "type": "Defend",
     "special": {
       "name": "Debuff",
       "type": "debuff",
-      "value": 6
-    },
-    "rarity": "Legendary"
-  },
-  {
-    "name": "Burning Smoldering Spirit",
-    "element": "Fire",
-    "value": 17,
-    "cost": 4,
-    "type": "Heal",
-    "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
-      "value": 19
+      "value": 9
     },
     "rarity": "Common"
+  },
+  {
+    "name": "Restoring Stone Slam",
+    "element": "Earth",
+    "value": 15,
+    "cost": 2,
+    "type": "Attack",
+    "special": {
+      "name": "Heal",
+      "type": "heal",
+      "value": 19
+    },
+    "rarity": "Uncommon"
   },
   {
     "name": "Guarded Feather Guard",
     "element": "Air",
     "value": 10,
+    "cost": 2,
+    "type": "Defend",
+    "special": {
+      "name": "Block",
+      "type": "block",
+      "value": 11
+    },
+    "rarity": "Epic"
+  },
+  {
+    "name": "Energized Aqua Recovery",
+    "element": "Water",
+    "value": 11,
+    "cost": 2,
+    "type": "Heal",
+    "special": {
+      "name": "Buff",
+      "type": "buff",
+      "value": 13
+    },
+    "rarity": "Uncommon"
+  },
+  {
+    "name": "Lingering Wind Cloak",
+    "element": "Air",
+    "value": 26,
+    "cost": 3,
+    "type": "Defend",
+    "special": {
+      "name": "Damage-over-time",
+      "type": "damage-over-time",
+      "value": 15,
+      "duration": 5
+    },
+    "rarity": "Uncommon"
+  },
+  {
+    "name": "Corrupting Ice Shell",
+    "element": "Water",
+    "value": 17,
+    "cost": 3,
+    "type": "Defend",
+    "special": {
+      "name": "Debuff",
+      "type": "debuff",
+      "value": 13
+    },
+    "rarity": "Uncommon"
+  },
+  {
+    "name": "Fortified Frosted Strike",
+    "element": "Water",
+    "value": 24,
+    "cost": 4,
+    "type": "Attack",
+    "special": {
+      "name": "Block",
+      "type": "block",
+      "value": 13
+    },
+    "rarity": "Uncommon"
+  },
+  {
+    "name": "Restoring Wave Crash",
+    "element": "Water",
+    "value": 18,
+    "cost": 2,
+    "type": "Attack",
+    "special": {
+      "name": "Heal",
+      "type": "heal",
+      "value": 10
+    },
+    "rarity": "Uncommon"
+  },
+  {
+    "name": "Guarded Ashen Shield",
+    "element": "Fire",
+    "value": 14,
     "cost": 5,
     "type": "Defend",
     "special": {
       "name": "Block",
       "type": "block",
-      "value": 6
+      "value": 10
+    },
+    "rarity": "Rare"
+  },
+  {
+    "name": "Lingering Gale Slash",
+    "element": "Air",
+    "value": 25,
+    "cost": 3,
+    "type": "Attack",
+    "special": {
+      "name": "Damage-over-time",
+      "type": "damage-over-time",
+      "value": 12,
+      "duration": 2
+    },
+    "rarity": "Common"
+  },
+  {
+    "name": "Fortified Flame Strike",
+    "element": "Fire",
+    "value": 15,
+    "cost": 2,
+    "type": "Attack",
+    "special": {
+      "name": "Block",
+      "type": "block",
+      "value": 17
+    },
+    "rarity": "Legendary"
+  },
+  {
+    "name": "Restoring Breath of Life",
+    "element": "Air",
+    "value": 12,
+    "cost": 4,
+    "type": "Heal",
+    "special": {
+      "name": "Heal",
+      "type": "heal",
+      "value": 7
+    },
+    "rarity": "Legendary"
+  },
+  {
+    "name": "Energized Tide Jab",
+    "element": "Water",
+    "value": 29,
+    "cost": 1,
+    "type": "Attack",
+    "special": {
+      "name": "Buff",
+      "type": "buff",
+      "value": 19
+    },
+    "rarity": "Rare"
+  },
+  {
+    "name": "Restoring Terra Punch",
+    "element": "Earth",
+    "value": 19,
+    "cost": 1,
+    "type": "Attack",
+    "special": {
+      "name": "Heal",
+      "type": "heal",
+      "value": 13
+    },
+    "rarity": "Rare"
+  },
+  {
+    "name": "Empowered Breeze Barrier",
+    "element": "Air",
+    "value": 16,
+    "cost": 2,
+    "type": "Defend",
+    "special": {
+      "name": "Buff",
+      "type": "buff",
+      "value": 10
+    },
+    "rarity": "Uncommon"
+  },
+  {
+    "name": "Blessed Terra Punch",
+    "element": "Earth",
+    "value": 30,
+    "cost": 3,
+    "type": "Attack",
+    "special": {
+      "name": "Buff",
+      "type": "buff",
+      "value": 10
     },
     "rarity": "Epic"
+  },
+  {
+    "name": "Burning Nature's Touch",
+    "element": "Earth",
+    "value": 12,
+    "cost": 2,
+    "type": "Heal",
+    "special": {
+      "name": "Damage-over-time",
+      "type": "damage-over-time",
+      "value": 7,
+      "duration": 5
+    },
+    "rarity": "Epic"
+  },
+  {
+    "name": "Restoring Stone Slam",
+    "element": "Earth",
+    "value": 13,
+    "cost": 5,
+    "type": "Attack",
+    "special": {
+      "name": "Heal",
+      "type": "heal",
+      "value": 14
+    },
+    "rarity": "Rare"
+  },
+  {
+    "name": "Blessed Ember Wall",
+    "element": "Fire",
+    "value": 14,
+    "cost": 2,
+    "type": "Defend",
+    "special": {
+      "name": "Buff",
+      "type": "buff",
+      "value": 18
+    },
+    "rarity": "Legendary"
+  },
+  {
+    "name": "Fortified Breeze Barrier",
+    "element": "Air",
+    "value": 20,
+    "cost": 2,
+    "type": "Defend",
+    "special": {
+      "name": "Block",
+      "type": "block",
+      "value": 8
+    },
+    "rarity": "Legendary"
+  },
+  {
+    "name": "Mending Breeze Barrier",
+    "element": "Air",
+    "value": 13,
+    "cost": 3,
+    "type": "Defend",
+    "special": {
+      "name": "Heal",
+      "type": "heal",
+      "value": 11
+    },
+    "rarity": "Uncommon"
+  },
+  {
+    "name": "Cursed Wind Cloak",
+    "element": "Air",
+    "value": 23,
+    "cost": 1,
+    "type": "Defend",
+    "special": {
+      "name": "Debuff",
+      "type": "debuff",
+      "value": 13
+    },
+    "rarity": "Uncommon"
+  },
+  {
+    "name": "Energized Tide Barrier",
+    "element": "Water",
+    "value": 22,
+    "cost": 1,
+    "type": "Defend",
+    "special": {
+      "name": "Buff",
+      "type": "buff",
+      "value": 16
+    },
+    "rarity": "Legendary"
+  },
+  {
+    "name": "Energized Flame Strike",
+    "element": "Fire",
+    "value": 28,
+    "cost": 2,
+    "type": "Attack",
+    "special": {
+      "name": "Buff",
+      "type": "buff",
+      "value": 13
+    },
+    "rarity": "Rare"
+  },
+  {
+    "name": "Healing Mist Guard",
+    "element": "Water",
+    "value": 11,
+    "cost": 2,
+    "type": "Defend",
+    "special": {
+      "name": "Heal",
+      "type": "heal",
+      "value": 14
+    },
+    "rarity": "Uncommon"
+  },
+  {
+    "name": "Shielded Nature's Touch",
+    "element": "Earth",
+    "value": 14,
+    "cost": 3,
+    "type": "Heal",
+    "special": {
+      "name": "Block",
+      "type": "block",
+      "value": 15
+    },
+    "rarity": "Legendary"
+  },
+  {
+    "name": "Shielded Airborne Heal",
+    "element": "Air",
+    "value": 14,
+    "cost": 1,
+    "type": "Heal",
+    "special": {
+      "name": "Block",
+      "type": "block",
+      "value": 11
+    },
+    "rarity": "Legendary"
+  },
+  {
+    "name": "Guarded Flame Mender",
+    "element": "Fire",
+    "value": 29,
+    "cost": 5,
+    "type": "Heal",
+    "special": {
+      "name": "Block",
+      "type": "block",
+      "value": 14
+    },
+    "rarity": "Uncommon"
+  },
+  {
+    "name": "Guarded Ice Shell",
+    "element": "Water",
+    "value": 21,
+    "cost": 1,
+    "type": "Defend",
+    "special": {
+      "name": "Block",
+      "type": "block",
+      "value": 8
+    },
+    "rarity": "Rare"
+  },
+  {
+    "name": "Healing Feather Guard",
+    "element": "Air",
+    "value": 11,
+    "cost": 1,
+    "type": "Defend",
+    "special": {
+      "name": "Heal",
+      "type": "heal",
+      "value": 17
+    },
+    "rarity": "Epic"
+  },
+  {
+    "name": "Weakened Feather Guard",
+    "element": "Air",
+    "value": 28,
+    "cost": 1,
+    "type": "Defend",
+    "special": {
+      "name": "Debuff",
+      "type": "debuff",
+      "value": 16
+    },
+    "rarity": "Common"
+  },
+  {
+    "name": "Blessed Breath of Life",
+    "element": "Air",
+    "value": 28,
+    "cost": 1,
+    "type": "Heal",
+    "special": {
+      "name": "Buff",
+      "type": "buff",
+      "value": 19
+    },
+    "rarity": "Uncommon"
+  },
+  {
+    "name": "Blessed Rock Shield",
+    "element": "Earth",
+    "value": 22,
+    "cost": 2,
+    "type": "Defend",
+    "special": {
+      "name": "Buff",
+      "type": "buff",
+      "value": 20
+    },
+    "rarity": "Common"
+  },
+  {
+    "name": "Blessed Ember Wall",
+    "element": "Fire",
+    "value": 21,
+    "cost": 4,
+    "type": "Defend",
+    "special": {
+      "name": "Buff",
+      "type": "buff",
+      "value": 15
+    },
+    "rarity": "Common"
   }
 ]

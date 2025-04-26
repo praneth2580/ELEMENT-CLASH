@@ -53,14 +53,20 @@ export default class Entity {
   applyDamage(damage) {
     console.log(`💢 [${this.constructor.name}] Taking damage: ${damage}`);
 
-    const totalBuffs = this.getSumEffects('buff');
-    const totalDebuffs = this.getSumEffects('debuff');
-    const totalBlocks = this.getSumEffects('block');
+    const totalBuffs = Math.max(1,this.getSumEffects('buff'));
+    const totalDebuffs = Math.max(1,this.getSumEffects('debuff'));
+    const totalBlocks = Math.min(0,this.getSumEffects('block'));
 
-    const final_damage = (((damage * totalBuffs) / totalDebuffs) - totalBlocks); 
+    let final_damage = (((damage * totalBuffs) / totalDebuffs) - totalBlocks) || 0; 
 
-    this.shield -= final_damage * 0.75; // blocks damange if shield is present and also account for block effect
-    if (this.shield <= 0) this.HP = this.HP + this.shield; // if more damage that shield then deduct from health
+    if (this.shield > 0) {
+      let temp_shield = this.shield;
+      temp_shield -= final_damage * 0.75; // blocks damange if shield is present and also account for block effect
+      this.shield = Math.min(0, temp_shield);
+      final_damage = final_damage + temp_shield;
+    }
+
+    this.HP = this.HP - final_damage; // if more damage that shield then deduct from health
 
     console.log(
       `💢 [${this.constructor.name}] HP: ${this.HP} SHIELD: ${this.shield}`
