@@ -10,6 +10,7 @@ export default class Entity {
     this.deck = getRandomCards(deckCount); // populate based on your logic
     this.used = [];
     this.aura = 0;
+    this.tac_aura = 0;
   }
 
   addSpecial(special) {
@@ -96,6 +97,9 @@ export default class Entity {
   getStats() {
     return {
       HP: this.HP,
+      aura: this.aura,
+      tac_aura: this.tac_aura,
+      deck: this.deck,
       shield: this.shield,
       effects: this.effects,
       hand: this.hand,

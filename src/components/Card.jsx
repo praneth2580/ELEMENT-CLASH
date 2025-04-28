@@ -2,6 +2,7 @@
 import React from "react";
 import "../Card.css";
 
+// Color mappings for different rarities
 const rarityColors = {
   Common: "#777",
   Uncommon: "#4CAF50",
@@ -10,6 +11,7 @@ const rarityColors = {
   Legendary: "#FFD700",
 };
 
+// Icons for elements
 const elementIcons = {
   Fire: "🔥",
   Water: "💧",
@@ -17,18 +19,49 @@ const elementIcons = {
   Air: "🌪️",
 };
 
+// Icons for card types
 const typeIcons = {
   Attack: "⚔️",
   Defend: "🛡️",
   Heal: "❤️",
 };
 
+// Icons for special effects
 const specialIcons = {
   "damage-over-time": "🔥",
   heal: "❤️",
   buff: "✨",
   debuff: "☠️",
   block: "🛡️",
+};
+
+// Symbols for traits
+const traitSymbols = {
+  Resilient: "🛡️",
+  Powerful: "💪",
+  Agile: "🏃‍♂️",
+  Cunning: "🧠",
+  Defensive: "🛡️",
+};
+
+// Symbols for affinities (with colors or icons)
+const affinitySymbols = {
+  Fire: {
+    strongAgainst: { symbol: "🌪️", color: "#FF6347" }, // Air (strong) - red
+    weakAgainst: { symbol: "💧", color: "#00BFFF" }, // Water (weak) - blue
+  },
+  Water: {
+    strongAgainst: { symbol: "🔥", color: "#FF6347" }, // Fire (strong) - red
+    weakAgainst: { symbol: "🌿", color: "#32CD32" }, // Earth (weak) - green
+  },
+  Earth: {
+    strongAgainst: { symbol: "💧", color: "#00BFFF" }, // Water (strong) - blue
+    weakAgainst: { symbol: "🌪️", color: "#FF6347" }, // Air (weak) - red
+  },
+  Air: {
+    strongAgainst: { symbol: "🌿", color: "#32CD32" }, // Earth (strong) - green
+    weakAgainst: { symbol: "🔥", color: "#FF6347" }, // Fire (weak) - red
+  },
 };
 
 const Card = ({
@@ -39,7 +72,8 @@ const Card = ({
   type,
   special,
   rarity,
-  aura,
+  trait,
+  affinity,
   specialReady,
 }) => {
   return (
@@ -72,12 +106,26 @@ const Card = ({
         </div>
       </div>
 
-      {/* <div className="aura-bar">
+      {/* Trait Display - show symbol based on trait */}
+      <div className="card-trait">
+        {traitSymbols[trait]} {/* Displaying trait symbol */}
+      </div>
+
+      {/* Affinity Display - show strong and weak affinity symbols with colors */}
+      <div className="card-affinity">
         <div
-          className="aura-fill"
-          style={{ width: `${(aura / 10) * 100}%` }}
-        ></div>
-      </div> */}
+          className="affinity-strong"
+          style={{ color: affinitySymbols[element].strongAgainst.color }}
+        >
+          {affinitySymbols[element].strongAgainst.symbol}
+        </div>
+        <div
+          className="affinity-weak"
+          style={{ color: affinitySymbols[element].weakAgainst.color }}
+        >
+          {affinitySymbols[element].weakAgainst.symbol}
+        </div>
+      </div>
     </div>
   );
 };

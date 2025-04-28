@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { removeByIndexes } from "../functions";
 import Player from "../scripts/Player";
 import AI from "../scripts/Ai";
 
@@ -12,14 +11,16 @@ export default function GameDev() {
     shield: 0,
     effects: [],
     hand: [],
-    aura: 0
+    aura: 0,
+    tacticalAura: 0
   });
   const [aiStats, setAiStats] = useState({
     HP: 0,
     shield: 0,
     effects: [],
     hand: [],
-    aura: 0
+    aura: 0,
+    tacticalAura: 0
   });
 
   const [currentTurn, setCurrentTurn] = useState(0); // 0 = Player, 1 = AI
@@ -43,19 +44,18 @@ export default function GameDev() {
     const aiTurn = setTimeout(() => {
       playCard(aiRef.current.pickFromHand());
       syncStats();
-    }, 3000);
+    }, 2000);
 
     return () => clearTimeout(aiTurn);
   }, [currentTurn]);
 
-  // TURN BASED AURA
   useEffect(() => {
     if (checkGameOver()) return;
 
     playerRef.current.addAura(1);
-    playerRef.current.applySpecial()
-    
-    aiRef.current.addAura(1); 
+    aiRef.current.addAura(1);
+
+    playerRef.current.applySpecial();
     aiRef.current.applySpecial();
 
     syncStats();
@@ -69,16 +69,14 @@ export default function GameDev() {
   function endTurn() {
     const nextTurn = (currentTurn + 1) % 2;
     if (nextTurn === 0) {
-      setCurrentRound((prev) => prev + 1);
+      setCurrentRound(prev => prev + 1);
     }
     setCurrentTurn(nextTurn);
   }
 
   function checkGameOver() {
     if (playerRef.current.HP <= 0 || aiRef.current.HP <= 0) {
-      setMessage(
-        `${playerRef.current.HP <= 0 ? "AI" : "Player"} has Won the Game`
-      );
+      setMessage(`${playerRef.current.HP <= 0 ? "AI" : "Player"} has won the game!`);
       return true;
     }
     return false;
@@ -90,23 +88,17 @@ export default function GameDev() {
     const attacker = currentTurn === 0 ? playerRef.current : aiRef.current;
     const defender = currentTurn === 0 ? aiRef.current : playerRef.current;
 
-    // Basic logic (expand as needed for special effects)
     if (card.type.toLowerCase() === "attack") {
       defender.applyDamage(card.value);
-      setMessage(
-        `${attacker.constructor.name} attacked for ${card.value} damage!`
-      );
+      setMessage(`${attacker.constructor.name} attacked for ${card.value} damage!`);
     } else if (card.type.toLowerCase() === "heal") {
       attacker.heal(card.value);
       setMessage(`${attacker.constructor.name} healed for ${card.value} HP!`);
     } else if (card.type.toLowerCase() === "block") {
       attacker.setShield(card.value);
-      setMessage(
-        `${attacker.constructor.name} raised a shield of ${card.value}!`
-      );
+      setMessage(`${attacker.constructor.name} raised a shield of ${card.value}!`);
     }
 
-    // adding special effect of cards to entity
     if (card.special) {
       if (["block", "heal", "buff"].includes(card.special.type)) {
         attacker.addSpecial(card.special);
@@ -121,98 +113,115 @@ export default function GameDev() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-6">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
-        {/* Player Debug - LEFT */}
-        <div className="bg-blue-50 rounded-lg p-4 shadow-md">
-          <h2 className="text-xl font-bold mb-2 text-center">🧙 Player</h2>
-          <p className="text-sm">HP: {playerStats.HP}</p>
-          <p className="text-sm">Shield: {playerStats.shield}</p>
-          <p className="text-sm mb-2">Aura: {playerStats.aura}</p>
+    <div className="max-w-7xl mx-auto p-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Player Section */}
+        <div className="bg-blue-50 rounded-lg p-4 shadow-md flex flex-col gap-3">
+          <h2 className="text-xl font-bold text-center">🧙 Player</h2>
+          <div>❤️ HP: {playerStats.HP}</div>
+          <div>🛡️ Shield: {playerStats.shield}</div>
+          <div>🌟 Aura: {playerStats.aura}</div>
+          <div>🌀 Tactical Aura: {playerStats.tacticalAura ?? 0}</div>
 
-          <h3 className="font-semibold text-sm mt-4">Effects</h3>
-          <ul className="text-sm bg-white rounded p-2 max-h-40 overflow-auto shadow-inner">
-            {playerStats.effects.length > 0 ? (
-              playerStats.effects.map((eff, i) => (
-                <li key={i}>
-                  {eff.type} – {eff.value ?? eff.multiplier} –{" "}
-                  {eff.duration ?? "∞"}
-                </li>
-              ))
-            ) : (
-              <li className="text-gray-500">None</li>
-            )}
-          </ul>
+          <div className="mt-3">
+            <h3 className="font-semibold text-sm mb-1">🎯 Effects</h3>
+            <div className="bg-white rounded p-2 text-sm min-h-[60px]">
+              {playerStats.effects.length > 0 ? (
+                playerStats.effects.map((eff, i) => (
+                  <div key={i}>
+                    {eff.type} — {eff.value ?? eff.multiplier} ({eff.duration ?? "∞"})
+                  </div>
+                ))
+              ) : (
+                <div className="text-gray-500">None</div>
+              )}
+            </div>
+          </div>
 
-          <h3 className="font-semibold text-sm mt-4">Hand</h3>
-          <ul className="text-sm bg-white rounded p-2 max-h-40 overflow-auto shadow-inner">
-            {playerStats.hand?.map((card, i) => (
-              <li key={i}>
-                {card.name} (Cost: {card.cost}, Dmg: {card.value})
-              </li>
-            ))}
-          </ul>
+          <div className="mt-3">
+            <h3 className="font-semibold text-sm mb-1">🃏 Hand</h3>
+            <div className="bg-white rounded p-2 text-sm min-h-[60px]">
+              {playerStats.hand.length > 0 ? (
+                playerStats.hand.map((card, i) => (
+                  <div key={i}>
+                    {card.name} ({card.type}) — Cost: {card.cost} / Value: {card.value}
+                  </div>
+                ))
+              ) : (
+                <div className="text-gray-500">No cards</div>
+              )}
+            </div>
+          </div>
         </div>
 
-        {/* Game UI - CENTER */}
-        <div className="bg-white rounded-lg p-4 shadow-md text-center">
-          <h1 className="text-2xl font-bold mb-2">Element Clash</h1>
-          <div className="text-sm mb-2">
-            Round: {currentRound} | Turn:{" "}
-            <strong>{currentTurn === 0 ? "Player" : "AI"}</strong>
+        {/* Center Section (Game Info) */}
+        <div className="bg-white rounded-lg p-4 shadow-md flex flex-col items-center gap-4">
+          <h1 className="text-2xl font-bold">⚡ Element Clash</h1>
+          <div className="text-sm">Round: {currentRound}</div>
+          <div className="text-sm">
+            Turn: <strong>{currentTurn === 0 ? "Player" : "AI"}</strong>
           </div>
-          <div className="mb-2 font-semibold">{message}</div>
+          <div className="text-center font-semibold">{message}</div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {/* Player action panel */}
+          <div className="w-full flex flex-wrap justify-center gap-3 mt-4">
             {currentTurn === 0 &&
-              playerStats.hand &&
-              playerStats.hand.map((card, index) => (
+              playerStats.hand.map((card, idx) => (
                 <button
-                  key={index}
+                  key={idx}
                   onClick={() => playCard(card)}
+                  className="bg-gray-100 hover:bg-gray-200 rounded p-3 text-sm w-32"
                   disabled={playerStats.HP <= 0 || aiStats.HP <= 0}
-                  className="p-3 border rounded bg-gray-100 hover:bg-gray-200 shadow"
                 >
                   <div className="font-bold">{card.name}</div>
-                  <div className="text-sm">Element: {card.element}</div>
-                  <div className="text-sm">Type: {card.type}</div>
-                  <div className="text-sm">Cost: {card.cost}</div>
-                  <div className="text-sm">Damage: {card.value}</div>
-                  <div className="text-xs italic">{card.special?.name}</div>
+                  <div>Type: {card.type}</div>
+                  <div>Cost: {card.cost}</div>
+                  <div>Value: {card.value}</div>
+                  {card.special && (
+                    <div className="italic text-xs mt-1">{card.special.name}</div>
+                  )}
                 </button>
               ))}
           </div>
         </div>
 
-        {/* AI Debug - RIGHT */}
-        <div className="bg-red-50 rounded-lg p-4 shadow-md">
-          <h2 className="text-xl font-bold mb-2 text-center">🤖 AI</h2>
-          <p className="text-sm">HP: {aiStats.HP}</p>
-          <p className="text-sm">Shield: {aiStats.shield}</p>
-          <p className="text-sm mb-2">Aura: {aiStats.aura}</p>
+        {/* AI Section */}
+        <div className="bg-red-50 rounded-lg p-4 shadow-md flex flex-col gap-3">
+          <h2 className="text-xl font-bold text-center">🤖 AI</h2>
+          <div>❤️ HP: {aiStats.HP}</div>
+          <div>🛡️ Shield: {aiStats.shield}</div>
+          <div>🌟 Aura: {aiStats.aura}</div>
+          <div>🌀 Tactical Aura: {aiStats.tacticalAura ?? 0}</div>
 
-          <h3 className="font-semibold text-sm mt-4">Effects</h3>
-          <ul className="text-sm bg-white rounded p-2 max-h-40 overflow-auto shadow-inner">
-            {aiStats.effects.length > 0 ? (
-              aiStats.effects.map((eff, i) => (
-                <li key={i}>
-                  {eff.type} – {eff.value ?? eff.multiplier} –{" "}
-                  {eff.duration ?? "∞"}
-                </li>
-              ))
-            ) : (
-              <li className="text-gray-500">None</li>
-            )}
-          </ul>
+          <div className="mt-3">
+            <h3 className="font-semibold text-sm mb-1">🎯 Effects</h3>
+            <div className="bg-white rounded p-2 text-sm min-h-[60px]">
+              {aiStats.effects.length > 0 ? (
+                aiStats.effects.map((eff, i) => (
+                  <div key={i}>
+                    {eff.type} — {eff.value ?? eff.multiplier} ({eff.duration ?? "∞"})
+                  </div>
+                ))
+              ) : (
+                <div className="text-gray-500">None</div>
+              )}
+            </div>
+          </div>
 
-          <h3 className="font-semibold text-sm mt-4">Hand</h3>
-          <ul className="text-sm bg-white rounded p-2 max-h-40 overflow-auto shadow-inner">
-            {aiStats.hand?.map((card, i) => (
-              <li key={i}>
-                {card.name} (Cost: {card.cost}, Dmg: {card.value})
-              </li>
-            ))}
-          </ul>
+          <div className="mt-3">
+            <h3 className="font-semibold text-sm mb-1">🃏 Hand</h3>
+            <div className="bg-white rounded p-2 text-sm min-h-[60px]">
+              {aiStats.hand.length > 0 ? (
+                aiStats.hand.map((card, i) => (
+                  <div key={i}>
+                    {card.name} ({card.type}) — Cost: {card.cost} / Value: {card.value}
+                  </div>
+                ))
+              ) : (
+                <div className="text-gray-500">No cards</div>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -1,42 +1,34 @@
 // pages/Demo.jsx
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from '../components/Card';
 import '../Card.css';
+import { generateCard } from '../scripts/Cards';
 
 const CardsDemo = () => {
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    const newCards = Array.from({ length: 3 }, generateCard); // Generate 3 random cards
+    setCards(newCards);
+  }, []);
+
   return (
     <div className="cards-grid">
-      <Card
-        name="Burning Airborne Heal"
-        element="Air"
-        value={14}
-        cost={4}
-        type="Heal"
-        special={{ name: "Damage-over-time", type: "damage-over-time", value: 16 }}
-        rarity="Legendary"
-        aura={10}
-        specialReady={true}
-      />
-      <Card
-        name="Restoring Wave Crash"
-        element="Water"
-        value={24}
-        cost={4}
-        type="Attack"
-        special={{ name: "Heal", type: "heal", value: 19 }}
-        rarity="Rare"
-        aura={6}
-      />
-      <Card
-        name="Energized Ice Shell"
-        element="Water"
-        value={14}
-        cost={4}
-        type="Defend"
-        special={{ name: "Buff", type: "buff", value: 19 }}
-        rarity="Epic"
-        aura={5}
-      />
+      {cards.map((card, index) => (
+        <Card
+          key={index}
+          name={card.name}
+          element={card.element}
+          value={card.value}
+          cost={card.cost}
+          type={card.type}
+          special={card.special}
+          rarity={card.rarity}
+          trait={card.trait}
+          affinity={card.affinity}
+          specialReady={Math.random() > 0.5} // Randomly set specialReady
+        />
+      ))}
     </div>
   );
 };

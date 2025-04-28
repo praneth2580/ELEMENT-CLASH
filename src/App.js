@@ -11,7 +11,7 @@ function App() {
     <HashRouter>
       <Routes>
         <Route path="/" element={<ElementClash />} />
-        <Route path="/dev" element={<GameDev />} />
+        <Route path="/dev" element={<ElementClash dev/>} />
         <Route path="/gen" element={<CardGenerator />} />
         <Route path="/demo" element={<CardsDemo />} />
       </Routes>
