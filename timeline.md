@@ -1,124 +1,120 @@
-📜 Tactical Card Game Upgrade Roadmap
-Phase 1: Foundation Systems (Core Battle Loop)
- Refine Status Effects System
+---
 
- Standardize effects: Burn, Freeze, Shock, Root, Weaken, Boost
+# 🗓️ timeline.md
 
- Effects should have duration (e.g., 2 turns)
+# Tactical Card Game Development Timeline
 
- Effects can stack or overwrite (define rules)
+---
 
- Add Affinity Strength/Weakness System
+## Phase 1: Foundation Systems (Core Battle Loop)
 
- Water > Fire (+50% damage)
+- [ ] **Status Effects System**  
+  - Standardize effects: Burn, Freeze, Shock, Root, Weaken, Boost  
+  - Add effect durations (e.g., 2 turns)  
+  - Define stacking / overwriting rules  
 
- Fire > Air (+50% damage)
+- [ ] **Affinity Strength/Weakness System**  
+  - Water > Fire (+50% damage)  
+  - Fire > Air (+50% damage)  
+  - Air > Earth (+50% damage)  
+  - Earth > Water (+50% damage)  
+  - Penalty on mismatch (e.g., -10% attack)
 
- Air > Earth (+50% damage)
+- [ ] **Energy / Aura Resource System Finalization**  
+  - Base Aura gain per turn (e.g., +1)  
+  - Aura cost to attempt Synergy  
+  - Certain cards modify Aura
 
- Earth > Water (+50% damage)
+---
 
- Penalty on wrong matchup (e.g., -10% attack)
+## Phase 2: Tactical Layer Systems (Hand and Play Control)
 
- Complete Energy / Aura Resource System
+- [ ] **Hand Management Mechanics**  
+  - Allow discard of card(s) from hand  
+  - Discard cost (e.g., -10 HP) to draw a new card  
+  - Limit discards per turn (e.g., 1-2)
 
- Base Aura per turn (e.g., gain +1 Aura per turn)
+- [ ] **Battlefield Conditions**  
+  - Random environment effect each match start  
+  - Example conditions:  
+    - Heavy Rain (Water boost)  
+    - Scorching Heat (Fire cost reduction)  
+    - Earthquake (Earth crit boost)  
+    - Storm Winds (Air dodge boost)  
+  - Conditions rotate or persist entire match
 
- Aura cost to attempt Synergy
+---
 
- Certain cards can give Aura boosts or cost more
+## Phase 3: Advanced Strategic Systems (Deck and Hero Building)
 
-Phase 2: Tactical Layer Systems (Hand and Play Control)
- Implement Hand Management Mechanics
+- [ ] **Dynamic Deck Modifiers (Mini Deckbuilding)**  
+  - Post-match deck changes:  
+    - Add 1 new card  
+    - Remove 1 card (optionally at cost)  
+    - Upgrade 1 card  
 
- Allow player to discard a card
+- [ ] **Card Traits & Personalities**  
+  - Traits assigned to cards:  
+    - Volatile (explode if discarded)  
+    - Loyal (buff if played after same element)  
+    - Greedy (higher cost, bigger payoff)
 
- On discard, pay a cost (e.g., lose 10 HP) to draw a new card
+- [ ] **Hero Abilities / Classes**  
+  - 3-5 Hero Classes  
+  - Each class:  
+    - 1 Passive Ability  
+    - (Optional) 1 Active Ability  
+  - Example Heroes:  
+    - Flame Knight: Free Fire synergy once per match  
+    - Tidecaller: Heal after Water synergy  
+    - Sky Thief: Steal Aura from enemy
 
- Limit discards per turn (e.g., max 1-2)
+---
 
- Add Battlefield Conditions (Dynamic Environment Effects)
+## Final Polish (Optional Endgame Features)
 
- Randomly roll battlefield condition each match start
+- [ ] **Combo Chains / Momentum System**  
+  - Bonus stacking for consecutive synergies
 
- Possible battlefield effects:
+- [ ] **Interrupt Cards**  
+  - Instant-play cards during opponent's turn
 
-Heavy Rain: Water cards +20% damage
+- [ ] **Rare Dual-Element Cards**  
+  - Special cards that count as two elements
 
-Scorching Heat: Fire cards cost -1 Aura
+- [ ] **Card Evolution System**  
+  - Cards level up or transform after repeated use
 
-Earthquake: Earth cards crit chance up
+---
 
-Storm Winds: Air cards 30% dodge boost
+# 🚀 Priority Timeline Overview
 
- Battlefield lasts whole match or rotates every X turns
+| Order | Feature |
+|:---|:---|
+| 1 | Status Effects |
+| 2 | Affinity Strength/Weakness |
+| 3 | Energy / Aura Resource Finalization |
+| 4 | Hand Management |
+| 5 | Battlefield Conditions |
+| 6 | Deck Modification After Matches |
+| 7 | Card Traits & Personalities |
+| 8 | Hero Classes / Abilities |
 
-Phase 3: Advanced Strategic Systems (Deck and Hero Building)
- Implement Dynamic Deck Modifiers (Mini Deckbuilding)
+---
 
- After each battle, allow:
+# 📌 Notes
 
-Add 1 new random card to deck
+- Build systems individually, test after each.
+- Focus on balance after Phase 1 complete.
+- Keep UI/UX feedback strong: clear animations, effects for new mechanics.
 
-Remove 1 card (at a cost maybe?)
+---
 
-Upgrade 1 card (make slightly stronger / cheaper)
+✅ **Last updated:** 2025-04-28
 
- Keep deck size limits (e.g., 20-30 cards)
+---
 
- Create Card Traits & Personalities
+# Example usage:
+> Save this file as `timeline.md` inside your `/docs/` or `/planning/` folder in your GitHub repo!
 
- Add random traits to cards:
-
-"Volatile" (explodes if discarded)
-
-"Loyal" (bonus if played after matching element)
-
-"Greedy" (costs 1 extra Aura but double damage if successful)
-
- Traits appear visually on cards
-
- Add Hero Abilities / Classes
-
- Define 3-5 hero classes
-
- Each class has:
-
-1 Passive ability
-
-1 Active ability (optional)
-
- Examples:
-
-Flame Knight: Fire synergy costs no Aura once per match
-
-Tidecaller: Water heal 10% after every synergy
-
-Sky Thief: Chance to steal Aura from enemy
-
-🎯 Final Polish (Once Core Systems Done)
- Add Combo Chains / Momentum System (Optional)
-
- Add Interrupt Cards (Advanced)
-
- Add Rare Dual-Element Cards
-
- Add Card Evolution (Level up cards mid-run)
-
-📦 Priority Order Summary
-
-Priority	Feature
-1	Status Effects
-2	Affinity Strength/Weakness
-3	Energy / Aura Finalization
-4	Hand Management (discard/draw)
-5	Battlefield Conditions
-6	Deck Modification After Matches
-7	Card Traits & Personalities
-8	Hero Classes / Abilities
-🚀 Notes
-Work in vertical slices → Finish one system at a time (even simple version first).
-
-Test battles after every Phase to adjust balance.
-
-Keep adding small UI feedbacks (particles, sounds) when new systems trigger!
+---
