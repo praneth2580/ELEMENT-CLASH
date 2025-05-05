@@ -8,6 +8,7 @@ const CardGenerator = () => {
 
   useEffect(() => {
     const newCards = Array.from({ length: 100 }, generateCard);
+    console.log(JSON.stringify(newCards[0]))
     setCards(newCards);
   }, []);
 
