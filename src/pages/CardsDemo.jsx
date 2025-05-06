@@ -1,8 +1,8 @@
 // pages/Demo.jsx
-import React, { useState, useEffect } from 'react';
-import Card from '../components/Card';
-import '../Card.css';
-import { generateCard } from '../scripts/Cards';
+import React, { useState, useEffect } from "react";
+import Card from "../components/Card";
+import "../Card.css";
+import { generateCard } from "../scripts/Cards";
 
 const CardsDemo = () => {
   const [cards, setCards] = useState([]);
@@ -12,22 +12,11 @@ const CardsDemo = () => {
     setCards(newCards);
   }, []);
 
+  console.log(cards)
   return (
-    <div className="cards-grid">
+    <div className="flex p-1 gap-1">
       {cards.map((card, index) => (
-        <Card
-          key={index}
-          name={card.name}
-          element={card.element}
-          value={card.value}
-          cost={card.cost}
-          type={card.type}
-          special={card.special}
-          rarity={card.rarity}
-          trait={card.trait}
-          affinity={card.affinity}
-          specialReady={Math.random() > 0.5} // Randomly set specialReady
-        />
+        <Card key={index} card={card} />
       ))}
     </div>
   );

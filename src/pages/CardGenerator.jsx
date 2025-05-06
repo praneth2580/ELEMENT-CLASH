@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import clsx from "clsx";
 import { elementColors, generateCard, rarityColors } from "../scripts/Cards";
+import Card from "../components/Card";
 
 const CardGenerator = () => {
   const [cards, setCards] = useState([]);
@@ -8,7 +9,7 @@ const CardGenerator = () => {
 
   useEffect(() => {
     const newCards = Array.from({ length: 100 }, generateCard);
-    console.log(JSON.stringify(newCards[0]))
+    console.log(JSON.stringify(newCards[0]));
     setCards(newCards);
   }, []);
 
@@ -38,52 +39,11 @@ const CardGenerator = () => {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="flex flex-wrap gap-3">
         {cards.map((card, index) => {
-          const elementStyle =
-            elementColors[card.element] ||
-            "bg-gray-100 border-gray-400 text-gray-800";
-          const rarityStyle = rarityColors[card.rarity] || "text-gray-700";
-
           return (
-            <div
-              key={index}
-              className={clsx(
-                "border-2 rounded-xl shadow-md p-4 transition transform hover:scale-105",
-                elementStyle
-              )}
-            >
-              <h2 className={`text-xl font-bold mb-1 ${rarityStyle}`}>
-                {card.name}
-              </h2>
-              <p>
-                <strong>Element:</strong> {card.element}
-              </p>
-              <p>
-                <strong>Type:</strong>{" "}
-                <span className="capitalize">{card.type}</span>
-              </p>
-              <p>
-                <strong>Cost:</strong> {card.cost}
-              </p>
-              <p>
-                <strong>Value:</strong> {card.value}
-              </p>
-              <p>
-                <strong>Rarity:</strong>{" "}
-                <span className={rarityStyle}>{card.rarity}</span>
-              </p>
-              <p>
-                <strong>Special:</strong> {card.special.name} (
-                {card.special.type}) - {card.special.value}
-              </p>
-              <p>
-                <strong>Trait:</strong> {card.trait}
-              </p>
-              <p>
-                <strong>Affinity:</strong> {card.affinity.strongAgainst}{" "}
-                (Strong), {card.affinity.weakAgainst} (Weak)
-              </p>
+            <div>
+              <Card key={index} card={card} />
             </div>
           );
         })}

@@ -1,14 +1,24 @@
 // ========== Imports ==========
 import default_logo from "../logo.svg";
+import air1 from "../assets/img/air1.jpeg";
+import air2 from "../assets/img/air2.jpeg";
+import air3 from "../assets/img/air3.jpeg";
+import air4 from "../assets/img/air4.jpeg";
+import earth from "../assets/img/earth.jpeg";
+import fire1 from "../assets/img/fire1.jpeg";
+import fire2 from "../assets/img/fire2.jpeg";
+import water1 from "../assets/img/water1.jpeg";
+import water2 from "../assets/img/water2.jpeg";
+import water3 from "../assets/img/water3.jpeg";
 
 // ========== Static Definitions ==========
 
 // --- Element Definitions with color classes ---
 const elements = {
   Fire: {
-    logo: default_logo,
-    banner: default_logo,
-    color: "#000",
+    logo: fire1,
+    banner: fire1,
+    color: "#E61E1E",
     ratio: 25,
     colorClass: "bg-red-100 border-red-500 text-red-800",
     affinities: { strongAgainst: "Earth", weakAgainst: "Water" },
@@ -25,9 +35,9 @@ const elements = {
     },
   },
   Earth: {
-    logo: default_logo,
-    banner: default_logo,
-    color: "#000",
+    logo: earth,
+    banner: earth,
+    color: "#683838",
     ratio: 25,
     colorClass: "bg-green-100 border-green-500 text-green-800",
     affinities: { strongAgainst: "Water", weakAgainst: "Fire" },
@@ -44,9 +54,9 @@ const elements = {
     },
   },
   Air: {
-    logo: default_logo,
-    banner: default_logo,
-    color: "#000",
+    logo: air2,
+    banner: air2,
+    color: "#58B6C7",
     ratio: 25,
     colorClass: "bg-blue-100 border-blue-400 text-blue-800",
     affinities: { strongAgainst: "Fire", weakAgainst: "Earth" },
@@ -63,9 +73,9 @@ const elements = {
     },
   },
   Water: {
-    logo: default_logo,
-    banner: default_logo,
-    color: "#000",
+    logo: water3,
+    banner: water3,
+    color: "#DEDE84",
     ratio: 25,
     colorClass: "bg-cyan-100 border-cyan-500 text-cyan-800",
     affinities: { strongAgainst: "Fire", weakAgainst: "Air" },
@@ -88,9 +98,9 @@ const globalTacAuraCostRange = { min: 1, max: 10 };
 
 // --- Type Definitions ---
 const types = {
-  Attack: { color: "#000", logo: default_logo },
-  Defend: { color: "#000", logo: default_logo },
-  Heal: { color: "#000", logo: default_logo },
+  Attack: { color: "#FA4545", logo: default_logo },
+  Defend: { color: "#6873EE", logo: default_logo },
+  Heal: { color: "#3ad227", logo: default_logo },
 };
 
 // --- Special Type Definitions ---
