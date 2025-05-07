@@ -6,25 +6,6 @@ const DevCard = ({ card, onClick, disabled }) => {
     onClick(card);
   };
 
-  {
-    /* <button
-  key={idx}
-  onClick={() => playCard(card)}
-  className="bg-gray-700 hover:bg-gray-600 rounded p-3 text-sm w-32"
-  disabled={playerStats.HP <= 0 || aiStats.HP <= 0}
->
-  <div className="font-bold">{card.name}</div>
-  <div>Type: {card.type}</div>
-  <div>Cost: {card.cost}</div>
-  <div>Value: {card.value}</div>
-  {card.special && (
-    <div className="italic text-xs mt-1">
-      {card.special.name}
-    </div>
-  )}
-</button> */
-  }
-
   return (
     <div
       onClick={handleClick}
