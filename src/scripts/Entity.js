@@ -1,13 +1,16 @@
+import { useCardGameStorage } from "../data/hooks/useCardGameStorage";
 import { getRandomCards, removeByIndexes } from "../functions";
 
 export default class Entity {
-  constructor(initialHP, deckCount = 10) {
+
+  
+  constructor(initialHP, deck, deckCount = 10) {
     this.maxHP = initialHP;
     this.HP = initialHP;
     this.shield = 0;
     this.effects = [];
     this.hand = [];
-    this.deck = getRandomCards(deckCount); // populate based on your logic
+    this.deck = getRandomCards(deckCount, deck); // populate based on your logic
     this.used = [];
     this.aura = 0;
     this.tac_aura = 0;

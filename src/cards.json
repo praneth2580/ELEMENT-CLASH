@@ -1,1820 +1,1567 @@
 [
   {
-    "name": "Weakened Aqua Recovery",
-    "element": "Water",
-    "value": 16,
-    "cost": 3,
-    "type": "Heal",
-    "special": {
-      "name": "Debuff",
-      "type": "debuff",
-      "value": 15
-    },
-    "rarity": "Common",
-    "trait": "Resilient",
-    "affinity": {
-      "strongAgainst": "Fire",
-      "weakAgainst": "Fire"
-    }
-  },
-  {
-    "name": "Blessed Mist Guard",
-    "element": "Water",
-    "value": 15,
-    "cost": 2,
-    "type": "Defend",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 9
-    },
-    "rarity": "Rare",
-    "trait": "Tough",
-    "affinity": {
-      "strongAgainst": "Air",
-      "weakAgainst": "Fire"
-    }
-  },
-  {
-    "name": "Healing Aqua Recovery",
-    "element": "Water",
-    "value": 27,
-    "cost": 1,
-    "type": "Heal",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 6
-    },
-    "rarity": "Rare",
-    "trait": "Agile",
-    "affinity": {
-      "strongAgainst": "Air",
-      "weakAgainst": "Fire"
-    }
-  },
-  {
-    "name": "Mending Wind Cutter",
     "element": "Air",
-    "value": 10,
-    "cost": 1,
-    "type": "Attack",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 10
-    },
-    "rarity": "Uncommon",
-    "trait": "Agile",
-    "affinity": {
-      "strongAgainst": "Water",
-      "weakAgainst": "Air"
-    }
-  },
-  {
-    "name": "Burning Flame Strike",
-    "element": "Fire",
-    "value": 10,
-    "cost": 1,
-    "type": "Attack",
-    "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
-      "value": 17,
-      "duration": 1
-    },
-    "rarity": "Common",
-    "trait": "Tough",
-    "affinity": {
-      "strongAgainst": "Fire",
-      "weakAgainst": "Earth"
-    }
-  },
-  {
-    "name": "Weakened Tide Jab",
-    "element": "Water",
-    "value": 14,
-    "cost": 3,
-    "type": "Attack",
-    "special": {
-      "name": "Debuff",
-      "type": "debuff",
-      "value": 7
-    },
-    "rarity": "Epic",
-    "trait": "Powerful",
-    "affinity": {
-      "strongAgainst": "Water",
-      "weakAgainst": "Fire"
-    }
-  },
-  {
-    "name": "Shielded Wave Crash",
-    "element": "Water",
-    "value": 23,
+    "value": 5,
     "cost": 5,
-    "type": "Attack",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 6
-    },
-    "rarity": "Uncommon",
-    "trait": "Powerful",
+    "type": "Defend",
     "affinity": {
       "strongAgainst": "Fire",
-      "weakAgainst": "Fire"
-    }
-  },
-  {
-    "name": "Energized Cyclone Shot",
-    "element": "Air",
-    "value": 11,
-    "cost": 4,
-    "type": "Attack",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 14
-    },
-    "rarity": "Epic",
-    "trait": "Resilient",
-    "affinity": {
-      "strongAgainst": "Air",
       "weakAgainst": "Earth"
-    }
-  },
-  {
-    "name": "Guarded Boulder Bash",
-    "element": "Earth",
-    "value": 19,
-    "cost": 2,
-    "type": "Attack",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 20
-    },
-    "rarity": "Uncommon",
-    "trait": "Tough",
-    "affinity": {
-      "strongAgainst": "Water",
-      "weakAgainst": "Water"
-    }
-  },
-  {
-    "name": "Shielded Ashen Shield",
-    "element": "Fire",
-    "value": 10,
-    "cost": 2,
-    "type": "Defend",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 10
     },
     "rarity": "Common",
-    "trait": "Powerful",
-    "affinity": {
-      "strongAgainst": "Air",
-      "weakAgainst": "Air"
-    }
+    "special": null,
+    "trait": "Swift",
+    "name": "Breeze Barrier"
   },
   {
-    "name": "Shielded Cyclone Shot",
-    "element": "Air",
-    "value": 15,
-    "cost": 5,
-    "type": "Attack",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 12
-    },
-    "rarity": "Common",
-    "trait": "Powerful",
-    "affinity": {
-      "strongAgainst": "Air",
-      "weakAgainst": "Water"
-    }
-  },
-  {
-    "name": "Corrupting Granite Guard",
-    "element": "Earth",
-    "value": 11,
-    "cost": 3,
-    "type": "Defend",
-    "special": {
-      "name": "Debuff",
-      "type": "debuff",
-      "value": 19
-    },
-    "rarity": "Legendary",
-    "trait": "Resilient",
-    "affinity": {
-      "strongAgainst": "Water",
-      "weakAgainst": "Fire"
-    }
-  },
-  {
-    "name": "Guarded Stone Slam",
-    "element": "Earth",
-    "value": 13,
-    "cost": 3,
-    "type": "Attack",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 19
-    },
-    "rarity": "Uncommon",
-    "trait": "Resilient",
-    "affinity": {
-      "strongAgainst": "Water",
-      "weakAgainst": "Earth"
-    }
-  },
-  {
-    "name": "Burning Cyclone Shot",
-    "element": "Air",
+    "element": "Water",
     "value": 12,
-    "cost": 1,
-    "type": "Attack",
+    "cost": 9,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Air"
+    },
+    "rarity": "Common",
     "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
-      "value": 16,
+      "name": "wet_armor",
+      "type": "block",
+      "value": 2,
       "duration": 2
     },
-    "rarity": "Epic",
-    "trait": "Powerful",
-    "affinity": {
-      "strongAgainst": "Fire",
-      "weakAgainst": "Earth"
-    }
+    "trait": "Swift",
+    "name": "Guarded Ice Shell"
   },
   {
-    "name": "Cursed Aqua Recovery",
     "element": "Water",
-    "value": 30,
-    "cost": 5,
-    "type": "Heal",
-    "special": {
-      "name": "Debuff",
-      "type": "debuff",
-      "value": 5
-    },
-    "rarity": "Common",
-    "trait": "Resilient",
-    "affinity": {
-      "strongAgainst": "Water",
-      "weakAgainst": "Water"
-    }
-  },
-  {
-    "name": "Restoring Terra Punch",
-    "element": "Earth",
-    "value": 18,
-    "cost": 5,
-    "type": "Attack",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 12
-    },
-    "rarity": "Epic",
-    "trait": "Resilient",
-    "affinity": {
-      "strongAgainst": "Air",
-      "weakAgainst": "Air"
-    }
-  },
-  {
-    "name": "Restoring Boulder Bash",
-    "element": "Earth",
-    "value": 26,
-    "cost": 1,
-    "type": "Attack",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 14
-    },
-    "rarity": "Rare",
-    "trait": "Resilient",
-    "affinity": {
-      "strongAgainst": "Fire",
-      "weakAgainst": "Air"
-    }
-  },
-  {
-    "name": "Mending Frosted Strike",
-    "element": "Water",
-    "value": 19,
-    "cost": 5,
-    "type": "Attack",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 6
-    },
-    "rarity": "Uncommon",
-    "trait": "Resilient",
-    "affinity": {
-      "strongAgainst": "Fire",
-      "weakAgainst": "Fire"
-    }
-  },
-  {
-    "name": "Venomous Tide Jab",
-    "element": "Water",
-    "value": 26,
-    "cost": 5,
-    "type": "Attack",
-    "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
-      "value": 14,
-      "duration": 1
-    },
-    "rarity": "Epic",
-    "trait": "Powerful",
-    "affinity": {
-      "strongAgainst": "Water",
-      "weakAgainst": "Fire"
-    }
-  },
-  {
-    "name": "Empowered Wave Crash",
-    "element": "Water",
-    "value": 16,
-    "cost": 1,
-    "type": "Attack",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 12
-    },
-    "rarity": "Epic",
-    "trait": "Powerful",
-    "affinity": {
-      "strongAgainst": "Fire",
-      "weakAgainst": "Fire"
-    }
-  },
-  {
-    "name": "Burning Stone Slam",
-    "element": "Earth",
-    "value": 28,
-    "cost": 4,
-    "type": "Attack",
-    "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
-      "value": 17,
-      "duration": 3
-    },
-    "rarity": "Legendary",
-    "trait": "Tough",
-    "affinity": {
-      "strongAgainst": "Air",
-      "weakAgainst": "Water"
-    }
-  },
-  {
-    "name": "Shielded Granite Guard",
-    "element": "Earth",
-    "value": 26,
-    "cost": 1,
-    "type": "Defend",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 19
-    },
-    "rarity": "Rare",
-    "trait": "Agile",
-    "affinity": {
-      "strongAgainst": "Water",
-      "weakAgainst": "Water"
-    }
-  },
-  {
-    "name": "Shielded Rainfall Blessing",
-    "element": "Water",
-    "value": 22,
-    "cost": 5,
-    "type": "Heal",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 15
-    },
-    "rarity": "Rare",
-    "trait": "Tough",
-    "affinity": {
-      "strongAgainst": "Air",
-      "weakAgainst": "Air"
-    }
-  },
-  {
-    "name": "Fortified Earthen Embrace",
-    "element": "Earth",
     "value": 12,
-    "cost": 4,
+    "cost": 7,
     "type": "Heal",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 15
-    },
-    "rarity": "Legendary",
-    "trait": "Powerful",
     "affinity": {
       "strongAgainst": "Fire",
-      "weakAgainst": "Fire"
-    }
-  },
-  {
-    "name": "Corrupting Airborne Heal",
-    "element": "Air",
-    "value": 28,
-    "cost": 2,
-    "type": "Heal",
-    "special": {
-      "name": "Debuff",
-      "type": "debuff",
-      "value": 12
+      "weakAgainst": "Air"
     },
     "rarity": "Common",
-    "trait": "Powerful",
-    "affinity": {
-      "strongAgainst": "Fire",
-      "weakAgainst": "Earth"
-    }
+    "special": null,
+    "trait": "Strategic",
+    "name": "Rainfall Blessing"
   },
   {
-    "name": "Blessed Boulder Bash",
-    "element": "Earth",
-    "value": 29,
-    "cost": 3,
-    "type": "Attack",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 11
-    },
-    "rarity": "Legendary",
-    "trait": "Powerful",
-    "affinity": {
-      "strongAgainst": "Water",
-      "weakAgainst": "Air"
-    }
-  },
-  {
-    "name": "Fortified Terra Punch",
-    "element": "Earth",
-    "value": 23,
-    "cost": 5,
-    "type": "Attack",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 14
-    },
-    "rarity": "Uncommon",
-    "trait": "Resilient",
-    "affinity": {
-      "strongAgainst": "Water",
-      "weakAgainst": "Air"
-    }
-  },
-  {
-    "name": "Weakened Inferno Slash",
-    "element": "Fire",
-    "value": 18,
-    "cost": 5,
-    "type": "Attack",
-    "special": {
-      "name": "Debuff",
-      "type": "debuff",
-      "value": 9
-    },
-    "rarity": "Legendary",
-    "trait": "Agile",
-    "affinity": {
-      "strongAgainst": "Water",
-      "weakAgainst": "Air"
-    }
-  },
-  {
-    "name": "Venomous Breeze Barrier",
-    "element": "Air",
-    "value": 18,
-    "cost": 5,
-    "type": "Defend",
-    "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
-      "value": 9,
-      "duration": 1
-    },
-    "rarity": "Legendary",
-    "trait": "Powerful",
-    "affinity": {
-      "strongAgainst": "Water",
-      "weakAgainst": "Air"
-    }
-  },
-  {
-    "name": "Fortified Frosted Strike",
-    "element": "Water",
-    "value": 29,
-    "cost": 4,
-    "type": "Attack",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 14
-    },
-    "rarity": "Rare",
-    "trait": "Powerful",
-    "affinity": {
-      "strongAgainst": "Earth",
-      "weakAgainst": "Fire"
-    }
-  },
-  {
-    "name": "Burning Rock Shield",
-    "element": "Earth",
-    "value": 24,
-    "cost": 1,
-    "type": "Defend",
-    "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
-      "value": 6,
-      "duration": 2
-    },
-    "rarity": "Common",
-    "trait": "Resilient",
-    "affinity": {
-      "strongAgainst": "Air",
-      "weakAgainst": "Fire"
-    }
-  },
-  {
-    "name": "Guarded Gale Slash",
     "element": "Air",
     "value": 17,
-    "cost": 5,
+    "cost": 10,
     "type": "Attack",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 18
-    },
-    "rarity": "Legendary",
-    "trait": "Resilient",
     "affinity": {
-      "strongAgainst": "Air",
-      "weakAgainst": "Air"
-    }
-  },
-  {
-    "name": "Corrupting Inferno Slash",
-    "element": "Fire",
-    "value": 19,
-    "cost": 3,
-    "type": "Attack",
-    "special": {
-      "name": "Debuff",
-      "type": "debuff",
-      "value": 11
-    },
-    "rarity": "Legendary",
-    "trait": "Resilient",
-    "affinity": {
-      "strongAgainst": "Water",
+      "strongAgainst": "Fire",
       "weakAgainst": "Earth"
-    }
-  },
-  {
-    "name": "Corrupting Boulder Bash",
-    "element": "Earth",
-    "value": 29,
-    "cost": 4,
-    "type": "Attack",
-    "special": {
-      "name": "Debuff",
-      "type": "debuff",
-      "value": 9
     },
     "rarity": "Common",
-    "trait": "Agile",
-    "affinity": {
-      "strongAgainst": "Fire",
-      "weakAgainst": "Water"
-    }
+    "special": null,
+    "trait": "Fierce",
+    "name": "Wind Cutter"
   },
   {
-    "name": "Energized Tide Jab",
     "element": "Water",
-    "value": 27,
-    "cost": 1,
-    "type": "Attack",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 5
-    },
-    "rarity": "Legendary",
-    "trait": "Powerful",
+    "value": 9,
+    "cost": 6,
+    "type": "Defend",
     "affinity": {
       "strongAgainst": "Fire",
       "weakAgainst": "Air"
-    }
+    },
+    "rarity": "Common",
+    "special": null,
+    "trait": "Tactical",
+    "name": "Tide Barrier"
   },
   {
-    "name": "Healing Gale Slash",
-    "element": "Air",
-    "value": 12,
-    "cost": 3,
+    "element": "Fire",
+    "value": 20,
+    "cost": 10,
     "type": "Attack",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 19
-    },
-    "rarity": "Rare",
-    "trait": "Powerful",
     "affinity": {
       "strongAgainst": "Earth",
-      "weakAgainst": "Earth"
-    }
-  },
-  {
-    "name": "Corrupting Wave Crash",
-    "element": "Water",
-    "value": 21,
-    "cost": 3,
-    "type": "Attack",
-    "special": {
-      "name": "Debuff",
-      "type": "debuff",
-      "value": 6
-    },
-    "rarity": "Legendary",
-    "trait": "Powerful",
-    "affinity": {
-      "strongAgainst": "Fire",
       "weakAgainst": "Water"
-    }
-  },
-  {
-    "name": "Restoring Feather Guard",
-    "element": "Air",
-    "value": 24,
-    "cost": 1,
-    "type": "Defend",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 8
     },
-    "rarity": "Rare",
-    "trait": "Tough",
-    "affinity": {
-      "strongAgainst": "Water",
-      "weakAgainst": "Air"
-    }
-  },
-  {
-    "name": "Healing Wind Cutter",
-    "element": "Air",
-    "value": 29,
-    "cost": 5,
-    "type": "Attack",
+    "rarity": "Common",
     "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 16
-    },
-    "rarity": "Epic",
-    "trait": "Resilient",
-    "affinity": {
-      "strongAgainst": "Air",
-      "weakAgainst": "Water"
-    }
-  },
-  {
-    "name": "Corrupting Mist Guard",
-    "element": "Water",
-    "value": 24,
-    "cost": 1,
-    "type": "Defend",
-    "special": {
-      "name": "Debuff",
-      "type": "debuff",
-      "value": 6
-    },
-    "rarity": "Uncommon",
-    "trait": "Agile",
-    "affinity": {
-      "strongAgainst": "Earth",
-      "weakAgainst": "Earth"
-    }
-  },
-  {
-    "name": "Restoring Terra Punch",
-    "element": "Earth",
-    "value": 12,
-    "cost": 5,
-    "type": "Attack",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 9
-    },
-    "rarity": "Rare",
-    "trait": "Agile",
-    "affinity": {
-      "strongAgainst": "Air",
-      "weakAgainst": "Earth"
-    }
-  },
-  {
-    "name": "Lingering Stone Slam",
-    "element": "Earth",
-    "value": 24,
-    "cost": 2,
-    "type": "Attack",
-    "special": {
-      "name": "Damage-over-time",
+      "name": "burn",
       "type": "damage-over-time",
-      "value": 9,
+      "value": 1,
       "duration": 4
     },
-    "rarity": "Legendary",
-    "trait": "Resilient",
-    "affinity": {
-      "strongAgainst": "Air",
-      "weakAgainst": "Water"
-    }
+    "trait": "Strategic",
+    "name": "Burning Inferno Slash"
   },
   {
-    "name": "Energized Frosted Strike",
     "element": "Water",
-    "value": 27,
-    "cost": 5,
-    "type": "Attack",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 10
-    },
-    "rarity": "Uncommon",
-    "trait": "Agile",
-    "affinity": {
-      "strongAgainst": "Earth",
-      "weakAgainst": "Fire"
-    }
-  },
-  {
-    "name": "Cursed Feather Guard",
-    "element": "Air",
-    "value": 18,
-    "cost": 2,
-    "type": "Defend",
-    "special": {
-      "name": "Debuff",
-      "type": "debuff",
-      "value": 15
-    },
-    "rarity": "Common",
-    "trait": "Agile",
-    "affinity": {
-      "strongAgainst": "Earth",
-      "weakAgainst": "Fire"
-    }
-  },
-  {
-    "name": "Restoring Ember Wall",
-    "element": "Fire",
     "value": 11,
-    "cost": 1,
-    "type": "Defend",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 6
+    "cost": 6,
+    "type": "Heal",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Air"
     },
     "rarity": "Common",
-    "trait": "Resilient",
-    "affinity": {
-      "strongAgainst": "Earth",
-      "weakAgainst": "Fire"
-    }
+    "special": null,
+    "trait": "Strategic",
+    "name": "Rainfall Blessing"
   },
   {
-    "name": "Venomous Flame Mender",
     "element": "Fire",
-    "value": 23,
+    "value": 10,
     "cost": 5,
     "type": "Heal",
-    "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
-      "value": 7,
-      "duration": 3
-    },
-    "rarity": "Epic",
-    "trait": "Tough",
     "affinity": {
       "strongAgainst": "Earth",
       "weakAgainst": "Water"
-    }
-  },
-  {
-    "name": "Energized Blazing Jab",
-    "element": "Fire",
-    "value": 24,
-    "cost": 4,
-    "type": "Attack",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 11
     },
-    "rarity": "Epic",
-    "trait": "Tough",
-    "affinity": {
-      "strongAgainst": "Air",
-      "weakAgainst": "Fire"
-    }
+    "rarity": "Common",
+    "special": {
+      "name": "flare",
+      "type": "buff",
+      "value": 2,
+      "duration": 2
+    },
+    "trait": "Strategic",
+    "name": "Empowered Smoldering Spirit"
   },
   {
-    "name": "Venomous Cyclone Shot",
-    "element": "Air",
-    "value": 28,
-    "cost": 1,
-    "type": "Attack",
+    "element": "Water",
+    "value": 11,
+    "cost": 6,
+    "type": "Heal",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Air"
+    },
+    "rarity": "Common",
     "special": {
-      "name": "Damage-over-time",
+      "name": "refresh",
+      "type": "heal",
+      "value": 8,
+      "duration": 0
+    },
+    "trait": "Fierce",
+    "name": "Healing Ocean’s Embrace"
+  },
+  {
+    "element": "Fire",
+    "value": 16,
+    "cost": 9,
+    "type": "Attack",
+    "affinity": {
+      "strongAgainst": "Earth",
+      "weakAgainst": "Water"
+    },
+    "rarity": "Common",
+    "special": null,
+    "trait": "Mystic",
+    "name": "Blazing Slash"
+  },
+  {
+    "element": "Air",
+    "value": 10,
+    "cost": 10,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Earth"
+    },
+    "rarity": "Common",
+    "special": null,
+    "trait": "Fierce",
+    "name": "Feather Guard"
+  },
+  {
+    "element": "Earth",
+    "value": 4,
+    "cost": 4,
+    "type": "Heal",
+    "affinity": {
+      "strongAgainst": "Water",
+      "weakAgainst": "Fire"
+    },
+    "rarity": "Common",
+    "special": null,
+    "trait": "Mystic",
+    "name": "Soil Healing"
+  },
+  {
+    "element": "Air",
+    "value": 6,
+    "cost": 6,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Earth"
+    },
+    "rarity": "Common",
+    "special": null,
+    "trait": "Strategic",
+    "name": "Breeze Barrier"
+  },
+  {
+    "element": "Water",
+    "value": 18,
+    "cost": 10,
+    "type": "Heal",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Air"
+    },
+    "rarity": "Common",
+    "special": null,
+    "trait": "Resilient",
+    "name": "Soothing Stream"
+  },
+  {
+    "element": "Water",
+    "value": 13,
+    "cost": 8,
+    "type": "Heal",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Air"
+    },
+    "rarity": "Common",
+    "special": null,
+    "trait": "Strategic",
+    "name": "Aqua Recovery"
+  },
+  {
+    "element": "Water",
+    "value": 12,
+    "cost": 9,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Air"
+    },
+    "rarity": "Common",
+    "special": {
+      "name": "wet_armor",
+      "type": "block",
+      "value": 2,
+      "duration": 2
+    },
+    "trait": "Strategic",
+    "name": "Shielded Mist Guard"
+  },
+  {
+    "element": "Fire",
+    "value": 18,
+    "cost": 10,
+    "type": "Attack",
+    "affinity": {
+      "strongAgainst": "Earth",
+      "weakAgainst": "Water"
+    },
+    "rarity": "Common",
+    "special": null,
+    "trait": "Swift",
+    "name": "Inferno Slash"
+  },
+  {
+    "element": "Fire",
+    "value": 9,
+    "cost": 9,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Earth",
+      "weakAgainst": "Water"
+    },
+    "rarity": "Common",
+    "special": null,
+    "trait": "Strategic",
+    "name": "Ashen Shield"
+  },
+  {
+    "element": "Air",
+    "value": 17,
+    "cost": 10,
+    "type": "Attack",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Earth"
+    },
+    "rarity": "Common",
+    "special": null,
+    "trait": "Fierce",
+    "name": "Gale Slash"
+  },
+  {
+    "element": "Fire",
+    "value": 7,
+    "cost": 7,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Earth",
+      "weakAgainst": "Water"
+    },
+    "rarity": "Common",
+    "special": null,
+    "trait": "Tactical",
+    "name": "Firewall"
+  },
+  {
+    "element": "Fire",
+    "value": 7,
+    "cost": 7,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Earth",
+      "weakAgainst": "Water"
+    },
+    "rarity": "Common",
+    "special": null,
+    "trait": "Resilient",
+    "name": "Flare Guard"
+  },
+  {
+    "element": "Earth",
+    "value": 18,
+    "cost": 10,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Water",
+      "weakAgainst": "Fire"
+    },
+    "rarity": "Common",
+    "special": null,
+    "trait": "Resilient",
+    "name": "Earth Wall"
+  },
+  {
+    "element": "Air",
+    "value": 9,
+    "cost": 8,
+    "type": "Attack",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Earth"
+    },
+    "rarity": "Common",
+    "special": null,
+    "trait": "Fierce",
+    "name": "Gale Slash"
+  },
+  {
+    "element": "Earth",
+    "value": 6,
+    "cost": 5,
+    "type": "Attack",
+    "affinity": {
+      "strongAgainst": "Water",
+      "weakAgainst": "Fire"
+    },
+    "rarity": "Common",
+    "special": null,
+    "trait": "Swift",
+    "name": "Terra Punch"
+  },
+  {
+    "element": "Air",
+    "value": 15,
+    "cost": 10,
+    "type": "Attack",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Earth"
+    },
+    "rarity": "Common",
+    "special": {
+      "name": "gust_boost",
+      "type": "buff",
+      "value": 2,
+      "duration": 2
+    },
+    "trait": "Mystic",
+    "name": "Empowered Cyclone Shot"
+  },
+  {
+    "element": "Water",
+    "value": 14,
+    "cost": 10,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Air"
+    },
+    "rarity": "Common",
+    "special": null,
+    "trait": "Resilient",
+    "name": "Wave Shield"
+  },
+  {
+    "element": "Earth",
+    "value": 4,
+    "cost": 4,
+    "type": "Heal",
+    "affinity": {
+      "strongAgainst": "Water",
+      "weakAgainst": "Fire"
+    },
+    "rarity": "Common",
+    "special": null,
+    "trait": "Strategic",
+    "name": "Nature's Touch"
+  },
+  {
+    "element": "Air",
+    "value": 7,
+    "cost": 6,
+    "type": "Heal",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Earth"
+    },
+    "rarity": "Common",
+    "special": {
+      "name": "regeneration",
+      "type": "heal-over-time",
+      "value": 2,
+      "duration": 4
+    },
+    "trait": "Fierce",
+    "name": "Airborne Heal"
+  },
+  {
+    "element": "Fire",
+    "value": 10,
+    "cost": 10,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Earth",
+      "weakAgainst": "Water"
+    },
+    "rarity": "Common",
+    "special": null,
+    "trait": "Mystic",
+    "name": "Ashen Shield"
+  },
+  {
+    "element": "Water",
+    "value": 11,
+    "cost": 6,
+    "type": "Heal",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Air"
+    },
+    "rarity": "Common",
+    "special": null,
+    "trait": "Swift",
+    "name": "Aqua Recovery"
+  },
+  {
+    "element": "Earth",
+    "value": 17,
+    "cost": 10,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Water",
+      "weakAgainst": "Fire"
+    },
+    "rarity": "Common",
+    "special": null,
+    "trait": "Swift",
+    "name": "Granite Guard"
+  },
+  {
+    "element": "Water",
+    "value": 5,
+    "cost": 5,
+    "type": "Attack",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Air"
+    },
+    "rarity": "Common",
+    "special": null,
+    "trait": "Tactical",
+    "name": "Aqua Blade"
+  },
+  {
+    "element": "Air",
+    "value": 12,
+    "cost": 10,
+    "type": "Heal",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Earth"
+    },
+    "rarity": "Common",
+    "special": {
+      "name": "regeneration",
+      "type": "heal-over-time",
+      "value": 2,
+      "duration": 2
+    },
+    "trait": "Resilient",
+    "name": "Breath of Life"
+  },
+  {
+    "element": "Air",
+    "value": 10,
+    "cost": 10,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Earth"
+    },
+    "rarity": "Common",
+    "special": null,
+    "trait": "Swift",
+    "name": "Feather Guard"
+  },
+  {
+    "element": "Air",
+    "value": 7,
+    "cost": 6,
+    "type": "Heal",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Earth"
+    },
+    "rarity": "Common",
+    "special": null,
+    "trait": "Mystic",
+    "name": "Sky Restoration"
+  },
+  {
+    "element": "Air",
+    "value": 8,
+    "cost": 8,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Earth"
+    },
+    "rarity": "Common",
+    "special": null,
+    "trait": "Strategic",
+    "name": "Feather Guard"
+  },
+  {
+    "element": "Water",
+    "value": 16,
+    "cost": 9,
+    "type": "Heal",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Air"
+    },
+    "rarity": "Common",
+    "special": null,
+    "trait": "Fierce",
+    "name": "Healing Rain"
+  },
+  {
+    "element": "Air",
+    "value": 5,
+    "cost": 5,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Earth"
+    },
+    "rarity": "Common",
+    "special": null,
+    "trait": "Mystic",
+    "name": "Breeze Barrier"
+  },
+  {
+    "element": "Air",
+    "value": 6,
+    "cost": 6,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Earth"
+    },
+    "rarity": "Common",
+    "special": null,
+    "trait": "Tactical",
+    "name": "Wind Cloak"
+  },
+  {
+    "element": "Water",
+    "value": 13,
+    "cost": 9,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Air"
+    },
+    "rarity": "Common",
+    "special": null,
+    "trait": "Resilient",
+    "name": "Bubble Guard"
+  },
+  {
+    "element": "Air",
+    "value": 6,
+    "cost": 6,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Earth"
+    },
+    "rarity": "Uncommon",
+    "special": null,
+    "trait": "Resilient",
+    "name": "Wind Cloak"
+  },
+  {
+    "element": "Air",
+    "value": 8,
+    "cost": 7,
+    "type": "Heal",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Earth"
+    },
+    "rarity": "Uncommon",
+    "special": {
+      "name": "regeneration",
+      "type": "heal-over-time",
+      "value": 1,
+      "duration": 3
+    },
+    "trait": "Swift",
+    "name": "Breath of Life"
+  },
+  {
+    "element": "Water",
+    "value": 11,
+    "cost": 6,
+    "type": "Heal",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Air"
+    },
+    "rarity": "Uncommon",
+    "special": null,
+    "trait": "Tactical",
+    "name": "Rainfall Blessing"
+  },
+  {
+    "element": "Water",
+    "value": 15,
+    "cost": 9,
+    "type": "Heal",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Air"
+    },
+    "rarity": "Uncommon",
+    "special": {
+      "name": "regeneration",
+      "type": "heal-over-time",
+      "value": 1,
+      "duration": 4
+    },
+    "trait": "Swift",
+    "name": "Ocean’s Embrace"
+  },
+  {
+    "element": "Earth",
+    "value": 15,
+    "cost": 10,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Water",
+      "weakAgainst": "Fire"
+    },
+    "rarity": "Uncommon",
+    "special": {
+      "name": "harden",
+      "type": "buff",
+      "value": 2,
+      "duration": 2
+    },
+    "trait": "Strategic",
+    "name": "Empowered Rock Shield"
+  },
+  {
+    "element": "Earth",
+    "value": 10,
+    "cost": 8,
+    "type": "Attack",
+    "affinity": {
+      "strongAgainst": "Water",
+      "weakAgainst": "Fire"
+    },
+    "rarity": "Uncommon",
+    "special": {
+      "name": "quake",
       "type": "damage-over-time",
+      "value": 3,
+      "duration": 3
+    },
+    "trait": "Swift",
+    "name": "Burning Boulder Bash"
+  },
+  {
+    "element": "Water",
+    "value": 14,
+    "cost": 8,
+    "type": "Heal",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Air"
+    },
+    "rarity": "Uncommon",
+    "special": null,
+    "trait": "Mystic",
+    "name": "Healing Rain"
+  },
+  {
+    "element": "Fire",
+    "value": 11,
+    "cost": 10,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Earth",
+      "weakAgainst": "Water"
+    },
+    "rarity": "Uncommon",
+    "special": null,
+    "trait": "Tactical",
+    "name": "Ashen Shield"
+  },
+  {
+    "element": "Fire",
+    "value": 20,
+    "cost": 10,
+    "type": "Attack",
+    "affinity": {
+      "strongAgainst": "Earth",
+      "weakAgainst": "Water"
+    },
+    "rarity": "Uncommon",
+    "special": null,
+    "trait": "Mystic",
+    "name": "Flame Strike"
+  },
+  {
+    "element": "Earth",
+    "value": 12,
+    "cost": 10,
+    "type": "Attack",
+    "affinity": {
+      "strongAgainst": "Water",
+      "weakAgainst": "Fire"
+    },
+    "rarity": "Uncommon",
+    "special": {
+      "name": "quake",
+      "type": "damage-over-time",
+      "value": 4,
+      "duration": 3
+    },
+    "trait": "Tactical",
+    "name": "Venomous Terra Punch"
+  },
+  {
+    "element": "Fire",
+    "value": 10,
+    "cost": 6,
+    "type": "Attack",
+    "affinity": {
+      "strongAgainst": "Earth",
+      "weakAgainst": "Water"
+    },
+    "rarity": "Uncommon",
+    "special": {
+      "name": "burn",
+      "type": "damage-over-time",
+      "value": 3,
+      "duration": 2
+    },
+    "trait": "Mystic",
+    "name": "Venomous Flame Strike"
+  },
+  {
+    "element": "Air",
+    "value": 8,
+    "cost": 7,
+    "type": "Heal",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Earth"
+    },
+    "rarity": "Uncommon",
+    "special": null,
+    "trait": "Mystic",
+    "name": "Sky Restoration"
+  },
+  {
+    "element": "Air",
+    "value": 17,
+    "cost": 10,
+    "type": "Attack",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Earth"
+    },
+    "rarity": "Uncommon",
+    "special": {
+      "name": "wind_blind",
+      "type": "debuff",
+      "value": 2,
+      "duration": 1
+    },
+    "trait": "Tactical",
+    "name": "Cursed Wind Cutter"
+  },
+  {
+    "element": "Earth",
+    "value": 9,
+    "cost": 8,
+    "type": "Attack",
+    "affinity": {
+      "strongAgainst": "Water",
+      "weakAgainst": "Fire"
+    },
+    "rarity": "Uncommon",
+    "special": null,
+    "trait": "Swift",
+    "name": "Terra Punch"
+  },
+  {
+    "element": "Fire",
+    "value": 12,
+    "cost": 7,
+    "type": "Attack",
+    "affinity": {
+      "strongAgainst": "Earth",
+      "weakAgainst": "Water"
+    },
+    "rarity": "Uncommon",
+    "special": null,
+    "trait": "Tactical",
+    "name": "Inferno Slash"
+  },
+  {
+    "element": "Water",
+    "value": 10,
+    "cost": 6,
+    "type": "Heal",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Air"
+    },
+    "rarity": "Uncommon",
+    "special": {
+      "name": "refresh",
+      "type": "heal",
       "value": 5,
-      "duration": 1
+      "duration": 0
     },
-    "rarity": "Uncommon",
-    "trait": "Powerful",
-    "affinity": {
-      "strongAgainst": "Earth",
-      "weakAgainst": "Air"
-    }
-  },
-  {
-    "name": "Venomous Breeze Barrier",
-    "element": "Air",
-    "value": 15,
-    "cost": 2,
-    "type": "Defend",
-    "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
-      "value": 8,
-      "duration": 4
-    },
-    "rarity": "Uncommon",
     "trait": "Resilient",
-    "affinity": {
-      "strongAgainst": "Earth",
-      "weakAgainst": "Fire"
-    }
+    "name": "Mending Ocean’s Embrace"
   },
   {
-    "name": "Guarded Tide Jab",
     "element": "Water",
-    "value": 17,
-    "cost": 5,
-    "type": "Attack",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 5
-    },
-    "rarity": "Rare",
-    "trait": "Tough",
-    "affinity": {
-      "strongAgainst": "Water",
-      "weakAgainst": "Air"
-    }
-  },
-  {
-    "name": "Empowered Blazing Jab",
-    "element": "Fire",
-    "value": 21,
-    "cost": 1,
-    "type": "Attack",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 10
-    },
-    "rarity": "Rare",
-    "trait": "Agile",
-    "affinity": {
-      "strongAgainst": "Fire",
-      "weakAgainst": "Earth"
-    }
-  },
-  {
-    "name": "Mending Inferno Slash",
-    "element": "Fire",
-    "value": 17,
-    "cost": 4,
-    "type": "Attack",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 6
-    },
-    "rarity": "Epic",
-    "trait": "Resilient",
-    "affinity": {
-      "strongAgainst": "Fire",
-      "weakAgainst": "Earth"
-    }
-  },
-  {
-    "name": "Shielded Boulder Bash",
-    "element": "Earth",
-    "value": 20,
-    "cost": 3,
-    "type": "Attack",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 19
-    },
-    "rarity": "Common",
-    "trait": "Resilient",
-    "affinity": {
-      "strongAgainst": "Water",
-      "weakAgainst": "Fire"
-    }
-  },
-  {
-    "name": "Energized Flame Mender",
-    "element": "Fire",
-    "value": 29,
-    "cost": 5,
-    "type": "Heal",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 14
-    },
-    "rarity": "Epic",
-    "trait": "Agile",
-    "affinity": {
-      "strongAgainst": "Air",
-      "weakAgainst": "Water"
-    }
-  },
-  {
-    "name": "Mending Stone Slam",
-    "element": "Earth",
-    "value": 17,
-    "cost": 2,
-    "type": "Attack",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 9
-    },
-    "rarity": "Common",
-    "trait": "Tough",
-    "affinity": {
-      "strongAgainst": "Fire",
-      "weakAgainst": "Earth"
-    }
-  },
-  {
-    "name": "Fortified Cyclone Shot",
-    "element": "Air",
-    "value": 20,
-    "cost": 4,
-    "type": "Attack",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 11
-    },
-    "rarity": "Common",
-    "trait": "Powerful",
-    "affinity": {
-      "strongAgainst": "Air",
-      "weakAgainst": "Earth"
-    }
-  },
-  {
-    "name": "Empowered Earth Wall",
-    "element": "Earth",
-    "value": 22,
-    "cost": 4,
-    "type": "Defend",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 15
-    },
-    "rarity": "Legendary",
-    "trait": "Agile",
-    "affinity": {
-      "strongAgainst": "Earth",
-      "weakAgainst": "Earth"
-    }
-  },
-  {
-    "name": "Mending Cyclone Shot",
-    "element": "Air",
-    "value": 29,
-    "cost": 5,
-    "type": "Attack",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 19
-    },
-    "rarity": "Rare",
-    "trait": "Resilient",
-    "affinity": {
-      "strongAgainst": "Water",
-      "weakAgainst": "Air"
-    }
-  },
-  {
-    "name": "Guarded Nature's Touch",
-    "element": "Earth",
-    "value": 16,
-    "cost": 5,
-    "type": "Heal",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 14
-    },
-    "rarity": "Common",
-    "trait": "Tough",
-    "affinity": {
-      "strongAgainst": "Fire",
-      "weakAgainst": "Air"
-    }
-  },
-  {
-    "name": "Fortified Boulder Bash",
-    "element": "Earth",
-    "value": 20,
-    "cost": 1,
-    "type": "Attack",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 5
-    },
-    "rarity": "Epic",
-    "trait": "Tough",
-    "affinity": {
-      "strongAgainst": "Fire",
-      "weakAgainst": "Fire"
-    }
-  },
-  {
-    "name": "Healing Wave Crash",
-    "element": "Water",
-    "value": 30,
-    "cost": 5,
-    "type": "Attack",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 10
-    },
-    "rarity": "Common",
-    "trait": "Resilient",
-    "affinity": {
-      "strongAgainst": "Earth",
-      "weakAgainst": "Air"
-    }
-  },
-  {
-    "name": "Mending Gale Slash",
-    "element": "Air",
-    "value": 23,
-    "cost": 5,
-    "type": "Attack",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 7
-    },
-    "rarity": "Rare",
-    "trait": "Tough",
-    "affinity": {
-      "strongAgainst": "Air",
-      "weakAgainst": "Earth"
-    }
-  },
-  {
-    "name": "Venomous Stone Slam",
-    "element": "Earth",
     "value": 11,
-    "cost": 5,
-    "type": "Attack",
+    "cost": 8,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Air"
+    },
+    "rarity": "Uncommon",
     "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
-      "value": 18,
+      "name": "wet_armor",
+      "type": "block",
+      "value": 2,
       "duration": 1
     },
-    "rarity": "Legendary",
-    "trait": "Powerful",
-    "affinity": {
-      "strongAgainst": "Air",
-      "weakAgainst": "Fire"
-    }
+    "trait": "Resilient",
+    "name": "Fortified Wave Shield"
   },
   {
-    "name": "Burning Wave Crash",
-    "element": "Water",
-    "value": 18,
-    "cost": 4,
+    "element": "Earth",
+    "value": 8,
+    "cost": 7,
     "type": "Attack",
-    "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
-      "value": 9,
-      "duration": 5
-    },
-    "rarity": "Common",
-    "trait": "Powerful",
     "affinity": {
       "strongAgainst": "Water",
-      "weakAgainst": "Air"
-    }
-  },
-  {
-    "name": "Venomous Rock Shield",
-    "element": "Earth",
-    "value": 15,
-    "cost": 1,
-    "type": "Defend",
-    "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
-      "value": 12,
-      "duration": 2
+      "weakAgainst": "Fire"
     },
-    "rarity": "Rare",
-    "trait": "Powerful",
-    "affinity": {
-      "strongAgainst": "Earth",
-      "weakAgainst": "Water"
-    }
+    "rarity": "Uncommon",
+    "special": null,
+    "trait": "Mystic",
+    "name": "Stone Slam"
   },
   {
-    "name": "Venomous Flame Strike",
-    "element": "Fire",
-    "value": 25,
-    "cost": 3,
+    "element": "Earth",
+    "value": 12,
+    "cost": 10,
     "type": "Attack",
+    "affinity": {
+      "strongAgainst": "Water",
+      "weakAgainst": "Fire"
+    },
+    "rarity": "Uncommon",
     "special": {
-      "name": "Damage-over-time",
+      "name": "quake",
       "type": "damage-over-time",
-      "value": 9,
+      "value": 3,
       "duration": 3
     },
-    "rarity": "Uncommon",
-    "trait": "Powerful",
-    "affinity": {
-      "strongAgainst": "Air",
-      "weakAgainst": "Earth"
-    }
+    "trait": "Fierce",
+    "name": "Burning Terra Punch"
   },
   {
-    "name": "Guarded Flame Strike",
     "element": "Fire",
-    "value": 16,
-    "cost": 4,
+    "value": 17,
+    "cost": 9,
     "type": "Attack",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 6
-    },
-    "rarity": "Common",
-    "trait": "Tough",
-    "affinity": {
-      "strongAgainst": "Water",
-      "weakAgainst": "Fire"
-    }
-  },
-  {
-    "name": "Mending Aqua Recovery",
-    "element": "Water",
-    "value": 14,
-    "cost": 3,
-    "type": "Heal",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 14
-    },
-    "rarity": "Common",
-    "trait": "Tough",
     "affinity": {
       "strongAgainst": "Earth",
-      "weakAgainst": "Earth"
-    }
-  },
-  {
-    "name": "Venomous Flare Guard",
-    "element": "Fire",
-    "value": 29,
-    "cost": 3,
-    "type": "Defend",
-    "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
-      "value": 13,
-      "duration": 5
-    },
-    "rarity": "Legendary",
-    "trait": "Tough",
-    "affinity": {
-      "strongAgainst": "Fire",
-      "weakAgainst": "Earth"
-    }
-  },
-  {
-    "name": "Restoring Wave Crash",
-    "element": "Water",
-    "value": 20,
-    "cost": 5,
-    "type": "Attack",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 19
+      "weakAgainst": "Water"
     },
     "rarity": "Uncommon",
-    "trait": "Resilient",
-    "affinity": {
-      "strongAgainst": "Water",
-      "weakAgainst": "Fire"
-    }
+    "special": {
+      "name": "burn",
+      "type": "damage-over-time",
+      "value": 2,
+      "duration": 2
+    },
+    "trait": "Strategic",
+    "name": "Burning Blazing Slash"
   },
   {
-    "name": "Weakened Breeze Barrier",
     "element": "Air",
-    "value": 29,
-    "cost": 3,
+    "value": 16,
+    "cost": 10,
+    "type": "Attack",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Earth"
+    },
+    "rarity": "Uncommon",
+    "special": null,
+    "trait": "Strategic",
+    "name": "Wind Cutter"
+  },
+  {
+    "element": "Water",
+    "value": 14,
+    "cost": 10,
     "type": "Defend",
-    "special": {
-      "name": "Debuff",
-      "type": "debuff",
-      "value": 19
-    },
-    "rarity": "Common",
-    "trait": "Tough",
-    "affinity": {
-      "strongAgainst": "Air",
-      "weakAgainst": "Air"
-    }
-  },
-  {
-    "name": "Blessed Airborne Heal",
-    "element": "Air",
-    "value": 23,
-    "cost": 1,
-    "type": "Heal",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 18
-    },
-    "rarity": "Epic",
-    "trait": "Agile",
     "affinity": {
       "strongAgainst": "Fire",
       "weakAgainst": "Air"
-    }
+    },
+    "rarity": "Uncommon",
+    "special": null,
+    "trait": "Resilient",
+    "name": "Bubble Guard"
   },
   {
-    "name": "Shielded Inferno Slash",
     "element": "Fire",
     "value": 12,
-    "cost": 3,
+    "cost": 7,
     "type": "Attack",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 17
-    },
-    "rarity": "Epic",
-    "trait": "Resilient",
     "affinity": {
       "strongAgainst": "Earth",
-      "weakAgainst": "Air"
-    }
+      "weakAgainst": "Water"
+    },
+    "rarity": "Uncommon",
+    "special": null,
+    "trait": "Mystic",
+    "name": "Inferno"
   },
   {
-    "name": "Cursed Wave Crash",
-    "element": "Water",
-    "value": 30,
-    "cost": 4,
+    "element": "Air",
+    "value": 17,
+    "cost": 10,
     "type": "Attack",
-    "special": {
-      "name": "Debuff",
-      "type": "debuff",
-      "value": 12
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Earth"
     },
-    "rarity": "Epic",
-    "trait": "Tough",
+    "rarity": "Uncommon",
+    "special": null,
+    "trait": "Resilient",
+    "name": "Wind Cutter"
+  },
+  {
+    "element": "Fire",
+    "value": 10,
+    "cost": 10,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Earth",
+      "weakAgainst": "Water"
+    },
+    "rarity": "Uncommon",
+    "special": null,
+    "trait": "Tactical",
+    "name": "Ember Wall"
+  },
+  {
+    "element": "Earth",
+    "value": 11,
+    "cost": 9,
+    "type": "Attack",
     "affinity": {
       "strongAgainst": "Water",
-      "weakAgainst": "Water"
-    }
+      "weakAgainst": "Fire"
+    },
+    "rarity": "Uncommon",
+    "special": {
+      "name": "quake",
+      "type": "damage-over-time",
+      "value": 3,
+      "duration": 2
+    },
+    "trait": "Swift",
+    "name": "Burning Terra Punch"
   },
   {
-    "name": "Guarded Feather Guard",
+    "element": "Earth",
+    "value": 4,
+    "cost": 4,
+    "type": "Heal",
+    "affinity": {
+      "strongAgainst": "Water",
+      "weakAgainst": "Fire"
+    },
+    "rarity": "Uncommon",
+    "special": null,
+    "trait": "Swift",
+    "name": "Earthen Embrace"
+  },
+  {
+    "element": "Fire",
+    "value": 17,
+    "cost": 9,
+    "type": "Attack",
+    "affinity": {
+      "strongAgainst": "Earth",
+      "weakAgainst": "Water"
+    },
+    "rarity": "Uncommon",
+    "special": {
+      "name": "flare",
+      "type": "buff",
+      "value": 3,
+      "duration": 1
+    },
+    "trait": "Fierce",
+    "name": "Energized Inferno Slash"
+  },
+  {
     "element": "Air",
+    "value": 7,
+    "cost": 7,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Earth"
+    },
+    "rarity": "Uncommon",
+    "special": {
+      "name": "evade",
+      "type": "block",
+      "value": null,
+      "duration": 1
+    },
+    "trait": "Strategic",
+    "name": "Guarded Wind Cloak"
+  },
+  {
+    "element": "Earth",
+    "value": 5,
+    "cost": 5,
+    "type": "Heal",
+    "affinity": {
+      "strongAgainst": "Water",
+      "weakAgainst": "Fire"
+    },
+    "rarity": "Uncommon",
+    "special": null,
+    "trait": "Fierce",
+    "name": "Nature's Touch"
+  },
+  {
+    "element": "Air",
+    "value": 10,
+    "cost": 8,
+    "type": "Attack",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Earth"
+    },
+    "rarity": "Rare",
+    "special": {
+      "name": "wind_blind",
+      "type": "debuff",
+      "value": 1,
+      "duration": 2
+    },
+    "trait": "Strategic",
+    "name": "Cursed Cunning Wind Cutter"
+  },
+  {
+    "element": "Earth",
+    "value": 5,
+    "cost": 5,
+    "type": "Heal",
+    "affinity": {
+      "strongAgainst": "Water",
+      "weakAgainst": "Fire"
+    },
+    "rarity": "Rare",
+    "special": null,
+    "trait": "Fierce",
+    "name": "Steady Nature's Touch"
+  },
+  {
+    "element": "Air",
+    "value": 12,
+    "cost": 10,
+    "type": "Attack",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Earth"
+    },
+    "rarity": "Rare",
+    "special": null,
+    "trait": "Fierce",
+    "name": "Steady Wind Cutter"
+  },
+  {
+    "element": "Fire",
+    "value": 9,
+    "cost": 5,
+    "type": "Heal",
+    "affinity": {
+      "strongAgainst": "Earth",
+      "weakAgainst": "Water"
+    },
+    "rarity": "Rare",
+    "special": {
+      "name": "flare",
+      "type": "buff",
+      "value": 2,
+      "duration": 1
+    },
+    "trait": "Tactical",
+    "name": "Empowered Steady Ash Revival"
+  },
+  {
+    "element": "Earth",
     "value": 16,
-    "cost": 4,
+    "cost": 10,
     "type": "Defend",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 11
-    },
-    "rarity": "Legendary",
-    "trait": "Tough",
-    "affinity": {
-      "strongAgainst": "Air",
-      "weakAgainst": "Water"
-    }
-  },
-  {
-    "name": "Cursed Earth Wall",
-    "element": "Earth",
-    "value": 13,
-    "cost": 2,
-    "type": "Defend",
-    "special": {
-      "name": "Debuff",
-      "type": "debuff",
-      "value": 12
-    },
-    "rarity": "Common",
-    "trait": "Resilient",
-    "affinity": {
-      "strongAgainst": "Air",
-      "weakAgainst": "Earth"
-    }
-  },
-  {
-    "name": "Venomous Boulder Bash",
-    "element": "Earth",
-    "value": 20,
-    "cost": 1,
-    "type": "Attack",
-    "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
-      "value": 8,
-      "duration": 5
-    },
-    "rarity": "Uncommon",
-    "trait": "Agile",
-    "affinity": {
-      "strongAgainst": "Water",
-      "weakAgainst": "Earth"
-    }
-  },
-  {
-    "name": "Guarded Wind Cutter",
-    "element": "Air",
-    "value": 25,
-    "cost": 2,
-    "type": "Attack",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 5
-    },
-    "rarity": "Rare",
-    "trait": "Agile",
     "affinity": {
       "strongAgainst": "Water",
       "weakAgainst": "Fire"
-    }
-  },
-  {
-    "name": "Energized Nature's Touch",
-    "element": "Earth",
-    "value": 27,
-    "cost": 3,
-    "type": "Heal",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 8
     },
-    "rarity": "Legendary",
-    "trait": "Agile",
-    "affinity": {
-      "strongAgainst": "Fire",
-      "weakAgainst": "Earth"
-    }
+    "rarity": "Rare",
+    "special": null,
+    "trait": "Tactical",
+    "name": "Steady Earth Wall"
   },
   {
-    "name": "Mending Wind Cutter",
-    "element": "Air",
-    "value": 11,
-    "cost": 4,
-    "type": "Attack",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 14
-    },
-    "rarity": "Uncommon",
-    "trait": "Agile",
-    "affinity": {
-      "strongAgainst": "Air",
-      "weakAgainst": "Earth"
-    }
-  },
-  {
-    "name": "Blessed Breeze Barrier",
-    "element": "Air",
+    "element": "Water",
     "value": 14,
-    "cost": 4,
-    "type": "Defend",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 7
-    },
-    "rarity": "Epic",
-    "trait": "Tough",
-    "affinity": {
-      "strongAgainst": "Air",
-      "weakAgainst": "Water"
-    }
-  },
-  {
-    "name": "Restoring Wind Cloak",
-    "element": "Air",
-    "value": 21,
-    "cost": 5,
-    "type": "Defend",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 10
-    },
-    "rarity": "Uncommon",
-    "trait": "Powerful",
-    "affinity": {
-      "strongAgainst": "Water",
-      "weakAgainst": "Air"
-    }
-  },
-  {
-    "name": "Energized Mist Guard",
-    "element": "Water",
-    "value": 24,
-    "cost": 3,
-    "type": "Defend",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 6
-    },
-    "rarity": "Common",
-    "trait": "Tough",
-    "affinity": {
-      "strongAgainst": "Air",
-      "weakAgainst": "Earth"
-    }
-  },
-  {
-    "name": "Healing Frosted Strike",
-    "element": "Water",
-    "value": 18,
-    "cost": 4,
-    "type": "Attack",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 5
-    },
-    "rarity": "Legendary",
-    "trait": "Resilient",
-    "affinity": {
-      "strongAgainst": "Earth",
-      "weakAgainst": "Air"
-    }
-  },
-  {
-    "name": "Shielded Flame Strike",
-    "element": "Fire",
-    "value": 27,
-    "cost": 4,
-    "type": "Attack",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 16
-    },
-    "rarity": "Legendary",
-    "trait": "Resilient",
-    "affinity": {
-      "strongAgainst": "Fire",
-      "weakAgainst": "Air"
-    }
-  },
-  {
-    "name": "Fortified Breeze Barrier",
-    "element": "Air",
-    "value": 27,
-    "cost": 2,
-    "type": "Defend",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 20
-    },
-    "rarity": "Rare",
-    "trait": "Resilient",
-    "affinity": {
-      "strongAgainst": "Earth",
-      "weakAgainst": "Earth"
-    }
-  },
-  {
-    "name": "Shielded Gale Slash",
-    "element": "Air",
-    "value": 13,
-    "cost": 1,
-    "type": "Attack",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 19
-    },
-    "rarity": "Epic",
-    "trait": "Powerful",
-    "affinity": {
-      "strongAgainst": "Water",
-      "weakAgainst": "Water"
-    }
-  },
-  {
-    "name": "Healing Feather Guard",
-    "element": "Air",
-    "value": 25,
-    "cost": 4,
-    "type": "Defend",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 19
-    },
-    "rarity": "Rare",
-    "trait": "Tough",
-    "affinity": {
-      "strongAgainst": "Water",
-      "weakAgainst": "Water"
-    }
-  },
-  {
-    "name": "Mending Aqua Recovery",
-    "element": "Water",
-    "value": 15,
-    "cost": 3,
+    "cost": 8,
     "type": "Heal",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 12
-    },
-    "rarity": "Common",
-    "trait": "Tough",
     "affinity": {
-      "strongAgainst": "Air",
+      "strongAgainst": "Fire",
       "weakAgainst": "Air"
-    }
-  },
-  {
-    "name": "Mending Frosted Strike",
-    "element": "Water",
-    "value": 13,
-    "cost": 2,
-    "type": "Attack",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 5
     },
-    "rarity": "Legendary",
-    "trait": "Resilient",
-    "affinity": {
-      "strongAgainst": "Fire",
-      "weakAgainst": "Water"
-    }
+    "rarity": "Rare",
+    "special": null,
+    "trait": "Strategic",
+    "name": "Steady Rainfall Blessing"
   },
   {
-    "name": "Fortified Terra Punch",
-    "element": "Earth",
-    "value": 21,
-    "cost": 4,
-    "type": "Attack",
-    "special": {
-      "name": "Block",
-      "type": "block",
-      "value": 15
-    },
-    "rarity": "Uncommon",
-    "trait": "Powerful",
-    "affinity": {
-      "strongAgainst": "Fire",
-      "weakAgainst": "Fire"
-    }
-  },
-  {
-    "name": "Lingering Blazing Jab",
     "element": "Fire",
-    "value": 13,
-    "cost": 4,
+    "value": 12,
+    "cost": 7,
     "type": "Attack",
-    "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
-      "value": 14,
-      "duration": 1
-    },
-    "rarity": "Epic",
-    "trait": "Tough",
     "affinity": {
       "strongAgainst": "Earth",
       "weakAgainst": "Water"
-    }
-  },
-  {
-    "name": "Venomous Blazing Jab",
-    "element": "Fire",
-    "value": 17,
-    "cost": 3,
-    "type": "Attack",
-    "special": {
-      "name": "Damage-over-time",
-      "type": "damage-over-time",
-      "value": 16,
-      "duration": 1
-    },
-    "rarity": "Legendary",
-    "trait": "Agile",
-    "affinity": {
-      "strongAgainst": "Water",
-      "weakAgainst": "Air"
-    }
-  },
-  {
-    "name": "Blessed Wave Crash",
-    "element": "Water",
-    "value": 17,
-    "cost": 4,
-    "type": "Attack",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 14
-    },
-    "rarity": "Legendary",
-    "trait": "Tough",
-    "affinity": {
-      "strongAgainst": "Fire",
-      "weakAgainst": "Fire"
-    }
-  },
-  {
-    "name": "Healing Rainfall Blessing",
-    "element": "Water",
-    "value": 13,
-    "cost": 3,
-    "type": "Heal",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 16
-    },
-    "rarity": "Common",
-    "trait": "Tough",
-    "affinity": {
-      "strongAgainst": "Air",
-      "weakAgainst": "Earth"
-    }
-  },
-  {
-    "name": "Mending Stone Slam",
-    "element": "Earth",
-    "value": 11,
-    "cost": 5,
-    "type": "Attack",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 19
-    },
-    "rarity": "Common",
-    "trait": "Tough",
-    "affinity": {
-      "strongAgainst": "Water",
-      "weakAgainst": "Earth"
-    }
-  },
-  {
-    "name": "Mending Flare Guard",
-    "element": "Fire",
-    "value": 30,
-    "cost": 5,
-    "type": "Defend",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 19
     },
     "rarity": "Rare",
-    "trait": "Powerful",
+    "special": null,
+    "trait": "Strategic",
+    "name": "Steady Blazing Slash"
+  },
+  {
+    "element": "Air",
+    "value": 5,
+    "cost": 5,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Earth"
+    },
+    "rarity": "Rare",
+    "special": null,
+    "trait": "Resilient",
+    "name": "Steady Feather Guard"
+  },
+  {
+    "element": "Fire",
+    "value": 6,
+    "cost": 6,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Earth",
+      "weakAgainst": "Water"
+    },
+    "rarity": "Rare",
+    "special": null,
+    "trait": "Tactical",
+    "name": "Cunning Ember Wall"
+  },
+  {
+    "element": "Earth",
+    "value": 7,
+    "cost": 6,
+    "type": "Attack",
+    "affinity": {
+      "strongAgainst": "Water",
+      "weakAgainst": "Fire"
+    },
+    "rarity": "Rare",
+    "special": null,
+    "trait": "Resilient",
+    "name": "Steady Boulder Bash"
+  },
+  {
+    "element": "Water",
+    "value": 8,
+    "cost": 8,
+    "type": "Attack",
     "affinity": {
       "strongAgainst": "Fire",
       "weakAgainst": "Air"
-    }
-  },
-  {
-    "name": "Corrupting Inferno Slash",
-    "element": "Fire",
-    "value": 22,
-    "cost": 4,
-    "type": "Attack",
+    },
+    "rarity": "Rare",
     "special": {
-      "name": "Debuff",
+      "name": "soak",
       "type": "debuff",
-      "value": 15
+      "value": 2,
+      "duration": 2
     },
-    "rarity": "Rare",
-    "trait": "Agile",
-    "affinity": {
-      "strongAgainst": "Fire",
-      "weakAgainst": "Water"
-    }
+    "trait": "Fierce",
+    "name": "Weakened Cunning Aqua Blade"
   },
   {
-    "name": "Mending Inferno Slash",
-    "element": "Fire",
-    "value": 28,
-    "cost": 1,
+    "element": "Water",
+    "value": 4,
+    "cost": 4,
     "type": "Attack",
-    "special": {
-      "name": "Heal",
-      "type": "heal",
-      "value": 5
-    },
-    "rarity": "Rare",
-    "trait": "Tough",
-    "affinity": {
-      "strongAgainst": "Air",
-      "weakAgainst": "Water"
-    }
-  },
-  {
-    "name": "Blessed Feather Guard",
-    "element": "Air",
-    "value": 11,
-    "cost": 1,
-    "type": "Defend",
-    "special": {
-      "name": "Buff",
-      "type": "buff",
-      "value": 17
-    },
-    "rarity": "Rare",
-    "trait": "Resilient",
     "affinity": {
       "strongAgainst": "Fire",
       "weakAgainst": "Air"
-    }
+    },
+    "rarity": "Rare",
+    "special": {
+      "name": "soak",
+      "type": "debuff",
+      "value": 1,
+      "duration": 2
+    },
+    "trait": "Swift",
+    "name": "Weakened Steady Wave Crash"
+  },
+  {
+    "element": "Air",
+    "value": 6,
+    "cost": 6,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Earth"
+    },
+    "rarity": "Rare",
+    "special": null,
+    "trait": "Swift",
+    "name": "Cunning Breeze Barrier"
+  },
+  {
+    "element": "Earth",
+    "value": 5,
+    "cost": 5,
+    "type": "Heal",
+    "affinity": {
+      "strongAgainst": "Water",
+      "weakAgainst": "Fire"
+    },
+    "rarity": "Rare",
+    "special": null,
+    "trait": "Resilient",
+    "name": "Steady Nature's Touch"
+  },
+  {
+    "element": "Water",
+    "value": 7,
+    "cost": 7,
+    "type": "Attack",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Air"
+    },
+    "rarity": "Rare",
+    "special": null,
+    "trait": "Strategic",
+    "name": "Cunning Tide Jab"
+  },
+  {
+    "element": "Fire",
+    "value": 11,
+    "cost": 10,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Earth",
+      "weakAgainst": "Water"
+    },
+    "rarity": "Epic",
+    "special": null,
+    "trait": "Strategic",
+    "name": "Unyielding Flare Guard"
+  },
+  {
+    "element": "Air",
+    "value": 6,
+    "cost": 6,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Earth"
+    },
+    "rarity": "Epic",
+    "special": {
+      "name": "evade",
+      "type": "block",
+      "value": null,
+      "duration": 1
+    },
+    "trait": "Resilient",
+    "name": "Guarded Fierce Breeze Barrier"
+  },
+  {
+    "element": "Water",
+    "value": 5,
+    "cost": 5,
+    "type": "Attack",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Air"
+    },
+    "rarity": "Epic",
+    "special": null,
+    "trait": "Strategic",
+    "name": "Unyielding Aqua Blade"
+  },
+  {
+    "element": "Water",
+    "value": 6,
+    "cost": 6,
+    "type": "Attack",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Air"
+    },
+    "rarity": "Epic",
+    "special": {
+      "name": "soak",
+      "type": "debuff",
+      "value": 1,
+      "duration": 2
+    },
+    "trait": "Tactical",
+    "name": "Cursed Fierce Aqua Blade"
+  },
+  {
+    "element": "Earth",
+    "value": 19,
+    "cost": 10,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Water",
+      "weakAgainst": "Fire"
+    },
+    "rarity": "Epic",
+    "special": null,
+    "trait": "Swift",
+    "name": "Unyielding Rock Shield"
+  },
+  {
+    "element": "Water",
+    "value": 8,
+    "cost": 6,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Air"
+    },
+    "rarity": "Epic",
+    "special": {
+      "name": "wet_armor",
+      "type": "block",
+      "value": 3,
+      "duration": 2
+    },
+    "trait": "Resilient",
+    "name": "Fortified Fierce Mist Guard"
+  },
+  {
+    "element": "Earth",
+    "value": 4,
+    "cost": 4,
+    "type": "Heal",
+    "affinity": {
+      "strongAgainst": "Water",
+      "weakAgainst": "Fire"
+    },
+    "rarity": "Epic",
+    "special": null,
+    "trait": "Resilient",
+    "name": "Fierce Soil Healing"
+  },
+  {
+    "element": "Fire",
+    "value": 10,
+    "cost": 10,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Earth",
+      "weakAgainst": "Water"
+    },
+    "rarity": "Epic",
+    "special": null,
+    "trait": "Mystic",
+    "name": "Unyielding Flare Guard"
+  },
+  {
+    "element": "Air",
+    "value": 6,
+    "cost": 6,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Earth"
+    },
+    "rarity": "Epic",
+    "special": {
+      "name": "evade",
+      "type": "block",
+      "value": null,
+      "duration": 1
+    },
+    "trait": "Strategic",
+    "name": "Fortified Unyielding Wind Cloak"
+  },
+  {
+    "element": "Water",
+    "value": 9,
+    "cost": 6,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Air"
+    },
+    "rarity": "Epic",
+    "special": null,
+    "trait": "Fierce",
+    "name": "Unyielding Wave Shield"
+  },
+  {
+    "element": "Earth",
+    "value": 4,
+    "cost": 4,
+    "type": "Heal",
+    "affinity": {
+      "strongAgainst": "Water",
+      "weakAgainst": "Fire"
+    },
+    "rarity": "Legendary",
+    "special": null,
+    "trait": "Tactical",
+    "name": "Ancient Soil Healing"
+  },
+  {
+    "element": "Water",
+    "value": 13,
+    "cost": 9,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Air"
+    },
+    "rarity": "Legendary",
+    "special": {
+      "name": "wet_armor",
+      "type": "block",
+      "value": 2,
+      "duration": 2
+    },
+    "trait": "Fierce",
+    "name": "Guarded Divine Mist Guard"
+  },
+  {
+    "element": "Air",
+    "value": 11,
+    "cost": 9,
+    "type": "Attack",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Earth"
+    },
+    "rarity": "Legendary",
+    "special": {
+      "name": "gust_boost",
+      "type": "buff",
+      "value": 3,
+      "duration": 1
+    },
+    "trait": "Strategic",
+    "name": "Energized Ancient Cyclone Shot"
+  },
+  {
+    "element": "Water",
+    "value": 12,
+    "cost": 9,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Fire",
+      "weakAgainst": "Air"
+    },
+    "rarity": "Legendary",
+    "special": {
+      "name": "wet_armor",
+      "type": "block",
+      "value": 2,
+      "duration": 2
+    },
+    "trait": "Swift",
+    "name": "Fortified Divine Wave Shield"
+  },
+  {
+    "element": "Fire",
+    "value": 12,
+    "cost": 10,
+    "type": "Defend",
+    "affinity": {
+      "strongAgainst": "Earth",
+      "weakAgainst": "Water"
+    },
+    "rarity": "Legendary",
+    "special": null,
+    "trait": "Resilient",
+    "name": "Ancient Ash Barrier"
   }
 ]

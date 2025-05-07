@@ -93,9 +93,6 @@ const elements = {
   },
 };
 
-const globalAuraCostRange = { min: 1, max: 10 };
-const globalTacAuraCostRange = { min: 1, max: 10 };
-
 // --- Type Definitions ---
 const types = {
   Attack: { color: "#FA4545", logo: default_logo },
@@ -105,7 +102,7 @@ const types = {
 
 // --- Special Type Definitions ---
 const specialEffects = {
-  "burn": {
+  burn: {
     logo: default_logo,
     type: "damage-over-time",
     appliesTo: "defender", // target
@@ -114,7 +111,7 @@ const specialEffects = {
     durationRange: [2, 4],
     valueRange: [1, 3],
   },
-  "ignite": {
+  ignite: {
     logo: default_logo,
     type: "buff",
     appliesTo: "attacker",
@@ -123,7 +120,7 @@ const specialEffects = {
     durationRange: [1, 2],
     valueRange: [1, 2], // extra damage
   },
-  "soak": {
+  soak: {
     logo: default_logo,
     type: "debuff",
     appliesTo: "defender",
@@ -132,7 +129,7 @@ const specialEffects = {
     durationRange: [2, 3],
     valueRange: [1, 2], // reduces attack effectiveness
   },
-  "regeneration": {
+  regeneration: {
     logo: default_logo,
     type: "heal-over-time",
     appliesTo: "attacker",
@@ -141,7 +138,7 @@ const specialEffects = {
     durationRange: [2, 4],
     valueRange: [1, 3],
   },
-  "stone_skin": {
+  stone_skin: {
     logo: default_logo,
     type: "block",
     appliesTo: "attacker",
@@ -150,7 +147,7 @@ const specialEffects = {
     durationRange: [1, 3],
     valueRange: [2, 5],
   },
-  "root": {
+  root: {
     logo: default_logo,
     type: "debuff",
     appliesTo: "defender",
@@ -159,7 +156,7 @@ const specialEffects = {
     durationRange: [2, 4],
     valueRange: [1, 2],
   },
-  "gust_boost": {
+  gust_boost: {
     logo: default_logo,
     type: "buff",
     appliesTo: "attacker",
@@ -168,7 +165,7 @@ const specialEffects = {
     durationRange: [1, 2],
     valueRange: [2, 3],
   },
-  "evade": {
+  evade: {
     logo: default_logo,
     type: "block",
     appliesTo: "attacker",
@@ -177,7 +174,7 @@ const specialEffects = {
     durationRange: [1, 1],
     valueRange: [100], // chance to dodge next attack
   },
-  "wet_armor": {
+  wet_armor: {
     logo: default_logo,
     type: "block",
     appliesTo: "defender",
@@ -186,7 +183,7 @@ const specialEffects = {
     durationRange: [1, 2],
     valueRange: [2, 3],
   },
-  "flare": {
+  flare: {
     logo: default_logo,
     type: "buff",
     appliesTo: "attacker",
@@ -195,7 +192,7 @@ const specialEffects = {
     durationRange: [1, 2],
     valueRange: [2, 4],
   },
-  "quake": {
+  quake: {
     logo: default_logo,
     type: "damage-over-time",
     appliesTo: "defender",
@@ -204,7 +201,7 @@ const specialEffects = {
     durationRange: [2, 3],
     valueRange: [2, 4],
   },
-  "refresh": {
+  refresh: {
     logo: default_logo,
     type: "heal",
     appliesTo: "attacker",
@@ -213,7 +210,7 @@ const specialEffects = {
     durationRange: [0, 0],
     valueRange: [5, 8],
   },
-  "wind_blind": {
+  wind_blind: {
     logo: default_logo,
     type: "debuff",
     appliesTo: "defender",
@@ -222,7 +219,7 @@ const specialEffects = {
     durationRange: [1, 2],
     valueRange: [1, 2],
   },
-  "harden": {
+  harden: {
     logo: default_logo,
     type: "buff",
     appliesTo: "attacker",
@@ -232,7 +229,6 @@ const specialEffects = {
     valueRange: [1, 2],
   },
 };
-
 
 // --- Rarity Definitions with ratios and color classes ---
 const rarities = {
@@ -243,7 +239,7 @@ const rarities = {
     ratio: 50,
     min: 0,
     max: 19,
-    specialChance: 0.5, 
+    specialChance: 0.5,
   },
   Uncommon: {
     color: "#000",
@@ -278,7 +274,7 @@ const rarities = {
     colorClass: "text-yellow-600",
     ratio: 1,
     min: 50,
-    max: 60, // You can adjust this upper limit as needed
+    max: Infinity, // You can adjust this upper limit as needed
     specialChance: 1.0,
   },
 };
@@ -296,9 +292,27 @@ const traits = [
 // --- Keyword Templates by Element and Type ---
 const elementKeywords = {
   Fire: {
-    Attack: ["Flame Strike", "Inferno Slash", "Blazing Jab", "Blazing Slash", "Inferno"],
-    Defend: ["Ember Wall", "Flare Guard", "Ashen Shield","Firewall", "Ash Barrier"],
-    Heal: ["Smoldering Spirit", "Ash Revival", "Flame Mender", "Ember Rebirth", "Smoldering Recovery"],
+    Attack: [
+      "Flame Strike",
+      "Inferno Slash",
+      "Blazing Jab",
+      "Blazing Slash",
+      "Inferno",
+    ],
+    Defend: [
+      "Ember Wall",
+      "Flare Guard",
+      "Ashen Shield",
+      "Firewall",
+      "Ash Barrier",
+    ],
+    Heal: [
+      "Smoldering Spirit",
+      "Ash Revival",
+      "Flame Mender",
+      "Ember Rebirth",
+      "Smoldering Recovery",
+    ],
   },
   Earth: {
     Attack: ["Stone Slam", "Boulder Bash", "Terra Punch"],
@@ -311,9 +325,27 @@ const elementKeywords = {
     Heal: ["Breath of Life", "Sky Restoration", "Airborne Heal"],
   },
   Water: {
-    Attack: ["Wave Crash", "Tide Jab", "Frosted Strike", "Tidal Surge", "Aqua Blade"],
-    Defend: ["Tide Barrier", "Ice Shell", "Mist Guard", "Wave Shield", "Bubble Guard"],
-    Heal: ["Soothing Stream", "Rainfall Blessing", "Aqua Recovery", "Healing Rain", "Ocean’s Embrace"],
+    Attack: [
+      "Wave Crash",
+      "Tide Jab",
+      "Frosted Strike",
+      "Tidal Surge",
+      "Aqua Blade",
+    ],
+    Defend: [
+      "Tide Barrier",
+      "Ice Shell",
+      "Mist Guard",
+      "Wave Shield",
+      "Bubble Guard",
+    ],
+    Heal: [
+      "Soothing Stream",
+      "Rainfall Blessing",
+      "Aqua Recovery",
+      "Healing Rain",
+      "Ocean’s Embrace",
+    ],
   },
 };
 
@@ -326,7 +358,7 @@ const specialPrefixes = {
   buff: ["Empowered", "Mystic", "Energized", "Blessed"],
   debuff: ["Cursed", "Weakened", "Corrupting"],
   block: ["Shielded", "Guarded", "Fortified"],
-  "damage-over-time": ["Burning", "Venomous", "Lingering"]
+  "damage-over-time": ["Burning", "Venomous", "Lingering"],
 };
 
 // Traits by rarity
@@ -335,9 +367,8 @@ const traitsByRarity = {
   Uncommon: [],
   Rare: ["Steady", "Cunning"],
   Epic: ["Fierce", "Unyielding"],
-  Legendary: ["Mythic", "Ancient", "Divine"]
+  Legendary: ["Mythic", "Ancient", "Divine"],
 };
-
 
 // ========== Derived Dynamic Constants ==========
 const _elements = Object.keys(elements);
@@ -472,24 +503,60 @@ const calculateValueAndCost = (element, type) => {
  * @param {number} cost - The card's cost (0–10)
  * @returns {string} Rarity name (e.g., "Common", "Uncommon")
  */
-function determineRarity(type, element, value, cost) {
-  const elementData = element;
-  if (!elementData) return "Common";
+// function determineRarity(type, element, value, cost) {
+//   const elementData = element;
 
-  const typeFrequency = elementData.type_ratios[type] || 0;
+//   if (!elementData) return "Common";
 
-  // Infrequent types make cards rarer, so we invert the frequency
-  const invertedFrequency = 100 - typeFrequency;
+//   const typeFrequency = elementData.type_ratios[type] || 0;
 
-  // Compute a normalized rarity score (0–100)
-  const rarityScore = value * 3 + cost * 2 + invertedFrequency;
+//   // Infrequent types make cards rarer, so we invert the frequency
+//   const invertedFrequency = 100 - typeFrequency;
 
-  // Find matching rarity range
-  const result = Object.entries(rarities).find(
-    ([, data]) => rarityScore >= data.min && rarityScore <= data.max
-  );
+//   // Compute a normalized rarity score (0–100)
+//   const rarityScore = value * 3 + cost * 2 + invertedFrequency;
 
-  return result?.[0] || "Common";
+//   // Find matching rarity range
+//   const result = Object.entries(rarities).find(
+//     ([, data]) => rarityScore >= data.min && rarityScore <= data.max
+//   );
+
+//   console.log("result?.[0] : ", rarityScore)
+
+//   return result?.[0] || "Common";
+// }
+
+function determineRarity(cards, card) {
+  const rarityRatios = {
+    Common: 40,
+    Uncommon: 30,
+    Rare: 15,
+    Epic: 10,
+    Legendary: 5,
+  };
+
+  // Sort once by rarityScore (ascending)
+  const sorted = [...cards].sort((a, b) => a.rarityScore - b.rarityScore);
+
+  // Calculate index thresholds
+  const total = sorted.length;
+  const thresholds = {};
+  let cumulative = 0;
+
+  for (const [rarity, ratio] of Object.entries(rarityRatios)) {
+    cumulative += ratio;
+    thresholds[rarity] = Math.floor((cumulative / 100) * total);
+  }
+
+  // Find index of the card in sorted array
+  const index = sorted.findIndex((c) => c === card);
+
+  // Assign rarity based on index
+  if (index < thresholds.Common) return "Common";
+  if (index < thresholds.Uncommon) return "Uncommon";
+  if (index < thresholds.Rare) return "Rare";
+  if (index < thresholds.Epic) return "Epic";
+  return "Legendary";
 }
 
 /**
@@ -512,11 +579,11 @@ function getSpecialEffectForCard(rarity, element, type) {
   const chanceMultiplier = rarityChances[rarity] || 0.2;
 
   // Filter effects compatible with element and type
-  const compatibleEffects = Object.entries(specialEffects)
-    .filter(([_, effect]) =>
+  const compatibleEffects = Object.entries(specialEffects).filter(
+    ([_, effect]) =>
       effect.compatibleElements.includes(element) &&
       effect.compatibleTypes.includes(type)
-    );
+  );
 
   if (compatibleEffects.length === 0) return null;
 
@@ -526,15 +593,17 @@ function getSpecialEffectForCard(rarity, element, type) {
   if (!shouldApply) return null;
 
   // Pick one randomly
-  const [effectName, effectData] = compatibleEffects[Math.floor(Math.random() * compatibleEffects.length)];
+  const [effectName, effectData] =
+    compatibleEffects[Math.floor(Math.random() * compatibleEffects.length)];
 
   // Assign random duration and value based on range
   const value = randomInRange(effectData.valueRange);
   const duration = randomInRange(effectData.durationRange);
+  const special_type = effectData.type;
 
   return {
     name: effectName,
-    ...effectData,
+    type: special_type,
     value,
     duration,
   };
@@ -556,7 +625,9 @@ function generateCardName(element, type, rarity, special) {
 
   // Debug: Check if keyword list is valid
   if (!keywordList || keywordList.length === 0) {
-    console.error(`No keywords found for element: ${element} and type: ${type}`);
+    console.error(
+      `No keywords found for element: ${element} and type: ${type}`
+    );
     return "Unknown Card";
   }
 
@@ -579,7 +650,22 @@ function generateCardName(element, type, rarity, special) {
 
 // ========== Card Generation ==========
 
-const generateCard = () => {
+const generateCard = (no_of_cards) => {
+
+  if (!no_of_cards || no_of_cards <= 0) return [];
+
+  const cards = Array.from({ length: no_of_cards }, getCardBasics); // Generate N random cards
+
+  cards.forEach(card => {
+    card.rarity = determineRarity(cards, card);
+    card.special = getSpecialEffectForCard(card.rarity, card.element, card.type);
+    card.trait = getRandomItem(_traits);
+    card.name = generateCardName(card.element, card.type, card.rarity, card.special);
+  });
+  return cards;
+};
+
+const getCardBasics = () => {
   const element = getWeightedRandomItem(
     _elements,
     _elementRatios,
@@ -591,79 +677,45 @@ const generateCard = () => {
   const type = getWeightedRandomItem(_types, typeRatio, _types[0]);
 
   const { value, cost } = calculateValueAndCost(element_data, type);
-  const rarity = determineRarity(type, element_data, value, cost);
-
-  const special = getSpecialEffectForCard(rarity, element, type);
-  const trait = getRandomItem(_traits);
 
   return {
-    name: generateCardName(element, type, rarity, special),
     element,
     value,
     cost,
     type,
-    special,
-    rarity,
-    trait: trait,
     affinity: element_data.affinities,
   };
 };
 
-const generateCardOld = () => {
-  const element = getRandomItem(_elements);
-  const typeRatio = typeRatios[element];
+// const generateCard = () => {
+//   const element = getWeightedRandomItem(
+//     _elements,
+//     _elementRatios,
+//     _elements[0]
+//   );
+//   const element_data = elements[element];
+//   const typeRatio = typeRatios[element].type_ratios;
 
-  let validTypes = _types.filter(
-    (type) => Math.random() * 100 <= typeRatio[type]
-  );
+//   const type = getWeightedRandomItem(_types, typeRatio, _types[0]);
 
-  if (validTypes.length === 0) {
-    validTypes = ["Attack"];
-  }
+//   const { value, cost } = calculateValueAndCost(element_data, type);
+//   const rarity = determineRarity(type, element_data, value, cost);
 
-  const type = getRandomItem(validTypes);
-  const cost = Math.floor(Math.random() * 5) + 1;
-  const value = Math.floor(Math.random() * 21) + 10;
-  const specialType = getRandomItem(_specialTypes);
-  const specialValue = Math.floor(Math.random() * 16) + 5;
-  const specialDuration = Math.floor(Math.random() * 5) + 1;
-  const rarity = getCardRarity({ value, specialValue });
+//   const special = getSpecialEffectForCard(rarity, element, type);
+//   const trait = getRandomItem(_traits);
 
-  const prefix = getRandomItem(specialPrefixes[specialType] || []);
-  const baseName = getRandomItem(
-    elementKeywords[element][type] || [`${element} ${type}`]
-  );
-  const name = `${prefix} ${baseName}`.trim();
-
-  const special =
-    specialType === "damage-over-time"
-      ? {
-          name: capitalize(specialType),
-          type: specialType,
-          value: specialValue,
-          duration: specialDuration,
-        }
-      : {
-          name: capitalize(specialType),
-          type: specialType,
-          value: specialValue,
-        };
-
-  return {
-    name,
-    element,
-    value,
-    cost,
-    type,
-    special,
-    rarity,
-    trait: getRandomItem(_traits),
-    affinity: {
-      strongAgainst: getRandomItem(_elements),
-      weakAgainst: getRandomItem(_elements),
-    },
-  };
-};
+//   return {
+//     name: generateCardName(element, type, rarity, special),
+//     element,
+//     value,
+//     cost,
+//     type,
+//     special,
+//     rarity,
+//     trait: trait,
+//     affinity: element_data.affinities,
+//   };
+// };
 
 const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
@@ -671,8 +723,8 @@ const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
 const specialTypes = {
   attacker: [],
-  defender: []
-}
+  defender: [],
+};
 
 export {
   elements,
@@ -691,5 +743,5 @@ export {
   getRandomItem,
   getCardRarity,
   generateCard,
-  getValidEffectsByRole
+  getValidEffectsByRole,
 };

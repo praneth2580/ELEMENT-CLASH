@@ -8,7 +8,7 @@ const CardsDemo = () => {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    const newCards = Array.from({ length: 3 }, generateCard); // Generate 3 random cards
+    const newCards = generateCard(3) // Generate 3 random cards
     setCards(newCards);
   }, []);
 

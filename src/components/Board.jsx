@@ -91,7 +91,7 @@ export default function GameBoard({
             onDragStart={() => handleDragStart(card)}
             className="cursor-pointer"
           >
-            <Card {...card} aura={playerStats.aura} specialReady={playerStats.aura >= card.cost} />
+            <Card key={idx} card={card} />
           </div>
         ))}
       </div>

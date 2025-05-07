@@ -8,10 +8,13 @@ import { Tooltip } from "react-tooltip"; // ✨ New tooltip library
 import "react-tooltip/dist/react-tooltip.css"; // ✨ Tooltip CSS
 import DevBoard from "../components/DevBoard";
 import { specialTypes } from "../scripts/Cards";
+import { useCardGameStorage } from "../data/hooks/useCardGameStorage";
 
 export default function ElementClash({ dev }) {
   const playerRef = useRef(null);
   const aiRef = useRef(null);
+
+  const { cards } = useCardGameStorage();
 
   const [playerStats, setPlayerStats] = useState({
     HP: 0,
@@ -39,16 +42,18 @@ export default function ElementClash({ dev }) {
   const [message, setMessage] = useState("Let the clash begin!");
 
   useEffect(() => {
-    playerRef.current = new Player(100);
-    aiRef.current = new AI(100);
+    if (cards.length === 0) return; // Wait until cards are loaded
+    playerRef.current = new Player(100, cards);
+    aiRef.current = new AI(100, cards);
 
     playerRef.current.drawHand(3);
     aiRef.current.drawHand(3);
 
     syncStats();
-  }, []);
+  }, [cards]);
 
   useEffect(() => {
+    if (cards.length === 0) return; // Wait until cards are loaded
     if (checkGameOver()) return;
     if (currentTurn === 0) return;
 
@@ -61,6 +66,7 @@ export default function ElementClash({ dev }) {
   }, [currentTurn]);
 
   useEffect(() => {
+    if (cards.length === 0) return; // Wait until cards are loaded
     if (checkGameOver()) return;
 
     playerRef.current.addAura(3);
