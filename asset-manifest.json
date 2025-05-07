@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ELEMENT-CLASH/static/css/main.d5455729.css",
-    "main.js": "/ELEMENT-CLASH/static/js/main.88bfeded.js",
+    "main.css": "/ELEMENT-CLASH/static/css/main.2a753141.css",
+    "main.js": "/ELEMENT-CLASH/static/js/main.ed0b96df.js",
     "static/js/453.e2fcaec1.chunk.js": "/ELEMENT-CLASH/static/js/453.e2fcaec1.chunk.js",
     "static/media/air4.jpeg": "/ELEMENT-CLASH/static/media/air4.fbf142bb91dc936fe91f.jpeg",
     "static/media/fire2.jpeg": "/ELEMENT-CLASH/static/media/fire2.9accf399227acc613185.jpeg",
@@ -15,12 +15,12 @@
     "static/media/fire1.jpeg": "/ELEMENT-CLASH/static/media/fire1.b25f347e12b4579e1248.jpeg",
     "static/media/logo.svg": "/ELEMENT-CLASH/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/ELEMENT-CLASH/index.html",
-    "main.d5455729.css.map": "/ELEMENT-CLASH/static/css/main.d5455729.css.map",
-    "main.88bfeded.js.map": "/ELEMENT-CLASH/static/js/main.88bfeded.js.map",
+    "main.2a753141.css.map": "/ELEMENT-CLASH/static/css/main.2a753141.css.map",
+    "main.ed0b96df.js.map": "/ELEMENT-CLASH/static/js/main.ed0b96df.js.map",
     "453.e2fcaec1.chunk.js.map": "/ELEMENT-CLASH/static/js/453.e2fcaec1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d5455729.css",
-    "static/js/main.88bfeded.js"
+    "static/css/main.2a753141.css",
+    "static/js/main.ed0b96df.js"
   ]
 }
