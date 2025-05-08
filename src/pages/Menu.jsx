@@ -1,6 +1,13 @@
-import { useCallback, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { RefreshCcw, Play, FlaskConical, Hammer, Sparkles, Download } from "lucide-react";
+import {
+  RefreshCcw,
+  Play,
+  FlaskConical,
+  Hammer,
+  Sparkles,
+  Download,
+} from "lucide-react";
 
 export default function MenuScreen() {
   const navigate = useNavigate();
@@ -19,9 +26,15 @@ export default function MenuScreen() {
     setShowInstallButton(false);
   };
 
-  const handleReset = useCallback(() => {
+  const handleReset = () => {
+    // Reset logic (e.g. localStorage.clear())
+    console.log("Resetting progress...");
+  };
+
+  // Run once on component mount
+  useEffect(() => {
     const handler = (e) => {
-      e.preventDefault();
+      e.preventDefault(); // Prevent the default mini-infobar
       setDeferredPrompt(e);
       setShowInstallButton(true);
     };
