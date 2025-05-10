@@ -12,9 +12,37 @@ export default class Entity {
     this.hand = [];
     this.deck = getRandomCards(deckCount, deck); // populate based on your logic
     this.used = [];
-    this.aura = 0;
+    this.aura = 5;
     this.tac_aura = 0;
+    this.card = null;
   }
+
+  // APPEND AURA TO EXISTING AURA UPTO 10
+  addAura(value) {
+    this.aura = Math.min(10, value);
+  }
+  
+  // PICK THREE RANDOM CARDS FROM THE DECK
+  drawHand(num) {
+    this.hand = getRandomCards(num, this.deck);
+    this.hand.forEach((hand) => {
+      this.deck = removeByIndexes(this.deck, this.deck.indexOf(hand));
+    });
+  }
+
+  getStats() {
+    return {
+      HP: this.HP,
+      aura: this.aura,
+      tac_aura: this.tac_aura,
+      deck: this.deck,
+      shield: this.shield,
+      effects: this.effects,
+      hand: this.hand,
+      card: this.card
+    };
+  }
+
 
   addSpecial(special) {
     this.effects.push(special);
@@ -91,31 +119,6 @@ export default class Entity {
 
   setShield(value) {
     this.shield = value;
-  }
-
-  addAura(value) {
-    this.aura = Math.min(10, value);
-  }
-
-  getStats() {
-    return {
-      HP: this.HP,
-      aura: this.aura,
-      tac_aura: this.tac_aura,
-      deck: this.deck,
-      shield: this.shield,
-      effects: this.effects,
-      hand: this.hand,
-      aura: this.aura,
-    };
-  }
-
-  // your existing methods
-  drawHand(num) {
-    this.hand = getRandomCards(num, this.deck);
-    this.hand.forEach((hand) => {
-      this.deck = removeByIndexes(this.deck, this.deck.indexOf(hand));
-    });
   }
 
   pickFromHand() {

@@ -11,21 +11,21 @@ const DevCard = ({ card, onClick, disabled }) => {
       onClick={handleClick}
       className="bg-gray-700 hover:bg-gray-600 rounded p-3 text-sm"
     >
-      <p className="text-md font-bold uppercase text-center">{card.name}</p>
-      <div className="flex flex-row justify-between gap-1">
+      <p className="text-md font-bold uppercase text-center grow-1">{card.name}</p>
+      <div className="flex flex-row justify-between gap-1 flex-wrap">
         <p className="text-sm text-center font-bold">{card.type}</p>
-        <p className="text-sm text-center">
+        <p className="text-sm text-center text-nowrap">
           ${card.cost} - {card.value}
         </p>
       </div>
-      <div className="flex flex-row justify-between gap-1">
+      <div className="flex flex-row justify-between gap-1 flex-wrap grow-1 p-1 rounded bg-sky-100 text-black">
         {card.special ? (
           <>
             <p className="text-sm text-center font-bold">
               {card.special?.type}
             </p>
-            <p className="text-sm text-center">
-              ${card.special?.cost} - {card.special?.value}
+            <p className="text-sm text-center text-nowrap">
+              {card.special?.cost ? "$" + card.special?.cost :  "∞" } - {card.special?.value}
             </p>
           </>
         ) : (
@@ -76,7 +76,7 @@ const EntityDetails = ({ entity, name = "Player", bgColor = "blue" }) => {
               entity.hand.map((card, i) => (
                 <div className="bg-slate-600 p-1 rounded" key={i}>
                   <h6 className="text-sm font-bold">{card.name}</h6>
-                  <p className="text-xs">
+                  <p className="text-xs text-nowrap">
                     {card.type} - ${card.cost} / {card.value}
                   </p>
                 </div>
