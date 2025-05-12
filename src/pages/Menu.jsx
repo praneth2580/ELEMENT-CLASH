@@ -7,7 +7,9 @@ import {
   Hammer,
   Sparkles,
   Download,
+  Container,
 } from "lucide-react";
+import logo from "../assets/logo.png";
 
 export default function MenuScreen() {
   const navigate = useNavigate();
@@ -53,6 +55,11 @@ export default function MenuScreen() {
       href: "/ELEMENT-CLASH/#/game",
     },
     {
+      label: "Deck Builder",
+      icon: <Container className="w-5 h-5" />,
+      href: "/ELEMENT-CLASH/#/deck",
+    },
+    {
       label: "Dev Board",
       icon: <FlaskConical className="w-5 h-5" />,
       href: "/ELEMENT-CLASH/#/dev",
@@ -74,7 +81,7 @@ export default function MenuScreen() {
       {/* Game Logo */}
       <div className="mb-10 flex flex-col items-center">
         <img
-          src="logo.png"
+          src={logo}
           alt="Element Clash Logo"
           className="w-32 h-32 md:w-40 md:h-40 object-contain"
         />

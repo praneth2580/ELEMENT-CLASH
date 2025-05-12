@@ -18,6 +18,9 @@ export const useCardGameStorage = () => {
       setRoundsPlayed(rounds?.value || 0);
     };
     loadData();
+    // updateDecks("test1", 1, "#ffffff", "#000000", [])
+    // updateDecks("test2", 1, "#ffffff", "#000000", [])
+    // updateDecks("test3", 1, "#ffffff", "#000000", [])
   }, []);
 
   const saveCards = async (newCards) => {
@@ -27,8 +30,8 @@ export const useCardGameStorage = () => {
   };
   
   // change this
-  const updateDecks = async (name, cards) => {
-    await db.decks.add({ name: name, cards: cards });
+  const updateDecks = async (name, type, fg_color, bg_color, cards) => {
+    await db.decks.add({ name: name, type: type, fg_color: fg_color, bg_color: bg_color, cards: cards });
     const allDecks = await db.decks.toArray();
 
     setDecks(allDecks);
@@ -39,5 +42,5 @@ export const useCardGameStorage = () => {
     setRoundsPlayed(newRounds);
   };
 
-  return { cards, roundsPlayed, saveCards, updateRounds };
+  return { cards, decks, roundsPlayed, saveCards, updateDecks, updateRounds };
 };

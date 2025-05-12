@@ -1,15 +1,29 @@
 // ========== Imports ==========
 import default_logo from "./logo.svg";
-import air1 from "./assets/img/air1.jpeg";
-import air2 from "./assets/img/air2.jpeg";
-import air3 from "./assets/img/air3.jpeg";
-import air4 from "./assets/img/air4.jpeg";
-import earth from "./assets/img/earth.jpeg";
-import fire1 from "./assets/img/fire1.jpeg";
-import fire2 from "./assets/img/fire2.jpeg";
-import water1 from "./assets/img/water1.jpeg";
-import water2 from "./assets/img/water2.jpeg";
-import water3 from "./assets/img/water3.jpeg";
+import air1 from "./assets/img/elements/air1.jpeg";
+import air2 from "./assets/img/elements/air2.jpeg";
+import air3 from "./assets/img/elements/air3.jpeg";
+import air4 from "./assets/img/elements/air4.jpeg";
+import earth from "./assets/img/elements/earth.jpeg";
+import fire1 from "./assets/img/elements/fire1.jpeg";
+import fire2 from "./assets/img/elements/fire2.jpeg";
+import water1 from "./assets/img/elements/water1.jpeg";
+import water2 from "./assets/img/elements/water2.jpeg";
+import water3 from "./assets/img/elements/water3.jpeg";
+  
+import deck_air from "./assets/img/decks/air";
+import deck_dragon from "./assets/img/decks/dragon";
+import deck_eagle from "./assets/img/decks/eagle";
+import deck_earth from "./assets/img/decks/earth";
+import deck_fire from "./assets/img/decks/fire";
+import deck_king from "./assets/img/decks/king";
+import deck_lion from "./assets/img/decks/lion";
+import deck_skull from "./assets/img/decks/skull";
+import deck_snake from "./assets/img/decks/snake";
+import deck_spear from "./assets/img/decks/spear";
+import deck_sword from "./assets/img/decks/sword";
+import deck_warrior from "./assets/img/decks/warrior";
+import deck_water from "./assets/img/decks/water";
 
 // ========== Static Definitions ==========
 
@@ -492,3 +506,19 @@ export const synergies = [
     downgradeEffect: { dodgeChance: 30 },
   },
 ];
+
+export const deckLogos = [
+  deck_air,
+  deck_dragon,
+  deck_eagle,
+  deck_earth,
+  deck_fire,
+  deck_king,
+  deck_lion,
+  deck_skull,
+  deck_snake,
+  deck_spear,
+  deck_sword,
+  deck_warrior,
+  deck_water
+]
