@@ -18,9 +18,18 @@ export const useCardGameStorage = () => {
       setRoundsPlayed(rounds?.value || 0);
     };
     loadData();
-    // updateDecks("test1", 1, "#ffffff", "#000000", [])
-    // updateDecks("test2", 1, "#ffffff", "#000000", [])
-    // updateDecks("test3", 1, "#ffffff", "#000000", [])
+    // updateDecks("test4", 1, "#ffffff", "#000000", [])
+    // updateDecks("test5", 1, "#ffffff", "#000000", [])
+    // updateDecks("test6", 1, "#ffffff", "#000000", [])
+    // updateDecks("test7", 1, "#ffffff", "#000000", [])
+    // updateDecks("test8", 1, "#ffffff", "#000000", [])
+    // updateDecks("test9", 1, "#ffffff", "#000000", [])
+    // updateDecks("test10", 1, "#ffffff", "#000000", [])
+    // updateDecks("test11", 1, "#ffffff", "#000000", [])
+    // updateDecks("test12", 1, "#ffffff", "#000000", [])
+    // updateDecks("test13", 1, "#ffffff", "#000000", [])
+    // updateDecks("test14", 1, "#ffffff", "#000000", [])
+    // updateDecks("test15", 1, "#ffffff", "#000000", [])
   }, []);
 
   const saveCards = async (newCards) => {

@@ -29,6 +29,7 @@ const Decks = ({}) => {
   return (
     <div className="p-4 bg-gray-900 min-h-screen text-white">
       <h1 className="text-2xl text-center font-bold mb-4">Build Your Deck</h1>
+      <div className="grid grid-cols-6 gap-2">
       {decks.map((deck) => (
         <Deck
           key={deck.id}
@@ -38,8 +39,30 @@ const Decks = ({}) => {
           color={deck.fg_color} 
         />
       ))}
+      </div>
     </div>
   );
 };
+
+const DecksDetails = ({deck}) => {
+
+  return (
+    <div className="p-4 bg-gray-900 min-h-screen text-white">
+      <h1 className="text-2xl text-center font-bold mb-4">{deck.name}</h1>
+      <div className="grid grid-cols-6 gap-2">
+        {deck.cards.map((card) => (
+          <Deck
+            key={card.id}
+            onClick={() => {}}
+            type={card.type}
+            name={card.name}
+            color={card.fg_color} 
+          />
+        ))}
+      </div>
+    </div>
+  );
+
+}
 
 export default Decks;
