@@ -2,7 +2,7 @@ import * as React from "react";
 
 const King = (props) => {
   return (
-    <svg fill="#000000" width="800px" height="800px" viewBox="0 0 32 32" dataName="Layer 2" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg {...props} fill="#000000" width="800px" height="800px" viewBox="0 0 32 32" dataName="Layer 2" xmlns="http://www.w3.org/2000/svg" {...props}>
     <title />
     <path
     d="M5.74,24.86a.93.93,0,0,0,.93.93H25.31a.93.93,0,0,0,0-1.86H6.67A.93.93,0,0,0,5.74,24.86Z" />

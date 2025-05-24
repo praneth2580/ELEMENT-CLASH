@@ -1,545 +1,174 @@
-import React, { useEffect, useState } from "react";
-import "../Card.css";
+import React, { useState } from "react";
 import { elements, types } from "../scripts/Cards";
 
-const costColor = "#F3A91E";
-const durationColor = "#f31ec1";
-const basicText = "#FFFFFF";
-const basicBG = "#1A1919";
-const basicCard = "#D9D9D929";
-
-
-const CARD_SIZES = {
-  lg: {
-    card: {
-      width: "20rem",
-      borderWidth: "4px",
-      padding: "0.5rem 1rem"
-    },
-    cardRow: {
-      paddingBlock: "0.5rem",
-    },
-    cardRowTrait: {
-      paddingBlock: "0.3rem",
-    },
-    costContainer: {
-      width: "2rem",
-      height: "2rem",
-      borderRadius: "0.2rem",
-    },
-    costContainerP: {
-      fontSize: "1rem",
-    },
-    valueContainer: {
-      width: "2rem",
-      height: "2rem",
-      borderRadius: "0.2rem",
-    },
-    valueContainerP: {
-      fontSize: "1rem",
-    },
-    rarityContainer: {
-      padding: "0.5rem 2rem",
-      borderRadius: "0.4rem",
-    },
-    rarityContainerP: {
-      fontSize: "1rem",
-    },
-    elementImage: {
-      width: "12rem",
-      borderWidth: "0.4rem",
-    },
-    cardTitle: {
-      fontSize: "1.2rem",
-      lineHeight: "1.2rem",
-    },
-    cardTrait: {
-      padding: "0.2rem 1rem",
-      fontSize: "0.7rem",
-    },
-    cardStrongContainer: {
-      gap: "0.3rem",
-    },
-    cardStrongContainerBefore: {
-      borderLeft: ".4rem solid transparent",
-      borderRight: ".4rem solid transparent",
-      borderBottom: ".8rem solid green",
-    },
-    cardWeakContainer: {
-      gap: "0.3rem",
-    },
-    cardWeakContainerAfter: {
-      borderLeft: ".4rem solid transparent",
-      borderRight: ".4rem solid transparent",
-      borderTop: ".8rem solid red",
-    },
-    cardAffinityP: {
-      fontSize: "1rem",
-    },
-    specialCard: {
-      height: "6rem",
-      borderRadius: "0.4rem",
-      padding: "0.5rem",
-    },
-    specialName: {
-      fontSize: "0.9rem",
-    },
-    specialType: {
-      fontSize: "0.6rem",
-    },
-    specialDetailsContainer: {
-      gridTemplateColumns: "2.5rem 5rem",
-      gridTemplateRows: "2.5rem 2.5rem",
-    },
-    specialValueContainerPAlt: {
-      fontSize: "1rem",
-    },
-    specialValueContainerP: {
-      fontSize: "2.5rem",
-    },
-  },
-  md: {
-    card: {
-      width: "16rem",
-      borderWidth: "3px",
-      padding: "0.5rem .5rem"
-    },
-    cardRow: {
-      paddingBlock: "0.4rem",
-    },
-    cardRowTrait: {
-      paddingBlock: "0.25rem",
-    },
-    costContainer: {
-      width: "1.6rem",
-      height: "1.6rem",
-      borderRadius: "0.2rem",
-    },
-    costContainerP: {
-      fontSize: "0.9rem",
-    },
-    valueContainer: {
-      width: "1.6rem",
-      height: "1.6rem",
-      borderRadius: "0.2rem",
-    },
-    valueContainerP: {
-      fontSize: "0.9rem",
-    },
-    rarityContainer: {
-      padding: "0.4rem 1.5rem",
-      borderRadius: "0.3rem",
-    },
-    rarityContainerP: {
-      fontSize: "0.9rem",
-    },
-    elementImage: {
-      width: "9rem",
-      borderWidth: "0.3rem",
-    },
-    cardTitle: {
-      fontSize: "1rem",
-      lineHeight: "1rem",
-    },
-    cardTrait: {
-      padding: "0.2rem 0.8rem",
-      fontSize: "0.6rem",
-    },
-    cardStrongContainer: {
-      gap: "0.25rem",
-    },
-    cardStrongContainerBefore: {
-      borderLeft: ".3rem solid transparent",
-      borderRight: ".3rem solid transparent",
-      borderBottom: ".6rem solid green",
-    },
-    cardWeakContainer: {
-      gap: "0.25rem",
-    },
-    cardWeakContainerAfter: {
-      borderLeft: ".3rem solid transparent",
-      borderRight: ".3rem solid transparent",
-      borderTop: ".6rem solid red",
-    },
-    cardAffinityP: {
-      fontSize: "0.9rem",
-    },
-    specialCard: {
-      height: "5rem",
-      borderRadius: "0.3rem",
-      padding: "0.4rem",
-    },
-    specialName: {
-      fontSize: "0.8rem",
-    },
-    specialType: {
-      fontSize: "0.55rem",
-    },
-    specialDetailsContainer: {
-      gridTemplateColumns: "2.1rem 4.2rem",
-      gridTemplateRows: "2.1rem 2.1rem",
-    },
-    specialValueContainerPAlt: {
-      fontSize: "0.9rem",
-    },
-    specialValueContainerP: {
-      fontSize: "2rem",
-    },
-  },
-  sm: {
-    card: {
-      width: "13rem",
-      borderWidth: "2px",
-      padding: ".5rem .5rem"
-    },
-    cardRow: {
-      paddingBlock: "0.3rem",
-    },
-    cardRowTrait: {
-      paddingBlock: "0.2rem",
-    },
-    costContainer: {
-      width: "1.4rem",
-      height: "1.4rem",
-      borderRadius: "0.15rem",
-    },
-    costContainerP: {
-      fontSize: "0.75rem",
-    },
-    valueContainer: {
-      width: "1.4rem",
-      height: "1.4rem",
-      borderRadius: "0.15rem",
-    },
-    valueContainerP: {
-      fontSize: "0.75rem",
-    },
-    rarityContainer: {
-      padding: "0.3rem 1rem",
-      borderRadius: "0.2rem",
-    },
-    rarityContainerP: {
-      fontSize: "0.75rem",
-    },
-    elementImage: {
-      width: "7rem",
-      borderWidth: "0.2rem",
-    },
-    cardTitle: {
-      fontSize: "0.9rem",
-      lineHeight: "0.9rem",
-    },
-    cardTrait: {
-      padding: "0.1rem 0.6rem",
-      fontSize: "0.5rem",
-    },
-    cardStrongContainer: {
-      gap: "0.2rem",
-    },
-    cardStrongContainerBefore: {
-      borderLeft: ".25rem solid transparent",
-      borderRight: ".25rem solid transparent",
-      borderBottom: ".5rem solid green",
-    },
-    cardWeakContainer: {
-      gap: "0.2rem",
-    },
-    cardWeakContainerAfter: {
-      borderLeft: ".25rem solid transparent",
-      borderRight: ".25rem solid transparent",
-      borderTop: ".5rem solid red",
-    },
-    cardAffinityP: {
-      fontSize: "0.75rem",
-    },
-    specialCard: {
-      height: "4rem",
-      borderRadius: "0.25rem",
-      padding: "0.3rem",
-    },
-    specialName: {
-      fontSize: "0.7rem",
-    },
-    specialType: {
-      fontSize: "0.5rem",
-    },
-    specialDetailsContainer: {
-      gridTemplateColumns: "1.7rem 3.4rem",
-      gridTemplateRows: "1.7rem 1.7rem",
-    },
-    specialValueContainerPAlt: {
-      fontSize: "0.8rem",
-    },
-    specialValueContainerP: {
-      fontSize: "1.5rem",
-    },
-  },
-};
-
-function useCardSize() {
-  const [size, setSize] = useState("lg");
-
-  useEffect(() => {
-    const checkSize = () => {
-      const width = window.innerWidth;
-      if (width < 640) {
-        setSize("sm");
-      } else if (width < 1024) {
-        setSize("md");
-      } else {
-        setSize("lg");
-      }
-    };
-
-    checkSize(); // set on mount
-
-    window.addEventListener("resize", checkSize);
-    return () => window.removeEventListener("resize", checkSize);
-  }, []);
-
-  return size;
-}
-
-const Card = ({ card }) => {
+export const DetailedCard = ({ card, onClose }) => {
   const elementColor = elements[card.element].color;
   const typeColor = types[card.type].color;
-  const size = useCardSize();
-  const styles = CARD_SIZES[size];
 
   return (
-    <div className="card-wrapper">
+    <div
+      className="fixed inset-0 z-50 bg-black bg-opacity-60 flex items-center justify-center p-4"
+      onClick={onClose}
+    >
       <div
-        className="card"
-        style={{
-          border: styles.card.borderWidth + " solid " + elementColor,
-          backgroundColor: basicBG,
-          width: styles.card.width,
-          padding: styles.card.padding
-        }}
+        className="relative w-full max-w-[320px] aspect-[63/88] bg-[#1A1919] border-[3px] rounded-2xl p-2 sm:p-3 shadow-lg text-white flex flex-col justify-between"
+        style={{ borderColor: elementColor }}
       >
-        <div style={styles.cardRow} className="card-row">
+        {/* Top row */}
+        <div className="flex justify-between items-center mb-1 sm:mb-2">
           <div
-            className="cost-container"
-            style={{
-              backgroundColor: costColor,
-              width: styles.costContainer.width,
-              height: styles.costContainer.height,
-              borderRadius: styles.costContainer.borderRadius,
-            }}
+            className="w-7 h-7 sm:w-8 sm:h-8 rounded-md rotate-45 flex justify-center items-center text-xs sm:text-sm font-bold"
+            style={{ backgroundColor: elementColor }}
           >
-            <p
-              style={{
-                color: basicText,
-                fontSize: styles.costContainerP.fontSize,
-              }}
-            >
-              {card.cost}
-            </p>
+            <span className="-rotate-45">{card.cost}</span>
           </div>
+
+          <div className="px-2 py-0.5 sm:px-3 sm:py-1 bg-black border border-white rounded-md text-xs sm:text-sm font-bold">
+            {card.rarity.toUpperCase()}
+          </div>
+
           <div
-            className="rarity-container"
-            style={{
-              borderColor: basicText,
-              padding: styles.rarityContainer.padding,
-              borderRadius: styles.rarityContainer.borderRadius,
-            }}
+            className="w-7 h-7 sm:w-8 sm:h-8 rounded-md flex justify-center items-center text-xs sm:text-sm font-bold"
+            style={{ backgroundColor: typeColor }}
           >
-            <p
-              style={{
-                color: basicText,
-                fontSize: styles.rarityContainerP.fontSize,
-              }}
-            >
-              {card.rarity.toUpperCase()}
-            </p>
-          </div>
-          <div
-            className="value-container"
-            style={{
-              backgroundColor: typeColor,
-              width: styles.valueContainer.width,
-              height: styles.valueContainer.height,
-              borderRadius: styles.valueContainer.borderRadius,
-            }}
-          >
-            <p
-              style={{
-                color: basicText,
-                fontSize: styles.valueContainerP.fontSize,
-              }}
-            >
-              {card.value}
-            </p>
-          </div>
-        </div>
-        <div
-          className="card-row"
-          style={{
-            justifyContent: "center",
-            paddingBlock: styles.cardRow.paddingBlock,
-          }}
-        >
-          <img
-            src={elements[card.element].logo}
-            alt={card.element}
-            style={{
-              borderColor: basicCard,
-              width: styles.elementImage.width,
-              borderWidth: styles.elementImage.borderWidth,
-            }}
-            className="element-image"
-          />
-        </div>
-        <div
-          className="card-row"
-          style={{
-            justifyContent: "center",
-            paddingBlock: styles.cardRow.paddingBlock,
-          }}
-        >
-          <p
-            className="card-title"
-            style={{
-              color: basicText,
-              fontSize: styles.cardTitle.fontSize,
-              lineHeight: styles.cardTitle.lineHeight,
-            }}
-          >
-            {card.name.replaceAll("_", " ")}
-          </p>
-        </div>
-        <div
-          className="card-row"
-          style={{
-            justifyContent: "center",
-            paddingBlock: styles.cardRowTrait.paddingBlock,
-          }}
-        >
-          <p
-            className="card-trait"
-            style={{
-              color: basicText,
-              padding: styles.cardTrait.padding,
-              fontSize: styles.cardTrait.fontSize,
-            }}
-          >
-            {card.trait}
-          </p>
-        </div>
-        <div style={styles.cardRow} className="card-row">
-          <div
-            style={styles.cardStrongContainer}
-            className="card-strong-container"
-          >
-            <p
-              style={{
-                color: basicText,
-                fontSize: styles.cardAffinityP.fontSize,
-              }}
-            >
-              {card.affinity.strongAgainst}
-            </p>
-          </div>
-          <div style={styles.cardWeakContainer} className="card-weak-container">
-            <p
-              style={{
-                color: basicText,
-                fontSize: styles.cardAffinityP.fontSize,
-              }}
-            >
-              {card.affinity.weakAgainst}
-            </p>
+            {card.value}
           </div>
         </div>
 
-        <div
-          className="card-row special-card"
-          style={{
-            backgroundColor: basicCard,
-            // paddingBlock: size.cardRow.paddingBlock,
-            height: styles.specialCard.height,
-            padding: styles.specialCard.padding,
-            borderRadius: styles.specialCard.borderRadius
-          }}
-        >
-          {!card.special ? (
-            <p
-              className="no-special"
-              style={{
-                color: basicText,
-                fontSize: styles.specialValueContainerPAlt.fontSize,
-              }}
-            >
-              No Special Effect
-            </p>
-          ) : (
+        {/* Image */}
+        <div className="flex justify-center mb-2 sm:mb-3">
+          <div
+            className="rounded-full border-[4px] sm:border-[6px] p-1"
+            style={{ borderColor: "#333" }}
+          >
+            <img
+              src={elements[card.element].logo}
+              alt={card.element}
+              className="w-24 h-24 sm:w-28 sm:h-28 object-cover rounded-full"
+            />
+          </div>
+        </div>
+
+        {/* Title */}
+        <div className="text-center text-base sm:text-lg font-bold leading-tight mb-1 px-1 sm:px-2">
+          {card.name.replaceAll("_", " ")}
+        </div>
+
+        {/* Trait */}
+        <div className="text-center mb-1 sm:mb-2">
+          <span
+            className="px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-[10px] sm:text-xs"
+            style={{ backgroundColor: "#9f9424" }}
+          >
+            {card.trait}
+          </span>
+        </div>
+
+        {/* Affinities - hide on very small screens */}
+        <div className="hidden xs:flex justify-between text-xs font-medium mb-2 sm:mb-3 px-1">
+          <span className="text-green-400">
+            ▲ {card.affinity.strongAgainst}
+          </span>
+          <span className="text-red-400">▼ {card.affinity.weakAgainst}</span>
+        </div>
+
+        {/* Special section */}
+        <div className="bg-[#2B2B2B] rounded-lg p-2 text-xs sm:text-sm">
+          {card.special ? (
             <>
-              <div className="special-text-container">
-                <p
-                  className="special-name"
-                  style={{
-                    color: basicText,
-                    fontSize: styles.specialName.fontSize,
-                  }}
-                >
-                  {card.special.name.toUpperCase().replaceAll("_", " ")}
-                </p>
-                <p
-                  className="special-type"
-                  style={{
-                    color: basicText,
-                    fontSize: styles.specialType.fontSize,
-                  }}
-                >
-                  {card.special.type.toUpperCase().replaceAll("_", " ")}
-                </p>
+              <div className="text-center mb-1 sm:mb-2">
+                <div className="font-bold uppercase">
+                  {card.special.name.replaceAll("_", " ")}
+                </div>
+                <div className="text-[10px] sm:text-xs">
+                  {card.special.type.replaceAll("_", " ")}
+                </div>
               </div>
-              <div style={styles.specialDetailsContainer} className="special-detials-container">
+              <div className="flex justify-around items-center mt-1">
                 <div
-                  className="special-cost-container"
-                  style={{ backgroundColor: costColor }}
+                  className="px-2 py-1 sm:px-3 rounded-md font-bold text-white text-xs"
+                  style={{ backgroundColor: "#F3A91E" }}
                 >
-                  <p
-                    style={{
-                      color: basicText,
-                      fontSize: styles.specialValueContainerPAlt.fontSize,
-                    }}
-                  >
-                    {card.cost}
-                  </p>
+                  {card.cost}
                 </div>
                 <div
-                  className="special-duration-container"
-                  style={{ backgroundColor: durationColor }}
+                  className="px-2 py-1 sm:px-3 rounded-md font-bold text-white text-xs"
+                  style={{ backgroundColor: "#F31EC1" }}
                 >
-                  <p
-                    style={{
-                      color: basicText,
-                      fontSize: styles.specialValueContainerPAlt.fontSize,
-                    }}
-                  >
-                    {card.duration ? card.duration : "∞"}
-                  </p>
+                  {card.duration ?? "∞"}
                 </div>
                 <div
-                  className="special-value-container"
-                  style={{ backgroundColor: typeColor }}
+                  className="px-2 py-1 sm:px-3 rounded-md font-bold text-white text-xs"
+                  style={{ backgroundColor: "#00C853" }}
                 >
-                  <p
-                    style={{
-                      color: basicText,
-                      fontSize: styles.specialValueContainerP.fontSize,
-                    }}
-                  >
-                    {card.value}
-                  </p>
+                  {card.value}
                 </div>
               </div>
             </>
+          ) : (
+            <p className="text-center">No Special Effect</p>
           )}
         </div>
       </div>
     </div>
+  );
+};
+
+const Card = ({ card, onClick }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const elementColor = elements[card.element]?.color;
+  const typeColor = types[card.type]?.color;
+
+  return (
+    <>
+      <div
+        className={`w-24 p-2 aspect-[3/4] rounded-md p-1 text-white border-2 shadow-md flex flex-col justify-between
+    ${
+      card.special
+        ? "bg-gradient-to-br from-[#1A1919] to-[#2c0036] border-pink-500"
+        : "bg-[#1A1919]"
+    }`}
+        style={{ borderColor: card.special ? "#F31EC1" : elementColor }}
+        onClick={() => (onClick ? onClick(setIsOpen) : setIsOpen(true))}
+      >
+        {/* Special Indicator */}
+        {/* {card.special && (
+          <div className="absolute top-0 left-0 w-2.5 h-2.5 rounded-full bg-pink-500 animate-pulse z-10 translate-x-[-2px] translate-y-[-2px]" />
+        )} */}
+
+        {/* Top row */}
+        <div className="flex justify-between items-center mb-1 sm:mb-2">
+          <div
+            className="w-6 aspect-square rounded-md rotate-45 flex justify-center items-center text-xs sm:text-sm font-bold"
+            style={{ backgroundColor: elementColor }}
+          >
+            <span className="text-xs -rotate-45">{card.cost}</span>
+          </div>
+
+          <div
+            className="w-6 aspect-square text-xs rounded-md flex justify-center items-center text-xs sm:text-sm font-bold"
+            style={{ backgroundColor: typeColor }}
+          >
+            {card.value}
+          </div>
+        </div>
+
+        {/* Image */}
+        <img
+          src={elements[card.element]?.logo}
+          alt={card.element}
+          className="w-10 h-10 mx-auto mb-1 object-contain rounded-full"
+        />
+
+        {/* Name */}
+        <div className="text-center text-[10px] font-bold px-1 truncate">
+          {card.name.replaceAll("_", " ")}
+        </div>
+      </div>
+
+      {isOpen && <DetailedCard card={card} onClose={() => setIsOpen(false)} />}
+    </>
   );
 };
 

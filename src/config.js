@@ -507,18 +507,18 @@ export const synergies = [
   },
 ];
 
-export const deckLogos = [
-  deck_air,
-  deck_dragon,
-  deck_eagle,
-  deck_earth,
-  deck_fire,
-  deck_king,
-  deck_lion,
-  deck_skull,
-  deck_snake,
-  deck_spear,
-  deck_sword,
-  deck_warrior,
-  deck_water
-]
+export const deckLogos = {
+  "Air" : deck_air,
+  "Dragon" : deck_dragon,
+  "Eagle" : deck_eagle,
+  "Earth" : deck_earth,
+  "Fire" : deck_fire,
+  "King" : deck_king,
+  "Lion" : deck_lion,
+  "Skull" : deck_skull,
+  "Snake" : deck_snake,
+  "Spear" : deck_spear,
+  "Sword" : deck_sword,
+  "Warrior" : deck_warrior,
+  "Water" : deck_water
+}

@@ -2,7 +2,7 @@ import * as React from "react";
 
 const Snake = (props) => {
   return (
-    <svg fill="#000000" width="800px" height="800px" viewBox="0 0 32 32"
+    <svg {...props} fill="#000000" width="800px" height="800px" viewBox="0 0 32 32"
     xmlns="http://www.w3.org/2000/svg" {...props}>
     <title>snake</title>
     <path
