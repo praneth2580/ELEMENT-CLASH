@@ -507,6 +507,8 @@ export const synergies = [
   },
 ];
 
+export const defaultDeck = { name: "Default Deck", type: 1, fg_color: "#ffffff", bg_color: "#000000", cards: [] };
+
 export const deckLogos = [
   deck_air,
   deck_dragon,
