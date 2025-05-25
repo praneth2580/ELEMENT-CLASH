@@ -2,7 +2,7 @@ import * as React from "react";
 
 const Spear = (props) => {
   return (
-    <svg fill="#000000" height="800px" width="800px" xmlns="http://www.w3.org/2000/svg"
+    <svg {...props} fill="#000000" height="800px" width="800px" xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 300.996 300.996"
     enableBackground="new 0 0 300.996 300.996">
     <g>

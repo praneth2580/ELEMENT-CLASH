@@ -1,5 +1,6 @@
 // pages/Demo.jsx
 import React, { useState, useEffect } from "react";
+// import Card from "../components/Card_bkp";
 import Card from "../components/Card";
 import "../Card.css";
 import { generateCard } from "../scripts/Cards";

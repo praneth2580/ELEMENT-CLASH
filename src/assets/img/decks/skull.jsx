@@ -2,7 +2,7 @@ import * as React from "react";
 
 const Skull = (props) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg"
+    <svg {...props} xmlns="http://www.w3.org/2000/svg"
     width="800px" height="800px" viewBox="0 0 512 512" xmlSpace="preserve">
     <g>
     <path className="st0" d="M186.521,265.189v27.578c0,4.969,4.219,9.016,9.438,9.016h23.016c5.203,0,9.422-4.047,9.422-9.016v-23.094
