@@ -18,18 +18,6 @@ export const useCardGameStorage = () => {
       setRoundsPlayed(rounds?.value || 0);
     };
     loadData();
-    // updateDecks("test4", 1, "#ffffff", "#000000", [])
-    // updateDecks("test5", 1, "#ffffff", "#000000", [])
-    // updateDecks("test6", 1, "#ffffff", "#000000", [])
-    // updateDecks("test7", 1, "#ffffff", "#000000", [])
-    // updateDecks("test8", 1, "#ffffff", "#000000", [])
-    // updateDecks("test9", 1, "#ffffff", "#000000", [])
-    // updateDecks("test10", 1, "#ffffff", "#000000", [])
-    // updateDecks("test11", 1, "#ffffff", "#000000", [])
-    // updateDecks("test12", 1, "#ffffff", "#000000", [])
-    // updateDecks("test13", 1, "#ffffff", "#000000", [])
-    // updateDecks("test14", 1, "#ffffff", "#000000", [])
-    // updateDecks("test15", 1, "#ffffff", "#000000", [])
   }, []);
 
   const saveCards = async (newCards) => {
@@ -39,8 +27,12 @@ export const useCardGameStorage = () => {
   };
   
   // change this
-  const updateDecks = async (name, type, fg_color, bg_color, cards) => {
-    await db.decks.add({ name: name, type: type, fg_color: fg_color, bg_color: bg_color, cards: cards });
+  const updateDecks = async (id, name, type, fg_color, bg_color, cards) => {
+    if (id) {
+      await db.decks.update(id, { name: name, type: type, fg_color: fg_color, bg_color: bg_color, cards: cards });
+    } else {
+      await db.decks.add({ name: name, type: type, fg_color: fg_color, bg_color: bg_color, cards: cards });
+    }
     const allDecks = await db.decks.toArray();
 
     setDecks(allDecks);

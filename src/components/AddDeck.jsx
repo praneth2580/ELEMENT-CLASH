@@ -3,6 +3,7 @@ import "../Card.css";
 import { elements, types } from "../scripts/Cards";
 import { deckLogos } from "../config";
 import Air from "../assets/img/decks/air";
+import Add from "../assets/img/decks/add";
 
 const color = "#F3A91E";
 const bg = "#000000";
@@ -13,13 +14,12 @@ const Deck = ({ onClick, type, name, color }) => {
 
   return (
     <div
-      className="card-wrapper hover:bg-slate-500 rounded p-2 cursor-pointer"
+      className="card-wrapper rounded p-2 cursor-pointer"
       onClick={onClick}
     >
-      <div className="rounded-lg w-full aspect-[2/3] bg-white flex items-center justify-center">
-        {Graphic ? <Graphic className="h-10 fill-amber-600" /> : <Air className="h-10 fill-amber-600"/>}
+      <div className="rounded-lg w-full aspect-[2/3] bg-slate-400 hover:bg-slate-200 flex items-center justify-center">
+        <Add className="h-12"/>
       </div>
-      {name && <h2 className="text-center text-xl">{name}</h2>}
     </div>
   );
 };

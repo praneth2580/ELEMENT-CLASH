@@ -15,7 +15,7 @@ export default function ElementClash({ dev }) {
   let playerRef = useRef(null);
   let aiRef = useRef(null);
 
-  const { cards } = useCardGameStorage();
+  const { cards, decks } = useCardGameStorage();
 
   const [playerStats, setPlayerStats] = useState({
     HP: 0,
@@ -101,7 +101,7 @@ export default function ElementClash({ dev }) {
 
   return (
     <>
-      <DeckPopup isOpen={isDeckModalOpen} cards={cards}/>
+      <DeckPopup isOpen={isDeckModalOpen} decks={decks}/>
       {dev ? (
         <DevBoard
           playerStats={playerStats}

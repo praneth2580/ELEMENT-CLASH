@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Deck from "../components/Deck";
 import Card from "../components/Card";
-import { deckLogos } from "../config";
+import AddDeck from "../components/AddDeck";
+import { deckLogos, defaultDeck } from "../config";
 import { useCardGameStorage } from "../data/hooks/useCardGameStorage";
 
 export default function Decks({}) {
@@ -22,13 +23,14 @@ export default function Decks({}) {
   return (
     <>
       {selectedDeck ? (
-        <DeckBuilder deck={selectedDeck} />
+        <DeckBuilder deck={selectedDeck} cards={cards} updateDecks={updateDecks}/>
       ) : (
         <div className="p-4 bg-gray-900 min-h-screen text-white">
           <h1 className="text-2xl text-center font-bold mb-4">
             Build Your Deck
           </h1>
           <div className="grid grid-cols-6 gap-2">
+            <AddDeck onClick={() => setSelectedDeck(defaultDeck)}/>
             {decks.map((deck) => (
               <Deck
                 key={deck.id}
@@ -45,14 +47,11 @@ export default function Decks({}) {
   );
 }
 
-const DeckBuilder = ({deck}) => {
+const DeckBuilder = ({deck, cards, updateDecks}) => {
   const [deckName, setDeckName] = useState(deck.name);
-  const [deckCover, setDeckCover] = useState(null);
-  const [selectedCards, setSelectedCards] = useState([]);
+  const [selectedCards, setSelectedCards] = useState(deck.cards);
   const deckLogoKeys = Object.keys(deckLogos);
-  const [selectedDeckLogo, setSelectedDeckLogo] = useState(deckLogoKeys[0]);
-
-  const { cards } = useCardGameStorage();
+  const [selectedDeckLogo, setSelectedDeckLogo] = useState(deck.type);
 
   const toggleCard = (card) => {
     if (selectedCards.find((c) => c.id === card.id)) {
@@ -61,6 +60,10 @@ const DeckBuilder = ({deck}) => {
       setSelectedCards((prev) => [...prev, card]);
     }
   };
+
+  useEffect(() => {
+    updateDecks(deck.id, deckName, selectedDeckLogo, deck.fg_color, deck.bg_color, selectedCards)
+  }, [deckName, selectedCards, selectedDeckLogo])
 
   return (
     <div className="p-4 space-y-4 max-w-screen-xl mx-auto">
@@ -83,7 +86,7 @@ const DeckBuilder = ({deck}) => {
                 class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer"
               >
                 {deckLogoKeys.map((logo, idx) => (
-                  <option key={idx} value={logo}>
+                  <option selected={logo == deck.type} key={idx} value={logo}>
                     {logo}
                   </option>
                 ))}
