@@ -1,8 +1,9 @@
 import { useCardGameStorage } from "../data/hooks/useCardGameStorage";
-import { getRandomCards, removeByIndexes } from "../functions";
+import { getRandomCards, pickHand, removeByIndexes } from "../functions";
+
+const max_shield = 100;
 
 export default class Entity {
-
   
   constructor(initialHP, deck, deckCount = 10) {
     this.maxHP = initialHP;
@@ -24,7 +25,9 @@ export default class Entity {
   
   // PICK THREE RANDOM CARDS FROM THE DECK
   drawHand(num) {
-    this.hand = getRandomCards(num, this.deck);
+    if (this.deck && this.deck.length == 0) return;
+
+    this.hand = pickHand(this, num, this.deck);
     this.hand.forEach((hand) => {
       this.deck = removeByIndexes(this.deck, this.deck.indexOf(hand));
     });
@@ -42,7 +45,6 @@ export default class Entity {
       card: this.card
     };
   }
-
 
   addSpecial(special) {
     this.effects.push(special);
@@ -117,8 +119,9 @@ export default class Entity {
     this.normalize();
   }
 
-  setShield(value) {
-    this.shield = value;
+  addShield(value) {
+    this.shield = Math.min(max_shield, (this.shield + value));
+    this.normalize();
   }
 
   pickFromHand() {
@@ -127,11 +130,16 @@ export default class Entity {
     return card;
   }
 
-  cardPlayered(index) {
-    const played_card = this.hand[index];
-
-    this.used = played_card;
+  cardPlayed(card) {
+    const index = this.hand.indexOf(card);
+    this.used.push(card);
+    this.card = null;
     this.hand[index] = getRandomCards(1, this.deck)[0];
-    // this.hand = removeByIndexes(this.hand, index);
+  }
+
+  cardSelected(index) {
+    const selected_card = this.hand[index];
+
+    this.card = selected_card;
   }
 }

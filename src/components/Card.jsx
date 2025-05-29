@@ -115,7 +115,9 @@ export const DetailedCard = ({ card, onClose }) => {
 };
 
 const Card = ({ card, onClick }) => {
+
   const [isOpen, setIsOpen] = useState(false);
+  if (!card) return;
 
   const elementColor = elements[card.element]?.color;
   const typeColor = types[card.type]?.color;

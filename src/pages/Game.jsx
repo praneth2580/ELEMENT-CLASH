@@ -53,6 +53,14 @@ export default function ElementClash({ dev }) {
     aiRef.current?.addAura(increment);
   };
 
+  const setPlayerDeck = (deck) => {
+    playerRef.current?.setDeck(deck);
+    playerRef.current.drawHand(3);
+    setIsDeckModalOpen(false);
+
+    syncStats();
+  }
+
   function syncStats() {
     setPlayerStats(playerRef.current.getStats());
     setAiStats(aiRef.current.getStats());
@@ -69,8 +77,95 @@ export default function ElementClash({ dev }) {
     return false;
   }
 
-  const playCard = (card) => {};
+  const playCard = (card) => {
+    const attacker = currentTurn == 0 ? playerRef : aiRef;
+    
+    if(card.cost > attacker.current?.aura) return setMessage(
+        `${attacker.constructor.name} has not enough Aura`
+      ); 
 
+    const card_idx = attacker.current?.hand.indexOf(card);
+    attacker.current?.cardSelected(card_idx);
+
+    setCurrentTurn(currentTurn == 0 ? 1 : 0)
+    syncStats()
+  };
+
+  function applyCards() {
+    if (isGameOver()) return;
+
+    const player = {
+      damage: 0,
+      heal: 0,
+      shield: 0,
+      card: playerRef.current?.card
+    };
+    const ai = {
+      damage: 0,
+      heal: 0,
+      shield: 0,
+      card: aiRef.current?.card
+    };
+
+    if (!player.card || !ai.card) return;
+
+    // setup on player
+    if (player.card.type.toLowerCase() === "attack") {
+      player.damage = player.card.value;
+      setMessage(
+        `${playerRef.current.constructor.name} attacked for ${player.card.value} damage!`
+      );
+    } else if (player.card.type.toLowerCase() === "heal") {
+      player.heal = player.card.value;
+      setMessage(`${playerRef.current.constructor.name} healed for ${player.card.value} HP!`);
+    } else if (player.card.type.toLowerCase() === "block") {
+      player.shield = player.card.value;
+      setMessage(
+        `${playerRef.current.constructor.name} raised a shield of ${player.card.value}!`
+      );
+    }
+
+    // setup on ai
+    if (ai.card.type.toLowerCase() === "attack") {
+      ai.damage = ai.card.value;
+      setMessage(
+        `${aiRef.current.constructor.name} attacked for ${ai.card.value} damage!`
+      );
+    } else if (ai.card.type.toLowerCase() === "heal") {
+      ai.heal = ai.card.value;
+      setMessage(`${aiRef.current.constructor.name} healed for ${ai.card.value} HP!`);
+    } else if (ai.card.type.toLowerCase() === "block") {
+      ai.shield = ai.card.value;
+      setMessage(
+        `${aiRef.current.constructor.name} raised a shield of ${ai.card.value}!`
+      );
+    }
+
+    if (player.card.special) playerRef.current?.addSpecial(player.card.special);
+    if (ai.card.special) aiRef.current?.addSpecial(ai.card.special);
+
+    if (player.shield > 0) playerRef.current?.addShield(player.shield);
+    if (ai.shield > 0) playerRef.current?.addShield(player.shield);
+    
+    if (player.damage > 0) playerRef.current?.applyDamage(player.damage);
+    if (ai.damage > 0) aiRef.current?.applyDamage(aiRef.damage);
+
+    if (player.heal > 0) playerRef.current?.heal(player.heal);
+    if (ai.heal > 0) playerRef.current?.heal(player.heal);
+
+    playerRef.current?.applySpecial();
+    aiRef.current?.applySpecial();
+
+    playerRef.current?.cardPlayed(player.card);
+    aiRef.current?.cardPlayed(ai.card);
+
+    console.log(player, ai);
+
+    syncStats();
+    // endTurn();
+  }
+
+  // this STARTS THE GAME
   useEffect(() => {
     if (cards.length === 0) return; // Wait until cards are loaded
 
@@ -79,7 +174,7 @@ export default function ElementClash({ dev }) {
     aiRef.current = new AI(100, cards);
 
     // DRAW NEW CARD TO HAND
-    playerRef.current.drawHand(3);
+    // playerRef.current.drawHand(3);
     aiRef.current.drawHand(3);
 
     syncStats();
@@ -88,20 +183,27 @@ export default function ElementClash({ dev }) {
   // AFTER EVERY TURN
   useEffect(() => {
     if (cards.length === 0) return; // Wait until cards are loaded
+    
+    setCurrentRound(currentRound + .5);
   }, [currentTurn]);
 
   // AFTER EVERY ROUND
   useEffect(() => {
     if (cards.length === 0) return; // Wait until cards are loaded
+    if(currentRound.toString().includes(".")) return;
 
     if (isGameOver()) return;
-    setCurrentTurn(0);
+    applyCards();
     auraPerRound(currentRound);
+    setCurrentRound(currentRound + .5);
   }, [currentRound]);
+
+  // console.log("Player :", playerStats);
+  // console.log("AI :", aiStats);
 
   return (
     <>
-      <DeckPopup isOpen={isDeckModalOpen} decks={decks}/>
+      <DeckPopup isOpen={isDeckModalOpen} selectDeck={setPlayerDeck} decks={decks}/>
       {dev ? (
         <DevBoard
           playerStats={playerStats}

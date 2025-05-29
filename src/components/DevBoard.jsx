@@ -1,6 +1,7 @@
 import React from "react";
 
-const DevCard = ({ card, onClick, disabled }) => {
+const DevCard = ({ card, selected, onClick, disabled }) => {
+  console.log(card.name, selected)
   const handleClick = () => {
     if (disabled) return;
     onClick(card);
@@ -9,7 +10,7 @@ const DevCard = ({ card, onClick, disabled }) => {
   return (
     <div
       onClick={handleClick}
-      className="bg-gray-700 hover:bg-gray-600 rounded p-3 text-sm"
+      className={`rounded p-3 text-sm cursor-pointer ${selected ? "bg-purple-700 hover:bg-purple-600" : "bg-gray-700 hover:bg-gray-600"}`}
     >
       <p className="text-md font-bold uppercase text-center grow-1">{card.name}</p>
       <div className="flex flex-row justify-between gap-1 flex-wrap">
@@ -37,7 +38,6 @@ const DevCard = ({ card, onClick, disabled }) => {
 };
 
 const EntityDetails = ({ entity, name = "Player", bgColor = "blue" }) => {
-  console.log(entity.entity);
   return (
     <div className={"bg-" + bgColor + "-800 rounded-lg p-4 shadow-md"}>
       <h2 className="text-xl font-bold text-center">{name}</h2>
@@ -73,8 +73,8 @@ const EntityDetails = ({ entity, name = "Player", bgColor = "blue" }) => {
           <h3 className="font-semibold text-sm mb-1">🃏 Hand</h3>
           <div className="bg-gray-800 rounded p-2 text-sm flex flex-col gap-1">
             {entity.hand.length > 0 ? (
-              entity.hand.map((card, i) => (
-                <div className="bg-slate-600 p-1 rounded" key={i}>
+              entity.hand?.map((card, i) => (
+                <div className={` p-1 rounded ${entity.card == card ? "bg-purple-600" : "bg-slate-600"}`} key={i}>
                   <h6 className="text-sm font-bold">{card.name}</h6>
                   <p className="text-xs text-nowrap">
                     {card.type} - ${card.cost} / {card.value}
@@ -103,7 +103,6 @@ const DevBoard = ({
     <div className="max-w-7xl mx-auto p-4 bg-gray-900 text-white"></div>
   );
 
-  console.log("AAA", playerStats);
   return (
     <div className="max-w-7xl mx-auto p-4 bg-gray-900 text-white">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -126,6 +125,8 @@ const DevBoard = ({
               ? playerStats.hand.map((card, idx) => (
                   <DevCard
                     card={card}
+                    key={idx}
+                    selected={playerStats.card == card}
                     onClick={playCard}
                     disabled={playerStats.HP <= 0 || aiStats.HP <= 0}
                   />

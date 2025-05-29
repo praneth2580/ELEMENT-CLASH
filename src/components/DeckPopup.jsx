@@ -1,5 +1,4 @@
-import { useCardGameStorage } from "../data/hooks/useCardGameStorage";
-import Card from "./Card";
+import Deck from "./Deck";
 
 export const DeckPopup = ({ isOpen, decks, selectDeck }) => {
   if (!isOpen) return null;
@@ -12,11 +11,13 @@ export const DeckPopup = ({ isOpen, decks, selectDeck }) => {
         <div className="p-6 max-h-[70vh] overflow-y-auto">
           <div className="grid grid-cols-6 gap-2">
             {decks.map((deck, idx) => (
-                <div className="w-32 h-fill">
-                  <Card
-                    onClick={() => selectDeck(deck)}
-                    deck={deck}
-                    key={idx}
+                <div key={idx} className="w-32 h-fill">
+                  <Deck
+                    onClick={() => selectDeck(deck.cards)}
+                    key={deck.id}
+                    type={deck.type}
+                    name={deck.name}
+                    color={deck.fg_color}
                   />
                 </div>
               ))}
