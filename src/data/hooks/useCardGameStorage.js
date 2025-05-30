@@ -22,6 +22,7 @@ export const useCardGameStorage = () => {
 
   const saveCards = async (newCards) => {
     await db.cards.clear();
+    await db.decks.clear();
     await db.cards.bulkAdd(newCards);
     setCards(newCards);
   };
