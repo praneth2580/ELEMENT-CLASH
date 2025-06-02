@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { elements, types } from "../scripts/Cards";
+import { elements, types } from "../config";
 
 export const DetailedCard = ({ card, onClose }) => {
   const elementColor = elements[card.element].color;

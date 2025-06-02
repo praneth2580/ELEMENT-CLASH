@@ -55,4 +55,10 @@ function removeByIndexes(array, indexesToRemove) {
   return array.filter((_, index) => !indices.includes(index));
 }
 
-export { getRandomCards, removeByIndexes, pickHand };
+function sortByDefinedOrder(dataObj, order) {
+  return order
+    .filter((key) => key in dataObj)
+    .map((key) => ({ name: key, value: dataObj[key] }));
+}
+
+export { getRandomCards, removeByIndexes, pickHand, sortByDefinedOrder };

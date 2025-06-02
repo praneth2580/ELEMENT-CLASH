@@ -1,22 +1,28 @@
 import React, { useState, useEffect } from "react";
 import clsx from "clsx";
-import { elementColors, generateCard, rarityColors } from "../scripts/Cards";
+import { generateCards } from "../scripts/Cards";
 import Card from "../components/Card";
 import { useCardGameStorage } from "../data/hooks/useCardGameStorage";
-import generateCards from "../scripts/CardGenerator";
 import Tabs from "../components/Tabs";
+import ConfigEditor from "./ConfigEditor";
 
 const CardGenerator = () => {
   const [cards, setCards] = useState([]);
   const [copied, setCopied] = useState(false);
+  const [refreshed, setRefreshed] = useState(false);
   const [saved, setSaved] = useState(false);
   const { saveCards } = useCardGameStorage();
 
   useEffect(() => {
-    const newCards = generateCard(100);
-    // console.log(newCards);
-    setCards(newCards);
+    refreshCards();
   }, []);
+
+  const refreshCards = () => {
+    setRefreshed(true);
+    const newCards = generateCards(100);
+    setCards(newCards);
+    setTimeout(() => setRefreshed(false), 2000);
+  }
 
   const handleCopyJSON = () => {
     const json = JSON.stringify(cards, null, 2);
@@ -35,7 +41,7 @@ const CardGenerator = () => {
     setTimeout(() => setSaved(false), 2000);
   };
 
-  console.log(cards);
+  const saveConfig = (config) => {}
 
   const tabs = [
     {
@@ -55,18 +61,28 @@ const CardGenerator = () => {
       </h1>
 
       <div className="flex justify-center mb-4 gap-2">
-        <button
+        {/* <button
           onClick={handleCopyJSON}
           className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
         >
           {copied ? "Copied!" : "Copy JSON"}
+        </button> */}
+        <button
+          onClick={refreshCards}
+          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+        >
+          {refreshed ? "Refreshed!" : "Re-Generate"}
         </button>
         <button
           onClick={handleSaveCards}
           className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
         >
-          {saved ? "Saved!" : "Save Cards"}
+          {saved ? "Saved!" : "Save"}
         </button>
+      </div>
+
+      <div>
+        <ConfigEditor onSave={saveConfig}/>
       </div>
 
       <Tabs tabs={tabs}/>
@@ -77,7 +93,7 @@ const CardGenerator = () => {
 function CardGrid({ cards }) {
   return(
     <div className="flex flex-wrap gap-3">
-      {cards.map((card, index) => {
+      {cards && cards.length > 0 && cards.map((card, index) => {
         return (
           <div key={index}>
             <Card key={"C-" + index} card={card} />

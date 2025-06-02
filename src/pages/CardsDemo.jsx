@@ -3,13 +3,13 @@ import React, { useState, useEffect } from "react";
 // import Card from "../components/Card_bkp";
 import Card from "../components/Card";
 import "../Card.css";
-import { generateCard } from "../scripts/Cards";
+import { generateCards } from "../scripts/Cards";
 
 const CardsDemo = () => {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    const newCards = generateCard(3) // Generate 3 random cards
+    const newCards = generateCards(3) // Generate 3 random cards
     setCards(newCards);
   }, []);
 
