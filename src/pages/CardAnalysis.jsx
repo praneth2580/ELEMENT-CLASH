@@ -37,6 +37,7 @@ export default function CardAnalysis() {
   const [rarityData, setRarityData] = useState([]);
   const [traitData, setTraitData] = useState([]);
   const [costData, setCostData] = useState([]);
+  const [avgValueForCostData, setAvgValueForCost] = useState([]);
 
   useEffect(() => {
     if (!cards || cards.length === 0) return;
@@ -56,6 +57,9 @@ export default function CardAnalysis() {
     );
     setCostData(
       sortByDefinedOrder(result.byCost, costOrder)
+    );
+    setAvgValueForCost(
+      sortByDefinedOrder(result.avgValueForCostByRarity, rarityOrder)
     );
   }, [cards]);
 
@@ -96,6 +100,12 @@ export default function CardAnalysis() {
           <p className="text-sm text-white">Avg. Value</p>
           <h2 className="text-2xl font-bold text-purple-800 dark:text-purple-300">
             {summary.avgValue}
+          </h2>
+        </div>
+        <div className="bg-gradient-to-br from-purple-100 to-purple-200 dark:from-purple-900 dark:to-purple-800 rounded-xl p-4 shadow">
+          <p className="text-sm text-white">Avg. Value For Cost</p>
+          <h2 className="text-2xl font-bold text-purple-800 dark:text-purple-300">
+            {summary.avgValueForCost}
           </h2>
         </div>
       </div>
@@ -177,6 +187,21 @@ export default function CardAnalysis() {
           </h2>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={costData}>
+              <XAxis dataKey="name" stroke="#FF8042" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Bar dataKey="value" fill="#FF8042" radius={[8, 8, 0, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+
+        <div className={sectionStyle}>
+          <h2 className="text-xl font-semibold mb-2 text-gray-700 dark:text-white">
+            Avg. Value For Cost
+          </h2>
+          <ResponsiveContainer width="100%" height={300}>
+            <BarChart data={avgValueForCostData}>
               <XAxis dataKey="name" stroke="#FF8042" />
               <YAxis />
               <Tooltip />

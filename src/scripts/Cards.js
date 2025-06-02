@@ -145,12 +145,16 @@ export function analyzeCards(cards) {
     byType: {},
     byRarity: {},
     byCost: {},
+    avgValueForCostByRarity: {},
     specialCount: 0,
     traits: {},
     avgCost: 0,
     avgValue: 0,
+    avgValueForCost: 0
   };
 
+
+  const valueForCostByRarity = {};
   let totalCost = 0;
   let totalValue = 0;
 
@@ -175,12 +179,22 @@ export function analyzeCards(cards) {
     // Count special effects
     if (card.special) summary.specialCount++;
 
+    valueForCostByRarity[card.rarity] = (valueForCostByRarity[card.rarity] || 0) + (card.value / card.cost);
     totalCost += card.cost;
     totalValue += card.value;
   }
 
+  const valueForCostByRarityKeys = Object.keys(valueForCostByRarity);
+
+  for (let i = 0; i < valueForCostByRarityKeys.length; i++) {
+    summary.avgValueForCostByRarity[valueForCostByRarityKeys[i]] = +(valueForCostByRarity[valueForCostByRarityKeys[i]] / summary.byRarity[valueForCostByRarityKeys[i]]).toFixed(2);    
+  }
+
   summary.avgCost = +(totalCost / cards.length).toFixed(2);
   summary.avgValue = +(totalValue / cards.length).toFixed(2);
+  summary.avgValueForCost = +(summary.avgValue / summary.avgCost).toFixed(2);
+
+  console.log(summary)
 
   return summary;
 }
