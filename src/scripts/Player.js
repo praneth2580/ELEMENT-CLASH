@@ -49,16 +49,7 @@ export default class Player extends Entity {
   constructor(initialHP, deck, deckCount = 10) {
     super(initialHP, deck, deckCount);
 
-    this.maxHP = initialHP;
-    this.HP = initialHP;
-    this.shield = 0;
-    this.effects = [];
-    this.hand = [];
-    this.deck = []; // player deck is selected by the player
-    this.used = [];
-    this.aura = 5;
-    this.tac_aura = 0;
-    this.card = null;
+    this.deck = []; 
   }
 
   setDeck(deck) {

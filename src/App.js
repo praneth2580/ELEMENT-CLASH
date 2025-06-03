@@ -8,6 +8,7 @@ import { HashRouter, Route, Routes } from "react-router-dom";
 import MenuScreen from "./pages/Menu";
 import DeckBuilder from "./pages/DeckBuilder";
 import CardAnalysis from "./pages/CardAnalysis";
+import LogViewer from "./pages/LogViewer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MenuScreen />} />
         <Route path="/game" element={<ElementClash />} />
+        <Route path="/logs" element={<LogViewer />} />
         <Route path="/deck" element={<DeckBuilder  />} />
         <Route path="/analysis" element={<CardAnalysis/>} />
         <Route path="/dev" element={<ElementClash dev/>} />

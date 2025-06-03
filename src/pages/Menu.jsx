@@ -9,6 +9,7 @@ import {
   Download,
   Container,
   ChartLine,
+  Logs,
 } from "lucide-react";
 import logo from "../assets/logo.png";
 
@@ -46,6 +47,7 @@ export default function MenuScreen() {
     { label: "Play Game", icon: <Play className="w-5 h-5" />, href: "/ELEMENT-CLASH/#/game" },
     { label: "Deck Builder", icon: <Container className="w-5 h-5" />, href: "/ELEMENT-CLASH/#/deck" },
     { label: "Dev Board", icon: <FlaskConical className="w-5 h-5" />, href: "/ELEMENT-CLASH/#/dev" },
+    { label: "Game Logs", icon: <Logs className="w-5 h-5" />, href: "/ELEMENT-CLASH/#/logs" },
     { label: "Deck Analysis", icon: <ChartLine className="w-5 h-5" />, href: "/ELEMENT-CLASH/#/analysis" },
     { label: "Card Builder", icon: <Hammer className="w-5 h-5" />, href: "/ELEMENT-CLASH/#/gen" },
     { label: "Card Showcase", icon: <Sparkles className="w-5 h-5" />, href: "/ELEMENT-CLASH/#/demo" },

@@ -194,7 +194,5 @@ export function analyzeCards(cards) {
   summary.avgValue = +(totalValue / cards.length).toFixed(2);
   summary.avgValueForCost = +(summary.avgValue / summary.avgCost).toFixed(2);
 
-  console.log(summary)
-
   return summary;
 }

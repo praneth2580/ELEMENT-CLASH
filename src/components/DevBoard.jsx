@@ -1,7 +1,6 @@
 import React from "react";
 
 const DevCard = ({ card, selected, onClick, disabled }) => {
-  console.log(card.name, selected)
   const handleClick = () => {
     if (disabled) return;
     onClick(card);
@@ -10,9 +9,15 @@ const DevCard = ({ card, selected, onClick, disabled }) => {
   return (
     <div
       onClick={handleClick}
-      className={`rounded p-3 text-sm cursor-pointer ${selected ? "bg-purple-700 hover:bg-purple-600" : "bg-gray-700 hover:bg-gray-600"}`}
+      className={`rounded p-3 text-sm cursor-pointer ${
+        selected
+          ? "bg-purple-700 hover:bg-purple-600"
+          : "bg-gray-700 hover:bg-gray-600"
+      }`}
     >
-      <p className="text-md font-bold uppercase text-center grow-1">{card.name}</p>
+      <p className="text-md font-bold uppercase text-center grow-1">
+        {card.name}
+      </p>
       <div className="flex flex-row justify-between gap-1 flex-wrap">
         <p className="text-sm text-center font-bold">{card.type}</p>
         <p className="text-sm text-center text-nowrap">
@@ -26,7 +31,8 @@ const DevCard = ({ card, selected, onClick, disabled }) => {
               {card.special?.type}
             </p>
             <p className="text-sm text-center text-nowrap">
-              {card.special?.cost ? "$" + card.special?.cost :  "∞" } - {card.special?.value}
+              {card.special?.cost ? "$" + card.special?.cost : "∞"} -{" "}
+              {card.special?.value}
             </p>
           </>
         ) : (
@@ -74,7 +80,12 @@ const EntityDetails = ({ entity, name = "Player", bgColor = "blue" }) => {
           <div className="bg-gray-800 rounded p-2 text-sm flex flex-col gap-1">
             {entity.hand.length > 0 ? (
               entity.hand?.map((card, i) => (
-                <div className={` p-1 rounded ${entity.card == card ? "bg-purple-600" : "bg-slate-600"}`} key={i}>
+                <div
+                  className={` p-1 rounded ${
+                    entity.card == card ? "bg-purple-600" : "bg-slate-600"
+                  }`}
+                  key={i}
+                >
                   <h6 className="text-sm font-bold">{card.name}</h6>
                   <p className="text-xs text-nowrap">
                     {card.type} - ${card.cost} / {card.value}
@@ -116,6 +127,12 @@ const DevBoard = ({
             <div className="text-sm">
               {currentTurn === 0 ? "Player" : "AI"} [{currentRound}]
             </div>
+            <button
+              onClick={() => playCard(null)}
+              className="bg-red-700 hover:bg-red-600 font-bold rounded p-1 text-sm w-32"
+            >
+              SKIP
+            </button>
             <div className="text-center font-semibold">{message}</div>
           </div>
 

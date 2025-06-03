@@ -4,33 +4,78 @@ import { getRandomCards, pickHand, removeByIndexes } from "../functions";
 const max_shield = 100;
 
 export default class Entity {
-  
-  constructor(initialHP, deck, deckCount = 10) {
+  constructor(name, initialHP, deck, deckCount = 10) {
+    this.name = name;
     this.maxHP = initialHP;
     this.HP = initialHP;
     this.shield = 0;
     this.effects = [];
     this.hand = [];
-    this.deck = getRandomCards(deckCount, deck); // populate based on your logic
+    this.deck = getRandomCards(deckCount, deck);
     this.used = [];
     this.aura = 5;
     this.tac_aura = 0;
     this.card = null;
+    this.logs = this.loadLogs(); // Load persisted logs
   }
 
-  // APPEND AURA TO EXISTING AURA UPTO 10
-  addAura(value) {
-    this.aura = Math.min(10, value);
+  logAction(msg) {
+    const timestamp = new Date().toISOString();
+    const logEntry = `[${timestamp}] ${msg}`;
+    this.logs.push(logEntry);
+    console.log(`${this.name}: ${logEntry}`);
+    this.saveLogs();
   }
-  
-  // PICK THREE RANDOM CARDS FROM THE DECK
-  drawHand(num) {
-    if (this.deck && this.deck.length == 0) return;
+
+  saveLogs() {
+    localStorage.setItem(`log_${this.name}`, JSON.stringify(this.logs));
+  }
+
+  loadLogs() {
+    return JSON.parse(localStorage.getItem(`log_${this.name}`)) || [];
+  }
+
+  saveTurnStats(prevStats, newStats) {
+    const key = `turn_stats_${this.name}`;
+    const prev = JSON.parse(localStorage.getItem(key)) || [];
+
+    prev.push({
+      timestamp: new Date().toISOString(),
+      previous: prevStats,
+      now: newStats,
+    });
+
+    localStorage.setItem(key, JSON.stringify(prev));
+  }
+
+  clearLogs() {
+    this.logs = [];
+    this.saveLogs();
+  }
+
+  printLog() {
+    this.logs.forEach((log) => console.log(`${this.name}: ${log}`));
+  }
+
+  addAura(value) {
+    this.logAction(`Aura before: ${this.aura}`);
+    this.aura = Math.min(10, this.aura + value);
+    this.logAction(`Gained ${value} aura → Now: ${this.aura}`);
+  }
+
+  useAura(value) {
+    this.aura = Math.max(0, this.aura - value);
+    this.logAction(`Used ${value} aura → Remaining: ${this.aura}`);
+  }
+
+  drawCards(num) {
+    if (!this.deck || this.deck.length === 0) return;
 
     this.hand = pickHand(this, num, this.deck);
-    this.hand.forEach((hand) => {
-      this.deck = removeByIndexes(this.deck, this.deck.indexOf(hand));
+    this.hand.forEach((card) => {
+      this.deck = removeByIndexes(this.deck, this.deck.indexOf(card));
     });
+    this.logAction(`Drew ${num} cards to hand`);
   }
 
   getStats() {
@@ -42,70 +87,68 @@ export default class Entity {
       shield: this.shield,
       effects: this.effects,
       hand: this.hand,
-      card: this.card
+      card: this.card,
     };
   }
 
   addSpecial(special) {
     this.effects.push(special);
+    this.logAction(`Added special effect: ${special.name || special.type}`);
   }
 
-  applySpecial() {
+  applySpecialEffects() {
     for (let i = 0; i < this.effects.length; i++) {
-      switch (this.effects[i].type) {
+      const effect = this.effects[i];
+      switch (effect.type) {
         case "damage-over-time":
-          if (this.effects[i].duration && this.effects[i].duration > 0)
-            this.applyDamage(this.effects[i].value);
+          if (effect.duration && effect.duration > 0) {
+            this.takeDamage(effect.value);
+            this.logAction(`Applied DOT: ${effect.value}`);
+          }
           break;
         case "heal":
-          this.heal(this.effects[i].value);
+          this.heal(effect.value);
           break;
-
         default:
           break;
       }
 
-      if (this.effects[i].duration) this.effects[i].duration -= 1;
-      if (this.effects[i].duration <= 0 || !this.effects[i].duration)
+      if (effect.duration) effect.duration -= 1;
+      if (effect.duration <= 0 || !effect.duration)
         this.effects = removeByIndexes(this.effects, i);
     }
   }
 
-  getSumEffects(type) {
-    const sumBlock =
-      this.effects
-        .filter((e) => e.type === type)
-        .reduce((sum, effect) => sum + (effect.value || 0), 0) || 0;
-    const blockEffectsIndex = this.effects
-      .map((effect, index) => (effect.type === type ? index : -1))
-      .filter((index) => index !== -1);
-
-    this.effects = removeByIndexes(this.effects, blockEffectsIndex);
-    return sumBlock;
+  consumeEffectsOfType(type) {
+    const sum = this.effects
+      .filter((e) => e.type === type)
+      .reduce((sum, effect) => sum + (effect.value || 0), 0);
+    const indexes = this.effects
+      .map((e, i) => (e.type === type ? i : -1))
+      .filter((i) => i !== -1);
+    this.effects = removeByIndexes(this.effects, indexes);
+    return sum;
   }
 
-  applyDamage(damage) {
-    console.log(`💢 [${this.constructor.name}] Taking damage: ${damage}`);
+  takeDamage(damage) {
+    const buffs = Math.max(1, this.consumeEffectsOfType("buff"));
+    const debuffs = Math.max(1, this.consumeEffectsOfType("debuff"));
+    const blocks = Math.min(0, this.consumeEffectsOfType("block"));
 
-    const totalBuffs = Math.max(1,this.getSumEffects('buff'));
-    const totalDebuffs = Math.max(1,this.getSumEffects('debuff'));
-    const totalBlocks = Math.min(0,this.getSumEffects('block'));
-
-    let final_damage = (((damage * totalBuffs) / totalDebuffs) - totalBlocks) || 0; 
+    let finalDamage = (damage * buffs) / debuffs - blocks;
 
     if (this.shield > 0) {
-      let temp_shield = this.shield;
-      temp_shield -= final_damage * 0.75; // blocks damange if shield is present and also account for block effect
-      this.shield = Math.min(0, temp_shield);
-      final_damage = final_damage + temp_shield;
+      let remainingShield = this.shield - finalDamage * 0.75;
+      finalDamage += Math.min(0, remainingShield);
+      this.shield = Math.max(0, remainingShield);
     }
 
-    this.HP = this.HP - final_damage; // if more damage that shield then deduct from health
-
-    console.log(
-      `💢 [${this.constructor.name}] HP: ${this.HP} SHIELD: ${this.shield}`
+    this.HP -= finalDamage;
+    this.logAction(
+      `Took ${finalDamage.toFixed(2)} damage → HP: ${this.HP}, Shield: ${
+        this.shield
+      }`
     );
-
     this.normalize();
   }
 
@@ -114,32 +157,44 @@ export default class Entity {
     this.shield = Math.max(0, this.shield);
   }
 
-  heal(hp) {
-    this.HP += hp;
+  heal(amount) {
+    const prevHP = this.HP;
+    this.HP += amount;
     this.normalize();
+    this.logAction(`Healed ${amount} → HP: ${prevHP} → ${this.HP}`);
   }
 
   addShield(value) {
-    this.shield = Math.min(max_shield, (this.shield + value));
+    const prev = this.shield;
+    this.shield = Math.min(max_shield, this.shield + value);
     this.normalize();
+    this.logAction(`Added ${value} shield → Shield: ${prev} → ${this.shield}`);
   }
 
-  pickFromHand() {
+  autoPlayCard() {
     const card = getRandomCards(1, this.hand)[0];
-    this.cardPlayered(card);
+    this.playCard(card);
     return card;
   }
 
-  cardPlayed(card) {
+  playCard(card) {
+    if (!card) return;
+
     const index = this.hand.indexOf(card);
+    if (index === -1) return;
+
     this.used.push(card);
-    this.card = null;
     this.hand[index] = getRandomCards(1, this.deck)[0];
+    this.useAura(card.cost);
+    this.card = null;
+
+    this.logAction(
+      `Played card: ${card.name || "Unknown"} (Cost: ${card.cost})`
+    );
   }
 
-  cardSelected(index) {
-    const selected_card = this.hand[index];
-
-    this.card = selected_card;
+  selectCard(index) {
+    this.card = this.hand[index];
+    this.logAction(`Selected card: ${this.card.name || "Unknown"}`);
   }
 }

@@ -43,8 +43,6 @@ function pickHand( entityRef, n, cards = _cards) {
     filler_length = n - priority_length;
   }
 
-  console.log(priority_list, filler_list);
-
   return [...getRandomCards(priority_length, priority_list), ...getRandomCards(filler_length, filler_list)];
 }
 
